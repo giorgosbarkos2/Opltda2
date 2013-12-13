@@ -120,7 +120,6 @@ class Estudio
 
 	/**
 	*
-	* @ORM\Column(name="fechaIngreso", type="datetime" ,nullable=true )
+	* @ORM\Column(name="macroProceso", type="text" ,nullable=true )
 	*/
-	private $fechaIngreso;
 }
