@@ -5,6 +5,19 @@ use Symfony\Component\Config\Loader\LoaderInterface;
 
 class AppKernel extends Kernel
 {
+<<<<<<< HEAD
+=======
+    
+    
+          public function init()
+    {
+        date_default_timezone_set( 'America/Santiago' );
+        parent::init();
+    }
+    
+    
+    
+>>>>>>> 5a45c6997fd8c30ec31f8cf65d0ab532ee878c05
     public function registerBundles()
     {
         $bundles = array(
@@ -16,6 +29,11 @@ class AppKernel extends Kernel
             new Symfony\Bundle\AsseticBundle\AsseticBundle(),
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
+<<<<<<< HEAD
+=======
+            new Opltda\PaginasBundle\OpltdaPaginasBundle(),
+            new Opltda\EntidadesBundle\OpltdaEntidadesBundle(),
+>>>>>>> 5a45c6997fd8c30ec31f8cf65d0ab532ee878c05
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 5a45c6997fd8c30ec31f8cf65d0ab532ee878c05
 Symfony Standard Edition
 ========================
 
@@ -169,3 +173,12 @@ Enjoy!
 [11]: http://symfony.com/doc/2.4/cookbook/logging/monolog.html
 [12]: http://symfony.com/doc/2.4/cookbook/assetic/asset_management.html
 [13]: http://symfony.com/doc/2.4/bundles/SensioGeneratorBundle/index.html
+<<<<<<< HEAD
+=======
+=======
+Opltda2
+=======
+
+Opltda2
+>>>>>>> 1790bb99eae0549c7236ed39a0dec58d951797f3
+>>>>>>> 5a45c6997fd8c30ec31f8cf65d0ab532ee878c05

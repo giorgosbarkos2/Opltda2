@@ -1163,11 +1163,16 @@
         },
         {
             "name": "symfony/icu",
+<<<<<<< HEAD
             "version": "v1.2.0",
+=======
+            "version": "v1.0.0",
+>>>>>>> 5a45c6997fd8c30ec31f8cf65d0ab532ee878c05
             "target-dir": "Symfony/Component/Icu",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Icu.git",
+<<<<<<< HEAD
                 "reference": "7299cd3d8d6602103d1ebff5d0a9917b7bc6de72"
             },
             "dist": {
@@ -1178,6 +1183,17 @@
             },
             "require": {
                 "lib-icu": ">=4.4",
+=======
+                "reference": "cac3fdfb111adbe590155f491594636d45129783"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/Icu/zipball/cac3fdfb111adbe590155f491594636d45129783",
+                "reference": "cac3fdfb111adbe590155f491594636d45129783",
+                "shasum": ""
+            },
+            "require": {
+>>>>>>> 5a45c6997fd8c30ec31f8cf65d0ab532ee878c05
                 "php": ">=5.3.3",
                 "symfony/intl": "~2.3"
             },
@@ -1207,7 +1223,11 @@
                 "icu",
                 "intl"
             ],
+<<<<<<< HEAD
             "time": "2013-06-03 18:32:58"
+=======
+            "time": "2013-06-03 18:32:07"
+>>>>>>> 5a45c6997fd8c30ec31f8cf65d0ab532ee878c05
         },
         {
             "name": "symfony/monolog-bundle",

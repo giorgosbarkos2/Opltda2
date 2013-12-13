@@ -1,0 +1,7 @@
+parameters:
+#    opltda_paginas.example.class: Opltda\PaginasBundle\Example
+
+services:
+#    opltda_paginas.example:
+#        class: %opltda_paginas.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
