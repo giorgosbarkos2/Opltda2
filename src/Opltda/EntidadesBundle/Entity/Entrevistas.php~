@@ -39,7 +39,7 @@ class Entrevistas
 
 
 
-     /**
+     **
      * @ORM\ManyToOne(targetEntity="Opltda\EntidadesBundle\Entity\Puertos", inversedBy="entrevistas")
      * @ORM\JoinColumn(name="puertos_id", referencedColumnName="id")
      */
@@ -51,7 +51,7 @@ class Entrevistas
 
 
 
-   /** @ORM\Column(type="string", length=200 , nullable=true) */
+      /** @ORM\Column(type="string", length=200 , nullable=true) */
 
 
     private $nombreCadena;

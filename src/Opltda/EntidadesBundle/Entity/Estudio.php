@@ -21,6 +21,13 @@ class Estudio
      */
     private $id;
 
+	/* Relaciones */
+	/**
+	* @ORM\OneToMany(targetEntity="Opltda\EntidadesBundle\Entity\Entrevistas", mappedBy="puertos")
+	*/
+
+	private $entrevistas;
+
     /**
      * @var string
      *
