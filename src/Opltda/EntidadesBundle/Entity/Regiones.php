@@ -40,6 +40,16 @@ class Regiones
     */
 
     private $inversionVial;
+    
+    
+    
+        /**
+    * @ORM\OneToMany(targetEntity="Opltda\EntidadesBundle\Entity\Estudio", mappedBy="regiones")
+    */
+
+    private $estudio;
+    
+    
 
 
 
