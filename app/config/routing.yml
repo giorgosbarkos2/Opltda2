@@ -1,0 +1,8 @@
+opltda_entidades:
+    resource: "@OpltdaEntidadesBundle/Resources/config/routing.yml"
+    prefix:   /
+
+opltda_paginas:
+    resource: "@OpltdaPaginasBundle/Resources/config/routing.yml"
+    prefix:   /
+
