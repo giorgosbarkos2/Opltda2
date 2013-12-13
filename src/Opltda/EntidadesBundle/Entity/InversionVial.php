@@ -5,12 +5,12 @@ namespace Opltda\EntidadesBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * FocusGroup
+ * InversionVial
  *
  * @ORM\Table()
  * @ORM\Entity
  */
-class FocusGroup
+class InversionVial
 {
     /**
      * @var integer
@@ -21,29 +21,21 @@ class FocusGroup
      */
     private $id;
 
-     /**
-     * @ORM\ManyToOne(targetEntity="Opltda\EntidadesBundle\Entity\Puertos", inversedBy="focusgroup")
-     * @ORM\JoinColumn(name="puertos_id", referencedColumnName="id")
+
+ 
+   /**
+     * @ORM\ManyToOne(targetEntity="Opltda\EntidadesBundle\Entity\Regiones", inversedBy="inversionvial")
+     * @ORM\JoinColumn(name="regiones_id", referencedColumnName="id")
      */
     
     
     
-    private $puerto;
+    private $region;
     
     
     /** @ORM\Column(type="string", length=200 , nullable=true) */
     
-    
-    private $trascripciones;
-    
-    
-    
-      /** @ORM\Column(type="string", length=200 , nullable=true) */
-    
-    
-    private $categorizaciones;
-    
-    
+    private $nombre;
     
     
     

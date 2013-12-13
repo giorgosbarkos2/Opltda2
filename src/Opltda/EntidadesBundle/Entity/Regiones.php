@@ -22,13 +22,25 @@ class Regiones
     private $id;
 
 
+
+    
+    
+       
     /**
-     * Get id
-     *
-     * @return integer 
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
+     * @ORM\OneToMany(targetEntity="Opltda\EntidadesBundle\Entity\Entrevistas", mappedBy="regiones")
+    */
+   
+    private $entrevistas;
+    
+    
+    
+    
+        /**
+     * @ORM\OneToMany(targetEntity="Opltda\EntidadesBundle\Entity\InversionVial", mappedBy="regiones")
+    */
+    
+    private $inversionVial;
+    
+    
+    
 }
