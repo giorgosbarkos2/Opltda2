@@ -1,3 +1,18 @@
 opltda_paginas_homepage:
     pattern:  /hello/{name}
     defaults: { _controller: OpltdaPaginasBundle:Default:index }
+    
+    
+LoginVista:
+    pattern:  /
+    defaults: { _controller: OpltdaPaginasBundle:Default:LoginVista }    
+    
+    
+login:    
+   pattern:  /login
+   defaults: { _controller: OpltdaPaginasBundle:Default:login }    
+   
+   
+pruebaEntidades:
+  pattern:  /pruebaEntidades
+  defaults: { _controller: OpltdaPaginasBundle:Default:pruebaEntidades }    
