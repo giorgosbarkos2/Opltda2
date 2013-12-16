@@ -46,10 +46,22 @@ class FocusGroup
     
     
     
+            /**
+    * @ORM\OneToMany(targetEntity="Opltda\EntidadesBundle\Entity\ArchivosFocusGroup", mappedBy="focusgroup")
+    */
     
     
+   
+    private $archivosfocusgroup;
     
     
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->archivosfocusgroup = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
     /**
      * Get id
@@ -128,5 +140,38 @@ class FocusGroup
     public function getPuertos()
     {
         return $this->puertos;
+    }
+
+    /**
+     * Add archivosfocusgroup
+     *
+     * @param \Opltda\EntidadesBundle\Entity\ArchivosFocusGroup $archivosfocusgroup
+     * @return FocusGroup
+     */
+    public function addArchivosfocusgroup(\Opltda\EntidadesBundle\Entity\ArchivosFocusGroup $archivosfocusgroup)
+    {
+        $this->archivosfocusgroup[] = $archivosfocusgroup;
+
+        return $this;
+    }
+
+    /**
+     * Remove archivosfocusgroup
+     *
+     * @param \Opltda\EntidadesBundle\Entity\ArchivosFocusGroup $archivosfocusgroup
+     */
+    public function removeArchivosfocusgroup(\Opltda\EntidadesBundle\Entity\ArchivosFocusGroup $archivosfocusgroup)
+    {
+        $this->archivosfocusgroup->removeElement($archivosfocusgroup);
+    }
+
+    /**
+     * Get archivosfocusgroup
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getArchivosfocusgroup()
+    {
+        return $this->archivosfocusgroup;
     }
 }

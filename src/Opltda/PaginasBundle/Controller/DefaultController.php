@@ -34,6 +34,10 @@ class DefaultController extends Controller {
          $Focus = $em->getRepository('OpltdaEntidadesBundle:FocusGroup')->findAll();
          $ArchivosFocus = $em->getRepository('OpltdaEntidadesBundle:ArchivosFocusGroup')->findAll();
          
+         $inversionVial = $em->getRepository('OpltdaEntidadesBundle:InversionVial')->findAll();
+         $arhivoInversion = $em->getRepository('OpltdaEntidadesBundle:ArchivosInversionVial')->findAll();
+         
+         
          
          
         return $this->render('OpltdaPaginasBundle:Default:login.html.twig', array('token' => $token));

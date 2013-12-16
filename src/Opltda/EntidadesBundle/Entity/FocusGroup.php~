@@ -46,8 +46,13 @@ class FocusGroup
     
     
     
+            /**
+    * @ORM\OneToMany(targetEntity="Opltda\EntidadesBundle\Entity\ArchivosFocusGroup", mappedBy="focusgroup")
+    */
     
     
+   
+    private $archivosfocusgroup;
     
     
 }
