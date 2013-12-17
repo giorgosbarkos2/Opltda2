@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "2c0295f7b959d7cc894ee1a78d4f3b41",
+    "hash": "f41ec888ef38defb2029866347298543",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -901,6 +901,153 @@
             "time": "2012-12-21 11:40:51"
         },
         {
+            "name": "pugx/autocompleter-bundle",
+            "version": "v1.1.0",
+            "target-dir": "PUGX/AutocompleterBundle",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/PUGX/PUGXAutoCompleterBundle.git",
+                "reference": "ddfc8a95768f4f7e9505931a3e9dbc924703ba7c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/PUGX/PUGXAutoCompleterBundle/zipball/ddfc8a95768f4f7e9505931a3e9dbc924703ba7c",
+                "reference": "ddfc8a95768f4f7e9505931a3e9dbc924703ba7c",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/orm": ">2.2",
+                "symfony/form": "~2.3",
+                "symfony/framework-bundle": "~2.3"
+            },
+            "type": "symfony-bundle",
+            "autoload": {
+                "psr-0": {
+                    "PUGX\\AutocompleterBundle": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-3.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Massimiliano Arione",
+                    "email": "garakkio@gmail.com",
+                    "homepage": "http://massimilianoarione.it"
+                }
+            ],
+            "description": "Add an autocomplete type to forms",
+            "keywords": [
+                "symfony2 form field"
+            ],
+            "time": "2013-12-04 15:45:32"
+        },
+        {
+            "name": "samson/autocomplete-bundle",
+            "version": "dev-master",
+            "target-dir": "Samson/Bundle/AutocompleteBundle",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/SamsonIT/AutocompleteBundle.git",
+                "reference": "406692306b09e265aaab00eef192311a624691a3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/SamsonIT/AutocompleteBundle/zipball/406692306b09e265aaab00eef192311a624691a3",
+                "reference": "406692306b09e265aaab00eef192311a624691a3",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/orm": ">=2.2",
+                "php": ">=5.3.0",
+                "samson/unexpected-response-bundle": "*",
+                "symfony/form": ">=2.1.0",
+                "symfony/http-kernel": ">=2.1.0",
+                "symfony/twig-bundle": ">=2.1.0"
+            },
+            "require-dev": {
+                "symfony/symfony": ">=2.1.0"
+            },
+            "type": "symfony-bundle",
+            "autoload": {
+                "psr-0": {
+                    "Samson\\Bundle\\AutocompleteBundle": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Bart van den Burg",
+                    "email": "bart@samson-it.nl",
+                    "homepage": "http://www.samson-it.nl",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Easily integrate the Select2 autocomplete widget into your Symfony application to search Doctrine entities",
+            "homepage": "https://github.com/SamsonIT/AutocompleteBundle",
+            "keywords": [
+                "autocomplete",
+                "doctrine",
+                "orm",
+                "select2",
+                "symfony"
+            ],
+            "time": "2013-12-11 09:05:18"
+        },
+        {
+            "name": "samson/unexpected-response-bundle",
+            "version": "0.1.2",
+            "target-dir": "Samson/Bundle/UnexpectedResponseBundle",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/SamsonIT/UnexpectedResponseBundle.git",
+                "reference": "e79817085ab0bdd97c2534ba5c76cbb2ed88c023"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/SamsonIT/UnexpectedResponseBundle/zipball/e79817085ab0bdd97c2534ba5c76cbb2ed88c023",
+                "reference": "e79817085ab0bdd97c2534ba5c76cbb2ed88c023",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0",
+                "symfony/http-foundation": "*",
+                "symfony/http-kernel": "*"
+            },
+            "require-dev": {
+                "symfony/symfony": "*"
+            },
+            "type": "symfony-bundle",
+            "autoload": {
+                "psr-0": {
+                    "Samson\\Bundle\\UnexpectedResponseBundle": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Bart van den Burg",
+                    "email": "bart@samson-it.nl",
+                    "homepage": "http://www.samson-it.nl",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Allows throwing a response from virtually anywhere",
+            "homepage": "https://github.com/SamsonIT/UnexpectedResponseBundle",
+            "keywords": [
+                "reponse",
+                "symfony"
+            ],
+            "time": "2013-05-21 08:36:17"
+        },
+        {
             "name": "sensio/distribution-bundle",
             "version": "v2.3.4",
             "target-dir": "Sensio/Bundle/DistributionBundle",
@@ -1163,27 +1310,11 @@
         },
         {
             "name": "symfony/icu",
-<<<<<<< HEAD
-            "version": "v1.2.0",
-=======
             "version": "v1.0.0",
->>>>>>> 5a45c6997fd8c30ec31f8cf65d0ab532ee878c05
             "target-dir": "Symfony/Component/Icu",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Icu.git",
-<<<<<<< HEAD
-                "reference": "7299cd3d8d6602103d1ebff5d0a9917b7bc6de72"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Icu/zipball/7299cd3d8d6602103d1ebff5d0a9917b7bc6de72",
-                "reference": "7299cd3d8d6602103d1ebff5d0a9917b7bc6de72",
-                "shasum": ""
-            },
-            "require": {
-                "lib-icu": ">=4.4",
-=======
                 "reference": "cac3fdfb111adbe590155f491594636d45129783"
             },
             "dist": {
@@ -1193,7 +1324,6 @@
                 "shasum": ""
             },
             "require": {
->>>>>>> 5a45c6997fd8c30ec31f8cf65d0ab532ee878c05
                 "php": ">=5.3.3",
                 "symfony/intl": "~2.3"
             },
@@ -1223,11 +1353,7 @@
                 "icu",
                 "intl"
             ],
-<<<<<<< HEAD
-            "time": "2013-06-03 18:32:58"
-=======
             "time": "2013-06-03 18:32:07"
->>>>>>> 5a45c6997fd8c30ec31f8cf65d0ab532ee878c05
         },
         {
             "name": "symfony/monolog-bundle",
@@ -1561,9 +1687,9 @@
 
     ],
     "minimum-stability": "stable",
-    "stability-flags": [
-
-    ],
+    "stability-flags": {
+        "samson/autocomplete-bundle": 20
+    },
     "platform": {
         "php": ">=5.3.3"
     },

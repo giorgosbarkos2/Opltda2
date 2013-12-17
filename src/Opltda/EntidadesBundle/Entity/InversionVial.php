@@ -41,8 +41,22 @@ class InversionVial
     
     
     
+            /**
+    * @ORM\OneToMany(targetEntity="Opltda\EntidadesBundle\Entity\ArchivosInversionVial", mappedBy="inversionvial")
+    */
     
     
+    private $archivosinversionvial;
+    
+    
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->archivosinversionvial = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
     /**
      * Get id
@@ -98,5 +112,38 @@ class InversionVial
     public function getRegiones()
     {
         return $this->regiones;
+    }
+
+    /**
+     * Add archivosinversionvial
+     *
+     * @param \Opltda\EntidadesBundle\Entity\ArchivosInversionVial $archivosinversionvial
+     * @return InversionVial
+     */
+    public function addArchivosinversionvial(\Opltda\EntidadesBundle\Entity\ArchivosInversionVial $archivosinversionvial)
+    {
+        $this->archivosinversionvial[] = $archivosinversionvial;
+
+        return $this;
+    }
+
+    /**
+     * Remove archivosinversionvial
+     *
+     * @param \Opltda\EntidadesBundle\Entity\ArchivosInversionVial $archivosinversionvial
+     */
+    public function removeArchivosinversionvial(\Opltda\EntidadesBundle\Entity\ArchivosInversionVial $archivosinversionvial)
+    {
+        $this->archivosinversionvial->removeElement($archivosinversionvial);
+    }
+
+    /**
+     * Get archivosinversionvial
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getArchivosinversionvial()
+    {
+        return $this->archivosinversionvial;
     }
 }

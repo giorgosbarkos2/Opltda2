@@ -20,7 +20,39 @@ class Mapas
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
+    
+    
+    private $nombre;
+    
+    
+    private $detalle;
+    
+    
 
+    
+    
+             /**
+     * @ORM\ManyToOne(targetEntity="Opltda\EntidadesBundle\Entity\Regiones", inversedBy="mapas")
+     * @ORM\JoinColumn(name="regiones_id", referencedColumnName="id")
+     */
+    
+    
+    private $regiones;
+    
+    
+    
+    
+              /**
+     * @ORM\ManyToOne(targetEntity="Opltda\EntidadesBundle\Entity\Puertos", inversedBy="mapas")
+     * @ORM\JoinColumn(name="puertos_id", referencedColumnName="id")
+     */
+    
+    
+    private $puertos;
+    
+    
+    
+    
 
     /**
      * Get id
@@ -30,5 +62,51 @@ class Mapas
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * Set regiones
+     *
+     * @param \Opltda\EntidadesBundle\Entity\Regiones $regiones
+     * @return Mapas
+     */
+    public function setRegiones(\Opltda\EntidadesBundle\Entity\Regiones $regiones = null)
+    {
+        $this->regiones = $regiones;
+
+        return $this;
+    }
+
+    /**
+     * Get regiones
+     *
+     * @return \Opltda\EntidadesBundle\Entity\Regiones 
+     */
+    public function getRegiones()
+    {
+        return $this->regiones;
+    }
+
+    /**
+     * Set puertos
+     *
+     * @param \Opltda\EntidadesBundle\Entity\Puertos $puertos
+     * @return Mapas
+     */
+    public function setPuertos(\Opltda\EntidadesBundle\Entity\Puertos $puertos = null)
+    {
+        $this->puertos = $puertos;
+
+        return $this;
+    }
+
+    /**
+     * Get puertos
+     *
+     * @return \Opltda\EntidadesBundle\Entity\Puertos 
+     */
+    public function getPuertos()
+    {
+        return $this->puertos;
     }
 }

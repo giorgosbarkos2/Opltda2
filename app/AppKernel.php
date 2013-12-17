@@ -26,6 +26,8 @@ class AppKernel extends Kernel
             new Symfony\Bundle\AsseticBundle\AsseticBundle(),
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
+            new PUGX\AutocompleterBundle\PUGXAutocompleterBundle(),
+            
 
             new Opltda\PaginasBundle\OpltdaPaginasBundle(),
             new Opltda\EntidadesBundle\OpltdaEntidadesBundle(),

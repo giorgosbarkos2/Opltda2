@@ -2,7 +2,16 @@ opltda_paginas_homepage:
     pattern:  /hello/{name}
     defaults: { _controller: OpltdaPaginasBundle:Default:index }
     
-    
+ 
+ 
+Autocompleta:
+   pattern:  /Autocompleta
+   defaults: { _controller: OpltdaPaginasBundle:Default:Autocompleta }  
+
+auto:
+   pattern:  /auto
+   defaults: { _controller: OpltdaPaginasBundle:Default:auto }  
+  
 LoginVista:
     pattern:  /
     defaults: { _controller: OpltdaPaginasBundle:Default:LoginVista }    
@@ -12,7 +21,11 @@ login:
    pattern:  /login
    defaults: { _controller: OpltdaPaginasBundle:Default:login }    
    
-   
+
+principal:
+  pattern:  /principal
+  defaults: { _controller: OpltdaPaginasBundle:Default:principalVista }    
+  
 pruebaEntidades:
   pattern:  /pruebaEntidades
   defaults: { _controller: OpltdaPaginasBundle:Default:pruebaEntidades }    

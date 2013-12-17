@@ -82,12 +82,24 @@ class Regiones
     
     
     
+      /**
+    * @ORM\OneToMany(targetEntity="Opltda\EntidadesBundle\Entity\Mapas", mappedBy="regiones")
+    */
+    
+    
+
+    private $mapas;
+    
+    
+    
+    
+    
     
     
     
 
 
-    
+ 
     /**
      * Constructor
      */
@@ -96,6 +108,8 @@ class Regiones
         $this->entrevistas = new \Doctrine\Common\Collections\ArrayCollection();
         $this->inversionvial = new \Doctrine\Common\Collections\ArrayCollection();
         $this->estudio = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->puertos = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->mapas = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
@@ -284,5 +298,38 @@ class Regiones
     public function getPuertos()
     {
         return $this->puertos;
+    }
+
+    /**
+     * Add mapas
+     *
+     * @param \Opltda\EntidadesBundle\Entity\Mapas $mapas
+     * @return Regiones
+     */
+    public function addMapa(\Opltda\EntidadesBundle\Entity\Mapas $mapas)
+    {
+        $this->mapas[] = $mapas;
+
+        return $this;
+    }
+
+    /**
+     * Remove mapas
+     *
+     * @param \Opltda\EntidadesBundle\Entity\Mapas $mapas
+     */
+    public function removeMapa(\Opltda\EntidadesBundle\Entity\Mapas $mapas)
+    {
+        $this->mapas->removeElement($mapas);
+    }
+
+    /**
+     * Get mapas
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getMapas()
+    {
+        return $this->mapas;
     }
 }

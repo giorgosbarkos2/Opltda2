@@ -41,62 +41,17 @@ class InversionVial
     
     
     
+            /**
+    * @ORM\OneToMany(targetEntity="Opltda\EntidadesBundle\Entity\ArchivosInversionVial", mappedBy="inversionvial")
+    */
     
     
-
-    /**
-     * Get id
-     *
-     * @return integer 
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
-
-    /**
-     * Set nombre
-     *
-     * @param string $nombre
-     * @return InversionVial
-     */
-    public function setNombre($nombre)
-    {
-        $this->nombre = $nombre;
-
-        return $this;
-    }
-
-    /**
-     * Get nombre
-     *
-     * @return string 
-     */
-    public function getNombre()
-    {
-        return $this->nombre;
-    }
-
-    /**
-     * Set regiones
-     *
-     * @param \Opltda\EntidadesBundle\Entity\Regiones $regiones
-     * @return InversionVial
-     */
-    public function setRegiones(\Opltda\EntidadesBundle\Entity\Regiones $regiones = null)
-    {
-        $this->regiones = $regiones;
-
-        return $this;
-    }
-
-    /**
-     * Get regiones
-     *
-     * @return \Opltda\EntidadesBundle\Entity\Regiones 
-     */
-    public function getRegiones()
-    {
-        return $this->regiones;
-    }
+    private $archivosinversionvial;
+    
+    
+    
+    
+    
+    
+   
 }

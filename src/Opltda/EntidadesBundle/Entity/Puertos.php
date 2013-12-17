@@ -59,7 +59,15 @@ class Puertos
     
     private $regiones;
     
+    
+    
+          /**
+    * @ORM\OneToMany(targetEntity="Opltda\EntidadesBundle\Entity\Mapas", mappedBy="puertos")
+    */
+    
+    
 
+    private $mapas;
     
     
     /**
@@ -70,6 +78,7 @@ class Puertos
         $this->entrevistas = new \Doctrine\Common\Collections\ArrayCollection();
         $this->focusgroup = new \Doctrine\Common\Collections\ArrayCollection();
         $this->estudio = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->mapas = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
@@ -80,6 +89,52 @@ class Puertos
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * Set nombre
+     *
+     * @param string $nombre
+     * @return Puertos
+     */
+    public function setNombre($nombre)
+    {
+        $this->nombre = $nombre;
+
+        return $this;
+    }
+
+    /**
+     * Get nombre
+     *
+     * @return string 
+     */
+    public function getNombre()
+    {
+        return $this->nombre;
+    }
+
+    /**
+     * Set codigo
+     *
+     * @param string $codigo
+     * @return Puertos
+     */
+    public function setCodigo($codigo)
+    {
+        $this->codigo = $codigo;
+
+        return $this;
+    }
+
+    /**
+     * Get codigo
+     *
+     * @return string 
+     */
+    public function getCodigo()
+    {
+        return $this->codigo;
     }
 
     /**
@@ -182,52 +237,6 @@ class Puertos
     }
 
     /**
-     * Set nombre
-     *
-     * @param string $nombre
-     * @return Puertos
-     */
-    public function setNombre($nombre)
-    {
-        $this->nombre = $nombre;
-
-        return $this;
-    }
-
-    /**
-     * Get nombre
-     *
-     * @return string 
-     */
-    public function getNombre()
-    {
-        return $this->nombre;
-    }
-
-    /**
-     * Set codigo
-     *
-     * @param string $codigo
-     * @return Puertos
-     */
-    public function setCodigo($codigo)
-    {
-        $this->codigo = $codigo;
-
-        return $this;
-    }
-
-    /**
-     * Get codigo
-     *
-     * @return string 
-     */
-    public function getCodigo()
-    {
-        return $this->codigo;
-    }
-
-    /**
      * Set regiones
      *
      * @param \Opltda\EntidadesBundle\Entity\Regiones $regiones
@@ -248,5 +257,38 @@ class Puertos
     public function getRegiones()
     {
         return $this->regiones;
+    }
+
+    /**
+     * Add mapas
+     *
+     * @param \Opltda\EntidadesBundle\Entity\Mapas $mapas
+     * @return Puertos
+     */
+    public function addMapa(\Opltda\EntidadesBundle\Entity\Mapas $mapas)
+    {
+        $this->mapas[] = $mapas;
+
+        return $this;
+    }
+
+    /**
+     * Remove mapas
+     *
+     * @param \Opltda\EntidadesBundle\Entity\Mapas $mapas
+     */
+    public function removeMapa(\Opltda\EntidadesBundle\Entity\Mapas $mapas)
+    {
+        $this->mapas->removeElement($mapas);
+    }
+
+    /**
+     * Get mapas
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getMapas()
+    {
+        return $this->mapas;
     }
 }
