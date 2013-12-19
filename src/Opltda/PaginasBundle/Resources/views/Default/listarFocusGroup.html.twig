@@ -1,0 +1,18 @@
+{% block listarFocusGroup %}
+	<table class="table">
+		<thead>
+			<th>Puertos</th>
+			<th>Transacciones</th>
+			<th>Categorizaciones</th>
+		<thead>
+		<tbody>
+		{% for focusgroup in focusgroup %}
+		<tr>
+			<td>{{focusgroup.puertos_id}}</td>
+			<td>{{focusgroup.trascripciones}}</td>
+			<td>{{focusgroup.categorizaciones}}</td>
+		</tr>
+		{% endfor %}
+		</tbody>
+	</table>
+{% endblock %}

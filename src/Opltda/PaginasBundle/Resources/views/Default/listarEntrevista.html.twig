@@ -1,0 +1,24 @@
+{% block entrevista %}
+	<table class="table">
+		<thead>
+			<th>Region</th>
+			<th>Puerto</th>
+			<th>Codigo Ficha</th>
+			<th>Nombre Cadena</th>
+			<th>Codigo Cadena</th>
+			<th>Actor</th>
+		</thead>
+		<tbody>
+			{% for entrevista in entrevista %}
+				<tr>
+					<td>{{entrevista.regiones_id}}</td>
+					<td>{{entrevista.puertos_id}}</td>
+					<td>{{entrevista.codigoFicha}}</td>
+					<td>{{entrevista.nombreCadena}}</td>
+					<td>{{entrevista.CodigoCadena}}</td>
+					<td>{{entrevista.TipoActor}}</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+{% endblock %}

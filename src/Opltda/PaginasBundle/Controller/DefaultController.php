@@ -168,5 +168,17 @@ class DefaultController extends Controller {
     }
     
     }
+	
+	public function listarFocusGroupAction(){
+		return $this->render('OpltdaPaginasBundle:Default:listarFocusGroup.html.twig');
+	}
+	
+	public function listarInversionVialAction(){
+		return $this->render('OpltdaPaginasBundle:Default:listarInversionVial.html.twig');
+	}
+
+	public function listarEntrevistaAction(){
+		return $this->render('OpltdaPaginasBundle:Default:listarEntrevista.html.twig');
+	}
 
 }

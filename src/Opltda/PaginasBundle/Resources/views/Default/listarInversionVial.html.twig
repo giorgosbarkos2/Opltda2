@@ -1,0 +1,16 @@
+{% block inversionvial %}
+	<table class="table">
+		<thead>
+			<th>Regiones</th>
+			<th>Nombres</th>	
+		</thead>
+		<tbody>
+		{% for inversionvial in inversionvial %}
+		<tr>
+			<td>{{inversionvial.regiones_id}}</td>
+			<td>{{inversionvial.nombres}}</td>
+		<tr>	
+		{% endfor %}
+		</tbody>
+	</table>
+{% endblock %}

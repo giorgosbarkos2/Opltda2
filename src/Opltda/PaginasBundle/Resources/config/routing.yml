@@ -29,3 +29,15 @@ principal:
 pruebaEntidades:
   pattern:  /pruebaEntidades
   defaults: { _controller: OpltdaPaginasBundle:Default:pruebaEntidades }    
+
+listarFocusGroup:
+  pattern: /listarFocusGroup
+  defaults: {_controller: OpltdaPaginasBundle:Default:listarFocusGroup}
+  
+listarInversionVial:
+  pattern: /listarInversionVial
+  defaults: {_controller: OpltdaPaginasBundle:Default:listarInversionVial}
+  
+listarEntrevista:
+  pattern: /listarEntrevista
+  defaults: {_controller: OpltdaPaginasBundle:Default:listarEntrevista}
