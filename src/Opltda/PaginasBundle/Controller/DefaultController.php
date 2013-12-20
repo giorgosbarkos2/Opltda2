@@ -59,7 +59,7 @@ class DefaultController extends Controller {
         $csrf = $this->get('form.csrf_provider'); //
         $token = $csrf->generateCsrfToken($intention);
 
-        return $this->render('OpltdaPaginasBundle:Default:login.html.twig');
+        return $this->render('OpltdaPaginasBundle:Default:login.html.twig' , array('token' => $token));
     }
     
     
