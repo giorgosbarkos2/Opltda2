@@ -1,21 +1,13 @@
-
 <!DOCTYPE html>
     <html>
     <head>
-
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <title>AgileUI</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
         <!-- Favicons -->
-  
-      
-        
-            
        {% include "OpltdaPaginasBundle:Layers:css.html.twig" %}
-   
     </head>
     <body class="fixed-sidebar fixed-header">
         
@@ -67,19 +59,19 @@
                             </a>
                             <ul>
                                 <li>
-                                    <a href="#" title="Google Maps">
+                                    <a href="{{ path('listarEntrevista')}}" title="Data visualization">
                                         <i class="glyph-icon icon-chevron-right"></i>
                                         Entrevistas.
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#" title="Google Maps">
+                                    <a href="{{ path('listarInversionVial')}}" title="Data visualization">
                                         <i class="glyph-icon icon-chevron-right"></i>
                                         Inversion Vial.
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#" title="Google Maps">
+                                    <a href="{{ path('listarFocusGroup')}}" title="Data visualization">
                                         <i class="glyph-icon icon-chevron-right"></i>
                                         Focus Group.
                                     </a>
