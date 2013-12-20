@@ -59,34 +59,7 @@ class DefaultController extends Controller {
         $csrf = $this->get('form.csrf_provider'); //
         $token = $csrf->generateCsrfToken($intention);
 
-        
-        
-        $em = $this->getDoctrine()->getManager();
-        $Entrevistas = $em->getRepository('OpltdaEntidadesBundle:Entrevistas')->findAll();
-        $ArchivosEntrevistas = $em->getRepository('OpltdaEntidadesBundle:ArchivosEntrevistas')->findAll();
-        
-        
-        $regiones = $em->getRepository('OpltdaEntidadesBundle:Regiones')->findAll();
-        
-         $Estudio = $em->getRepository('OpltdaEntidadesBundle:Estudio')->findAll();
-         $ArchivoEstudio = $em->getRepository('OpltdaEntidadesBundle:ArchivosEstudios')->findAll();
-         
-         
-         $Focus = $em->getRepository('OpltdaEntidadesBundle:FocusGroup')->findAll();
-         $ArchivosFocus = $em->getRepository('OpltdaEntidadesBundle:ArchivosFocusGroup')->findAll();
-         
-         $inversionVial = $em->getRepository('OpltdaEntidadesBundle:InversionVial')->findAll();
-         $arhivoInversion = $em->getRepository('OpltdaEntidadesBundle:ArchivosInversionVial')->findAll();
-         
-         
-         
-         $mapas = $em->getRepository('OpltdaEntidadesBundle:Mapas')->findAll();
-         $archivosMapas = $em->getRepository('OpltdaEntidadesBundle:ArchivosMapas')->findAll();
-        
- 
-         
-         
-        return $this->render('OpltdaPaginasBundle:Default:login.html.twig', array('token' => $token , 'regiones' => $regiones));
+        return $this->render('OpltdaPaginasBundle:Default:login.html.twig');
     }
     
     
@@ -131,8 +104,7 @@ class DefaultController extends Controller {
     }
 
     public function loginAction(Request $request) {
-
-        
+       
         $intention = '';
         $csrf = $this->get('form.csrf_provider'); //
         $token1 = $csrf->generateCsrfToken($intention);
@@ -147,18 +119,11 @@ class DefaultController extends Controller {
         $usuario = $em->getRepository('OpltdaEntidadesBundle:Usuarios')->findOneBy(array('usuario' => $usuario, 'password' => $password));
 
         if ($request->getMethod() == 'POST') {
-            
-
-            if ($usuario) {
-                
-                  return $this->redirect($this->generateUrl('principal'));
+            if($usuario){
+                 return $this->redirect($this->generateUrl('principal'));
                  return new Response('200');
-                 
-               
-                
             } else {
-
-                return new Response('100');
+                 return new Response('100');
             }
         } else {
 
@@ -170,15 +135,20 @@ class DefaultController extends Controller {
     }
 	
 	public function listarFocusGroupAction(){
-		return $this->render('OpltdaPaginasBundle:Default:listarFocusGroup.html.twig');
+            $em  = $this->getDoctrine()->getManager();
+            $focusgroup = $em->getRepository('OpltdaEntidadesBundle:FocusGroup')->findAll();
+            return $this->render('OpltdaPaginasBundle:Default:listarFocusGroup.html.twig', array('focusgroup'=> $focusgroup));
 	}
 	
 	public function listarInversionVialAction(){
-		return $this->render('OpltdaPaginasBundle:Default:listarInversionVial.html.twig');
+            $em = $this->getDoctrine()->getManager();
+            $inversionvial = $em->getRepository('OpltdaEntidadesBundle:InversionVial')->findAll();
+            return $this->render('OpltdaPaginasBundle:Default:listarInversionVial.html.twig', array('inversionvial'=>$inversionvial));
 	}
 
 	public function listarEntrevistaAction(){
-		return $this->render('OpltdaPaginasBundle:Default:listarEntrevista.html.twig');
+            $em = $this->getDoctrine()->getManager();
+            $entrevista = $em->getRepository('OpltdaEntidadesBundle:Entrevista')->findAll();
+            return $this->render('OpltdaPaginasBundle:Default:listarEntrevista.html.twig', array('entrevista' => $entrevista));
 	}
-
 }
