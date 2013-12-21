@@ -7,7 +7,9 @@ use Symfony\Component\HttpFoundation\Session\Session;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
 use Opltda\EntidadesBundle\Entity\Usuarios;
-
+use Opltda\EntidadesBundle\Entity\Entrevistas;
+use Opltda\EntidadesBundle\Entity\InversionVial;
+use Opltda\EntidadesBundle\Entity\FocusGroup;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 use Symfony\Component\HttpFoundation\JsonResponse;
@@ -148,7 +150,7 @@ class DefaultController extends Controller {
 
 	public function listarEntrevistaAction(){
             $em = $this->getDoctrine()->getManager();
-            $entrevista = $em->getRepository('OpltdaEntidadesBundle:Entrevista')->findAll();
+            $entrevista = $em->getRepository('OpltdaEntidadesBundle:Entrevistas')->findAll();
             return $this->render('OpltdaPaginasBundle:Default:listarEntrevista.html.twig', array('entrevista' => $entrevista));
 	}
 }
