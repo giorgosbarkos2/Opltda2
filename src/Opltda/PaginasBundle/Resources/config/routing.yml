@@ -3,7 +3,6 @@ opltda_paginas_homepage:
     defaults: { _controller: OpltdaPaginasBundle:Default:index }
     
  
- 
 Autocompleta:
    pattern:  /Autocompleta
    defaults: { _controller: OpltdaPaginasBundle:Default:Autocompleta }  
