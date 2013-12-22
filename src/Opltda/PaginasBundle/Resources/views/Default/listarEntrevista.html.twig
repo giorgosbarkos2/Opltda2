@@ -371,9 +371,9 @@
                             </div>
                         </div>
                     </div><!-- #page-breadcrumb-wrapper -->
-                    <div id="" style="width:95%;height:200px; margin-left: 2%;">
+                    <div id="page-content">
 {% block entrevista %}
-	<table class="table"  id="example1" style="width:100px;height:900px;" >
+	<table class="table"  id="example1" >
 		<thead>
 			<th width="10%">Region</th>
 			<th width="10%">Puerto</th>
@@ -381,6 +381,7 @@
 			<th width="10%">Nombre Cadena</th>
 			
 			<th>Actor</th>
+                                                 <th>Archivos</td>
 		</thead>
 		<tbody>
 			{% for entrevista in entrevista %}
@@ -390,6 +391,21 @@
                                     <td>{{entrevista.codigoFicha}}</td>
                                     <td>{{entrevista.nombreCadena}}</td>
                                     <td>{{entrevista.tipoActor}}</td>
+                                    <td>
+
+                                    {% set archivo = entrevista.archivosentrevistas %}
+                                     
+                                        {% for archivo in archivo %}
+                                    
+                                        <a href="../web/archivos/entrevistas/{{archivo.url}}.pdf">Archivo</a>
+                                        {{archivo.url }}
+                                        
+                                        {% endfor %}
+                                        
+                                        
+                                    
+                                    
+                                    </td>
                                     
 					
 				</tr>
