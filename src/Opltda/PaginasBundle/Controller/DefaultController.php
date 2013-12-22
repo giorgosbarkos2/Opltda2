@@ -123,6 +123,8 @@ class DefaultController extends Controller {
 	public function listarEntrevistaAction(){
             $em = $this->getDoctrine()->getManager();
             $entrevista = $em->getRepository('OpltdaEntidadesBundle:Entrevistas')->findAll();
+            
+            
             return $this->render('OpltdaPaginasBundle:Default:listarEntrevista.html.twig', array('entrevista' => $entrevista));
 	}
 }

@@ -68891,8 +68891,8 @@ notes['warning'] = '<i class="glyph-icon icon-cog mrg5R"></i>This is a warning f
     $(function() {
 
       $('#example1').dataTable( {
-          "sScrollY": 300,
-          "bJQueryUI": true,
+          "sScrollY": 500,
+          "bJQueryUI": false,
           "sPaginationType": "full_numbers"
       });
 

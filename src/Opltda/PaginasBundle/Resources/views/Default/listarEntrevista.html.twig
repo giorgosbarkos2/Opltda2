@@ -8,6 +8,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
         <!-- Favicons -->
        {% include "OpltdaPaginasBundle:Layers:css.html.twig" %}
+        
+        
     </head>
     <body class="fixed-sidebar fixed-header">
         
@@ -43,97 +45,11 @@
                     </form>
                     <i class="glyph-icon icon-search"></i>
                 </div>
-                <div id="sidebar-menu" class="scrollable-content">
-                    <ul>
-                        <li>
-                            <a href="index.html" title="Dashboard">
-                                <i class="glyph-icon icon-dashboard"></i>
-                                Dashboard
-                            </a>
-                        </li>
-                        
-                        <li>
-                            <a href="javascript:;" title="Data visualization">
-                                <i class="glyph-icon icon-bar-chart-o"></i>
-                                Visualización de Datos
-                            </a>
-                            <ul>
-                                <li>
-                                    <a href="{{ path('listarEntrevista')}}" title="Data visualization">
-                                        <i class="glyph-icon icon-chevron-right"></i>
-                                        Entrevistas.
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="{{ path('listarInversionVial')}}" title="Data visualization">
-                                        <i class="glyph-icon icon-chevron-right"></i>
-                                        Inversion Vial.
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="{{ path('listarFocusGroup')}}" title="Data visualization">
-                                        <i class="glyph-icon icon-chevron-right"></i>
-                                        Focus Group.
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <!-- Prueba de testeo. -->
-                        <li>
-                            <a href="{{ path('listarEntrevista')}}" title="Data visualization">
-                                <i class="glyph-icon icon-chevron-right"></i>
-                                    Entrevistas.
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{{ path('listarInversionVial')}}" title="Data visualization">
-                                <i class="glyph-icon icon-chevron-right"></i>
-                                        Inversion Vial.
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{{ path('listarFocusGroup')}}" title="Data visualization">
-                               <i class="glyph-icon icon-chevron-right"></i>
-                               Focus Group.
-                            </a>
-                        </li>
-                        <!-- Prueba de testeo. -->
-                        <li>
-                            <a href="javascript:;" title="Maps">
-                                <i class="glyph-icon icon-map-marker"></i>
-                                Mapas
-                            </a>
-                            <ul>
-                                <li>
-                                    <a href="google_maps.html" title="Google Maps">
-                                        <i class="glyph-icon icon-chevron-right"></i>
-                                        Por Region
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="vector_maps.html" title="Vector maps">
-                                        <i class="glyph-icon icon-chevron-right"></i>
-                                        Por Puertos
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                    <div class="divider mrg5T mobile-hidden"></div>
-                    <div class="text-center mobile-hidden">
-                        <div class="button-group">
-                            
-                            <div style="width: 160px;height: 160px;position:relative;margin:auto;">
-                                <img src="{{asset('bundles/opltdapaginas/images/logo.png')}}">
-                            
-                            </div>
-                            
-                            
-                        </div>
-
-                        <div class="divider"></div>
-                    </div>
-                </div>
+                
+                    
+                    
+                          {% include "OpltdaPaginasBundle:Layers:menu.html.twig" %} 
+                    
 
             </div><!-- #page-sidebar -->
             
@@ -455,26 +371,27 @@
                             </div>
                         </div>
                     </div><!-- #page-breadcrumb-wrapper -->
-                    <div id="page-content">
+                    <div id="" style="width:95%;height:200px; margin-left: 2%;">
 {% block entrevista %}
-	<table class="table">
+	<table class="table"  id="example1" style="width:100px;height:900px;" >
 		<thead>
-			<th>Region</th>
-			<th>Puerto</th>
-			<th>Codigo Ficha</th>
-			<th>Nombre Cadena</th>
-			<th>Codigo Cadena</th>
+			<th width="10%">Region</th>
+			<th width="10%">Puerto</th>
+			<th width="10%">Codigo Ficha</th>
+			<th width="10%">Nombre Cadena</th>
+			
 			<th>Actor</th>
 		</thead>
 		<tbody>
 			{% for entrevista in entrevista %}
-				<tr>
-					<td>{{entrevista.regiones_id}}</td>
-					<td>{{entrevista.puertos_id}}</td>
-					<td>{{entrevista.codigoFicha}}</td>
-					<td>{{entrevista.nombreCadena}}</td>
-					<td>{{entrevista.CodigoCadena}}</td>
-					<td>{{entrevista.TipoActor}}</td>
+				<tr>    
+                                    <td>{{entrevista.regiones.nombre}}</td>
+                                    <td>{{entrevista.puertos.codigo}}</td>
+                                    <td>{{entrevista.codigoFicha}}</td>
+                                    <td>{{entrevista.nombreCadena}}</td>
+                                    <td>{{entrevista.tipoActor}}</td>
+                                    
+					
 				</tr>
 			{% endfor %}
 		</tbody>
