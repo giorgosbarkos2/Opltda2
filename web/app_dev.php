@@ -22,7 +22,7 @@ if (isset($_SERVER['HTTP_CLIENT_IP'])
 
 //require_once __DIR__.'/../app/AppKernel.php';
 
-$kernel = new AppKernel('prod', true);
+$kernel = new AppKernel('dev', true);
 
 $kernel->loadClassCache();
 $request = Request::createFromGlobals();

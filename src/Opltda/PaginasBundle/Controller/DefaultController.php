@@ -21,33 +21,19 @@ class DefaultController extends Controller {
     }
     
     public function AutocompletaAction(Request $request){
-        
- 
-       
             return $this->render('OpltdaPaginasBundle:Default:prueba.html.twig');
     }
     
     
         public function autoAction(Request $request){
-            
-                 $em = $this->getDoctrine()->getManager();
-                 
-        
-          $term = $request->request->get('term');
+            $em = $this->getDoctrine()->getManager();
+            $term = $request->request->get('term');
             $regiones = $em->getRepository('OpltdaEntidadesBundle:Regiones')->findBy(array('id' => $term));
-             
             $film_titles = array();
-             
             foreach ($regiones  as $regiones ) {
-                
                 $film_titles [] = $regiones ->getNombre().' - '.$regiones ->getId();
-                
             }
-         
-            return new JsonResponse($film_titles);
-            
-       
-                
+            return new JsonResponse($film_titles);                
     }
     
     
@@ -83,26 +69,12 @@ class DefaultController extends Controller {
 
         return new Response($hostess->getNombre());
         
-        
-        
-        
     }
 
     
     public function pruebaEntidadesAction(){
-        
-        $em = $this->getDoctrine()->getManager();
-        
         $Entrevistas = $em->getRepository('OpltdaEntidadesBundle:Entrevistas')->findAll();
-        
-        
-        
         return $this->render('OpltdaPaginasBundle:Default:prueba.html.twig', array('Entrevistas' => $Entrevistas));
-        
-        
-        
-        
-        
     }
 
     public function loginAction(Request $request) {

@@ -1,8 +1,7 @@
 opltda_paginas_homepage:
     pattern:  /hello/{name}
     defaults: { _controller: OpltdaPaginasBundle:Default:index }
-    
- 
+
 Autocompleta:
    pattern:  /Autocompleta
    defaults: { _controller: OpltdaPaginasBundle:Default:Autocompleta }  
@@ -14,29 +13,27 @@ auto:
 LoginVista:
     pattern:  /
     defaults: { _controller: OpltdaPaginasBundle:Default:LoginVista }    
-    
-    
+        
 login:    
    pattern:  /login
    defaults: { _controller: OpltdaPaginasBundle:Default:login }    
    
-
 principal:
-  pattern:  /principal
-  defaults: { _controller: OpltdaPaginasBundle:Default:principalVista }    
+    pattern:  /principal
+    defaults: { _controller: OpltdaPaginasBundle:Default:principalVista }    
   
 pruebaEntidades:
-  pattern:  /pruebaEntidades
-  defaults: { _controller: OpltdaPaginasBundle:Default:pruebaEntidades }    
+    pattern:  /pruebaEntidades
+    defaults: { _controller: OpltdaPaginasBundle:Default:pruebaEntidades }    
 
 listarFocusGroup:
-  pattern: /listarFocusGroup
-  defaults: {_controller: OpltdaPaginasBundle:Default:listarFocusGroup}
+    pattern: /listarFocusGroup
+    defaults: {_controller: OpltdaPaginasBundle:Default:listarFocusGroup}
   
 listarInversionVial:
-  pattern: /listarInversionVial
-  defaults: {_controller: OpltdaPaginasBundle:Default:listarInversionVial}
+    pattern: /listarInversionVial
+    defaults: {_controller: OpltdaPaginasBundle:Default:listarInversionVial}
   
 listarEntrevista:
-  pattern: /listarEntrevista
-  defaults: {_controller: OpltdaPaginasBundle:Default:listarEntrevista}
+    pattern: /listarEntrevista
+    defaults: {_controller: OpltdaPaginasBundle:Default:listarEntrevista}
