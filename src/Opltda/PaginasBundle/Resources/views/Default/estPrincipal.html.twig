@@ -1,6 +1,49 @@
 {# empty Twig template #}
-<div id="sidebar-menu" class="scrollable-content">
-                      <ul>
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Opltda</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <!-- Favicons -->
+       {% include "OpltdaPaginasBundle:Layers:css.html.twig" %}
+    </head>
+    <body class="fixed-sidebar fixed-header">
+        
+
+        <div id="loading" class="ui-front loader ui-widget-overlay bg-white opacity-100">
+            <img src="assets/images/loader-dark.gif" alt="">
+        </div>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+        <div id="page-wrapper" class="demo-example">
+
+            <div id="page-sidebar">
+                <div id="header-logo">
+                    Opltda <i class="opacity-80"></i>
+
+                    <a href="javascript:;" class="tooltip-button" data-placement="bottom" title="Close sidebar" id="close-sidebar">
+                        <i class="glyph-icon icon-align-justify"></i>
+                    </a>
+                    <a href="javascript:;" class="tooltip-button hidden" data-placement="bottom" title="Open sidebar" id="rm-close-sidebar">
+                        <i class="glyph-icon icon-align-justify"></i>
+                    </a>
+                    <a href="javascript:;" class="tooltip-button hidden" title="Navigation Menu" id="responsive-open-menu">
+                        <i class="glyph-icon icon-align-justify"></i>
+                    </a>
+                </div>
+                <div id="sidebar-search">
+                    
+                 
+                   
+                    <i class="glyph-icon icon-search"></i>
+                </div>
+                <div id="sidebar-menu" class="scrollable-content">
+                    <ul>
                         <li>
                             <a href="{{path('principal')}}" title="Dashboard">
                                 <i class="glyph-icon icon-dashboard"></i>
@@ -50,8 +93,6 @@
                             </ul>
                         </li>
                     </ul>
-                              
-                               
                     <div class="divider mrg5T mobile-hidden"></div>
                     <div class="text-center mobile-hidden">
                         <div class="button-group">
@@ -67,3 +108,17 @@
                         <div class="divider"></div>
                     </div>
                 </div>
+
+            </div><!-- #page-sidebar -->
+            
+            <div id="page-main">
+
+                <div id="page-main-wrapper">
+
+                   
+
+                    <div id="page-breadcrumb-wrapper">
+                       
+                    </div>
+                    
+                    <!-- #page-breadcrumb-wrapper -->

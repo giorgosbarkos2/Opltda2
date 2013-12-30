@@ -6,6 +6,15 @@ Autocompleta:
    pattern:  /Autocompleta
    defaults: { _controller: OpltdaPaginasBundle:Default:Autocompleta }  
 
+AutoCompletaCodEnt:
+   pattern:  /AutoCompletaCodEnt
+   defaults: { _controller: OpltdaPaginasBundle:Default:AutoCompletaCodEnt}  
+  
+AutoCadenaCodEnt:
+  pattern:  /AutoCadenaCodEnt
+  defaults: { _controller: OpltdaPaginasBundle:Default:AutoCadenaCodEnt}  
+  
+  
 auto:
    pattern:  /auto
    defaults: { _controller: OpltdaPaginasBundle:Default:auto }  
@@ -33,6 +42,11 @@ listarFocusGroup:
 listarInversionVial:
     pattern: /listarInversionVial
     defaults: {_controller: OpltdaPaginasBundle:Default:listarInversionVial}
+  
+  
+detallePuerto:
+  pattern: /detallePuerto/{id}
+  defaults: {_controller: OpltdaPaginasBundle:Default:detallePuerto}
   
 listarEntrevista:
     pattern: /listarEntrevista

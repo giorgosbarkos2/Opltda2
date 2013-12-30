@@ -24,8 +24,8 @@ if (isset($_SERVER['HTTP_CLIENT_IP'])
 
 $kernel = new AppKernel('dev', true);
 
-$kernel->loadClassCache();
-$request = Request::createFromGlobals();
+// $kernel->loadClassCache();
+// $request = Request::createFromGlobals();
 $response = $kernel->handle($request);
 $response->send();
 $kernel->terminate($request, $response);

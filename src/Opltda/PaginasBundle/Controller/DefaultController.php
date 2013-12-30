@@ -12,6 +12,7 @@ use Opltda\EntidadesBundle\Entity\InversionVial;
 use Opltda\EntidadesBundle\Entity\FocusGroup;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
+
 use Symfony\Component\HttpFoundation\JsonResponse;
 
 class DefaultController extends Controller {
@@ -25,6 +26,8 @@ class DefaultController extends Controller {
     }
     
     
+    
+    
         public function autoAction(Request $request){
             $em = $this->getDoctrine()->getManager();
             $term = $request->request->get('term');
@@ -34,12 +37,49 @@ class DefaultController extends Controller {
                 $film_titles [] = $regiones ->getNombre().' - '.$regiones ->getId();
             }
             return new JsonResponse($film_titles);                
+            
+    }
+    
+    
+    
+    public function AutoCompletaCodEntAction(Request $request){
+        $em = $this->getDoctrine()->getManager();
+        $term = $request->request->get('term');
+        $busEntrevisar = array();
+        $query = $em->createQuery("SELECT o FROM OpltdaEntidadesBundle:Entrevistas o where o.codigoFicha LIKE   '%$term%' ");
+        $entrevistas = $query->getResult();
+        foreach ($entrevistas  as $entrevistas ) {
+                $busEntrevisar [] = $entrevistas->getCodigoFicha();
+            }
+            
+          return new JsonResponse($busEntrevisar);           
+    }
+    
+    
+    
+    
+        public function AutoCadenaCodEntAction(Request $request){
+        $em = $this->getDoctrine()->getManager();
+        $term = $request->request->get('term');
+        $busEntrevisar = array();
+        $query = $em->createQuery("SELECT o FROM OpltdaEntidadesBundle:Entrevistas o where o.puertos LIKE   '%$term%' ");
+        $entrevistas = $query->getResult();
+        foreach ($entrevistas  as $entrevistas ) {
+                $busEntrevisar [] = $entrevistas->getPuerto()->getId();
+            }
+            
+          return new JsonResponse($busEntrevisar);           
     }
     
     
     
     public function principalVistaAction(){
-         return $this->render('OpltdaPaginasBundle:Default:principal.html.twig');
+         $em = $this->getDoctrine()->getManager();
+         $entrevistas = $em->getRepository('OpltdaEntidadesBundle:Entrevistas')->findAll();
+         $focusGroup = $em->getRepository('OpltdaEntidadesBundle:FocusGroup')->findAll();
+         return $this->render('OpltdaPaginasBundle:Default:principal.html.twig' , array('entrevistas' => $entrevistas , 'focusGroup' => $focusGroup ));
+    
+         
     }
     public function LoginVistaAction() {
 
@@ -108,6 +148,14 @@ class DefaultController extends Controller {
     
     }
 	
+    
+    public function detallePuertoAction($id){
+           $em  = $this->getDoctrine()->getManager();
+            $puertos = $em->getRepository('OpltdaEntidadesBundle:Puertos')->findAll();
+            return $this->render('OpltdaPaginasBundle:Default:detallePuerto.html.twig', array('puertos'=> $puertos));
+            
+   
+    }
 	public function listarFocusGroupAction(){
             $em  = $this->getDoctrine()->getManager();
             $focusgroup = $em->getRepository('OpltdaEntidadesBundle:FocusGroup')->findAll();

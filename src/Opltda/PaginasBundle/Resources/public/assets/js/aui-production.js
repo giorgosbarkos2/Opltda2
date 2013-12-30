@@ -50826,7 +50826,7 @@ if(jQuery) (function($) {
 		 *      } );
 		 *    } );
 		 */
-		"aLengthMenu": [ 10, 25, 50, 100 ],
+		"aLengthMenu": [ 100, 250, 500, 1000 ],
 	
 	
 		/**
@@ -52083,7 +52083,7 @@ if(jQuery) (function($) {
 				 *      } );
 				 *    } );
 				 */
-				"sNext": "Next",
+				"sNext": "Próximo",
 			
 			
 				/**
@@ -52104,7 +52104,7 @@ if(jQuery) (function($) {
 				 *      } );
 				 *    } );
 				 */
-				"sPrevious": "Previous"
+				"sPrevious": "Anterior"
 			},
 		
 			/**
@@ -52125,7 +52125,7 @@ if(jQuery) (function($) {
 			 *      } );
 			 *    } );
 			 */
-			"sEmptyTable": "No data available in table",
+			"sEmptyTable": "No se encontró ningún resultado",
 		
 		
 			/**
@@ -52146,7 +52146,7 @@ if(jQuery) (function($) {
 			 *      } );
 			 *    } );
 			 */
-			"sInfo": "Showing _START_ to _END_ of _TOTAL_ entries",
+			"sInfo": "Mostrado _START_ un _END_ of _TOTAL_ entradas",
 		
 		
 			/**
@@ -52165,7 +52165,7 @@ if(jQuery) (function($) {
 			 *      } );
 			 *    } );
 			 */
-			"sInfoEmpty": "Showing 0 to 0 of 0 entries",
+			"sInfoEmpty": "Mostrando 0 de 0  0 entries",
 		
 		
 			/**
@@ -52251,6 +52251,7 @@ if(jQuery) (function($) {
 			 *    
 			 *  @example
 			 *    // Language and options change
+                         *    
 			 *    $(document).ready( function() {
 			 *      $('#example').dataTable( {
 			 *        "oLanguage": {
@@ -52266,7 +52267,7 @@ if(jQuery) (function($) {
 			 *      } );
 			 *    } );
 			 */
-			"sLengthMenu": "Show _MENU_ entries",
+			"sLengthMenu": "Mostrando _MENU_ entradas",
 		
 		
 			/**
@@ -52340,7 +52341,7 @@ if(jQuery) (function($) {
 			 *      } );
 			 *    } );
 			 */
-			"sSearch": "Search:",
+			"sSearch": "Buscador :",
 		
 		
 			/**
@@ -68075,7 +68076,7 @@ $(function() {
   $('#close-sidebar').click(function(){
 
     $('body').addClass('close-sidebar');
-    closeSidebarCookie = $.cookie('closesidebar', 'close');
+    closeSidebarCookie = $.cookie('Cerrar', 'close');
     $(this).addClass('hidden');
     $('#rm-close-sidebar').removeClass('hidden');
 
@@ -68084,13 +68085,13 @@ $(function() {
   $('#rm-close-sidebar').click(function(){
 
     $('body').removeClass('close-sidebar');
-    closeSidebarCookie = $.cookie('closesidebar', 'rm-close');
+    closeSidebarCookie = $.cookie('Cerrar', 'rm-close');
     $(this).addClass('hidden');
     $('#close-sidebar').removeClass('hidden');
 
   });
 
-  var closeSidebarCookie = $.cookie('closesidebar');
+  var closeSidebarCookie = $.cookie('Cerrar');
 
   if (closeSidebarCookie == 'close') {
     $('#close-sidebar').addClass('hidden');
@@ -68895,6 +68896,14 @@ notes['warning'] = '<i class="glyph-icon icon-cog mrg5R"></i>This is a warning f
           "bJQueryUI": true,
           "sPaginationType": "full_numbers"
       });
+      
+      
+        $('#example2').dataTable( {
+              "sScrollY": 600,
+          "bJQueryUI": true,
+          "sPaginationType": "full_numbers"
+      });
+
 
       $('.dataTable .ui-icon-carat-2-n').addClass('icon-sort-up');
       $('.dataTable .ui-icon-carat-2-s').addClass('icon-sort-down');

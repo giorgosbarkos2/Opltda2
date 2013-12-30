@@ -21,7 +21,84 @@ class Estudio
      */
     private $id;
 
+    
+     /** @ORM\Column(type="string", length=200 , nullable=true) */
+    
+    
+    private $codigoCadena;
+    
+    
+    
+    /** @ORM\Column(type="string", length=200 , nullable=true) */
+    
+    
+    private $nombreCadena;
+    
+    
+    
+    
+      /** @ORM\Column(type="string", length=200 , nullable=true) */
+    
+    
+    private $macroProceso;
+    
+        
+      /** @ORM\Column(type="string", length=200 , nullable=true) */
+    
+    private $dimension;
+    
+    
+    
+      /** @ORM\Column(type="string", length=200 , nullable=true) */
+    
+    
+    
+    private $codigoActividad;
+    
+        
+      /** @ORM\Column(type="string", length=200 , nullable=true) */
+    
+    private $nombreActividad;
+    
+    private $agente;
+    
+        
+      /** @ORM\Column(type="string", length=200 , nullable=true) */
+    
+    private $costo;
+    
+        
+      /** @ORM\Column(type="string", length=200 , nullable=true) */
+    
+    private $tiempoPromedioServicio;
+        
+      /** @ORM\Column(type="string", length=200 , nullable=true) */
+    
+    
+    private $tiempoPromedioEspera;
+        
+      /** @ORM\Column(type="string", length=200 , nullable=true) */
+    
+    
+    private $inificencias;
+        
+      /** @ORM\Column(type="string", length=200 , nullable=true) */
+    
+    private $causainificencia;
+        
+      /** @ORM\Column(type="string", length=200 , nullable=true) */
+    
+    
+    private $iniciativa;
+    
+        
+      /** @ORM\Column(type="string", length=200 , nullable=true) */
+    
+    
+    private $fechaIngreso;
+    
 
+    
 	   /**
      * @ORM\ManyToOne(targetEntity="Opltda\EntidadesBundle\Entity\Regiones", inversedBy="estudio")
      * @ORM\JoinColumn(name="regiones_id", referencedColumnName="id")
@@ -42,128 +119,6 @@ class Estudio
         
         
         
-        
-        
-        
-        
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="codigoCadena", type="text" ,nullable=true )
-     */
-    private $codigoCadena;
-
-	/**
-	*
-	* @ORM\Column(name="nombreCadena", type="text" ,nullable=true )
-	*/
-	private $nombreCadena;
-
-	/**
-	*
-	* @ORM\Column(name="macroProceso", type="text" ,nullable=true )
-	*/
-	private $macroProceso;
-
-	/**
-	*
-	* @ORM\Column(name="dimension", type="text" ,nullable=true )
-	*/
-	private $dimension;
-
-	/**
-	*
-	* @ORM\Column(name="codigoActividad", type="text" ,nullable=true )
-	*/
-	private $codigoActividad;
-
-	/**
-	*
-	* @ORM\Column(name="nombreActividad", type="text" ,nullable=true )
-	*/
-	private $nombreActividad;
-
-	/**
-	*
-	* @ORM\Column(name="generadoresIneficiencia", type="text" ,nullable=true )
-	*/
-	private $generadoresIneficiencia;
-
-	/**
-	*
-	* @ORM\Column(name="tiempoServicio", type="text" ,nullable=true )
-	*/
-	private $tiempoServicio;
-
-	/**
-	*
-	* @ORM\Column(name="tiempoEspera", type="text" ,nullable=true )
-	*/
-	private $tiempoEspera;
-
-	/**
-	*
-	* @ORM\Column(name="tipoInficiencia", type="text" ,nullable=true )
-	*/
-	private $tipoIneficiencia;
-
-	/**
-	*
-	* @ORM\Column(name="descripcionIneficiencia", type="text" ,nullable=true )
-	*/
-	private $descripcionIneficiencia;
-
-	/**
-	*
-	* @ORM\Column(name="costoIneficiencia", type="text" ,nullable=true )
-	*/
-	private $costoIneficiena;
-
-	/**
-	*
-	* @ORM\Column(name="causaIneficiencia", type="text" ,nullable=true )
-	*/
-	private $causaIneficiencia;
-
-	/**
-	*
-	* @ORM\Column(name="impactoIneficiencia", type="text" ,nullable=true )
-	*/
-	private $impactoIneficiencia;
-
-	/**
-	*
-	* @ORM\Column(name="ejeIniciativa", type="text" ,nullable=true )
-	*/
-	private $ejeIniciativa;
-
-	/**
-	*
-	* @ORM\Column(name="descripcionInciativa", type="text" ,nullable=true )
-	*/
-	private $descripcionInciativa;
-
-	/**
-	*
-	* @ORM\Column(name="fechaIngreso", type="datetime" ,nullable=true )
-	*/
-	private $fechaIngreso;
-        
-        
-        
-        
-               /**
-    * @ORM\OneToMany(targetEntity="Opltda\EntidadesBundle\Entity\ArchivosEstudios", mappedBy="estudio")
-    */
-    
-    
-   
-    private $archivosestudios;
-    
-    
-    
-    
 
     /**
      * Get id
@@ -314,239 +269,147 @@ class Estudio
     }
 
     /**
-     * Set generadoresIneficiencia
+     * Set costo
      *
-     * @param string $generadoresIneficiencia
+     * @param string $costo
      * @return Estudio
      */
-    public function setGeneradoresIneficiencia($generadoresIneficiencia)
+    public function setCosto($costo)
     {
-        $this->generadoresIneficiencia = $generadoresIneficiencia;
+        $this->costo = $costo;
 
         return $this;
     }
 
     /**
-     * Get generadoresIneficiencia
+     * Get costo
      *
      * @return string 
      */
-    public function getGeneradoresIneficiencia()
+    public function getCosto()
     {
-        return $this->generadoresIneficiencia;
+        return $this->costo;
     }
 
     /**
-     * Set tiempoServicio
+     * Set tiempoPromedioServicio
      *
-     * @param string $tiempoServicio
+     * @param string $tiempoPromedioServicio
      * @return Estudio
      */
-    public function setTiempoServicio($tiempoServicio)
+    public function setTiempoPromedioServicio($tiempoPromedioServicio)
     {
-        $this->tiempoServicio = $tiempoServicio;
+        $this->tiempoPromedioServicio = $tiempoPromedioServicio;
 
         return $this;
     }
 
     /**
-     * Get tiempoServicio
+     * Get tiempoPromedioServicio
      *
      * @return string 
      */
-    public function getTiempoServicio()
+    public function getTiempoPromedioServicio()
     {
-        return $this->tiempoServicio;
+        return $this->tiempoPromedioServicio;
     }
 
     /**
-     * Set tiempoEspera
+     * Set tiempoPromedioEspera
      *
-     * @param string $tiempoEspera
+     * @param string $tiempoPromedioEspera
      * @return Estudio
      */
-    public function setTiempoEspera($tiempoEspera)
+    public function setTiempoPromedioEspera($tiempoPromedioEspera)
     {
-        $this->tiempoEspera = $tiempoEspera;
+        $this->tiempoPromedioEspera = $tiempoPromedioEspera;
 
         return $this;
     }
 
     /**
-     * Get tiempoEspera
+     * Get tiempoPromedioEspera
      *
      * @return string 
      */
-    public function getTiempoEspera()
+    public function getTiempoPromedioEspera()
     {
-        return $this->tiempoEspera;
+        return $this->tiempoPromedioEspera;
     }
 
     /**
-     * Set tipoIneficiencia
+     * Set inificencias
      *
-     * @param string $tipoIneficiencia
+     * @param string $inificencias
      * @return Estudio
      */
-    public function setTipoIneficiencia($tipoIneficiencia)
+    public function setInificencias($inificencias)
     {
-        $this->tipoIneficiencia = $tipoIneficiencia;
+        $this->inificencias = $inificencias;
 
         return $this;
     }
 
     /**
-     * Get tipoIneficiencia
+     * Get inificencias
      *
      * @return string 
      */
-    public function getTipoIneficiencia()
+    public function getInificencias()
     {
-        return $this->tipoIneficiencia;
+        return $this->inificencias;
     }
 
     /**
-     * Set descripcionIneficiencia
+     * Set causainificencia
      *
-     * @param string $descripcionIneficiencia
+     * @param string $causainificencia
      * @return Estudio
      */
-    public function setDescripcionIneficiencia($descripcionIneficiencia)
+    public function setCausainificencia($causainificencia)
     {
-        $this->descripcionIneficiencia = $descripcionIneficiencia;
+        $this->causainificencia = $causainificencia;
 
         return $this;
     }
 
     /**
-     * Get descripcionIneficiencia
+     * Get causainificencia
      *
      * @return string 
      */
-    public function getDescripcionIneficiencia()
+    public function getCausainificencia()
     {
-        return $this->descripcionIneficiencia;
+        return $this->causainificencia;
     }
 
     /**
-     * Set costoIneficiena
+     * Set iniciativa
      *
-     * @param string $costoIneficiena
+     * @param string $iniciativa
      * @return Estudio
      */
-    public function setCostoIneficiena($costoIneficiena)
+    public function setIniciativa($iniciativa)
     {
-        $this->costoIneficiena = $costoIneficiena;
+        $this->iniciativa = $iniciativa;
 
         return $this;
     }
 
     /**
-     * Get costoIneficiena
+     * Get iniciativa
      *
      * @return string 
      */
-    public function getCostoIneficiena()
+    public function getIniciativa()
     {
-        return $this->costoIneficiena;
-    }
-
-    /**
-     * Set causaIneficiencia
-     *
-     * @param string $causaIneficiencia
-     * @return Estudio
-     */
-    public function setCausaIneficiencia($causaIneficiencia)
-    {
-        $this->causaIneficiencia = $causaIneficiencia;
-
-        return $this;
-    }
-
-    /**
-     * Get causaIneficiencia
-     *
-     * @return string 
-     */
-    public function getCausaIneficiencia()
-    {
-        return $this->causaIneficiencia;
-    }
-
-    /**
-     * Set impactoIneficiencia
-     *
-     * @param string $impactoIneficiencia
-     * @return Estudio
-     */
-    public function setImpactoIneficiencia($impactoIneficiencia)
-    {
-        $this->impactoIneficiencia = $impactoIneficiencia;
-
-        return $this;
-    }
-
-    /**
-     * Get impactoIneficiencia
-     *
-     * @return string 
-     */
-    public function getImpactoIneficiencia()
-    {
-        return $this->impactoIneficiencia;
-    }
-
-    /**
-     * Set ejeIniciativa
-     *
-     * @param string $ejeIniciativa
-     * @return Estudio
-     */
-    public function setEjeIniciativa($ejeIniciativa)
-    {
-        $this->ejeIniciativa = $ejeIniciativa;
-
-        return $this;
-    }
-
-    /**
-     * Get ejeIniciativa
-     *
-     * @return string 
-     */
-    public function getEjeIniciativa()
-    {
-        return $this->ejeIniciativa;
-    }
-
-    /**
-     * Set descripcionInciativa
-     *
-     * @param string $descripcionInciativa
-     * @return Estudio
-     */
-    public function setDescripcionInciativa($descripcionInciativa)
-    {
-        $this->descripcionInciativa = $descripcionInciativa;
-
-        return $this;
-    }
-
-    /**
-     * Get descripcionInciativa
-     *
-     * @return string 
-     */
-    public function getDescripcionInciativa()
-    {
-        return $this->descripcionInciativa;
+        return $this->iniciativa;
     }
 
     /**
      * Set fechaIngreso
      *
-     * @param \DateTime $fechaIngreso
+     * @param string $fechaIngreso
      * @return Estudio
      */
     public function setFechaIngreso($fechaIngreso)
@@ -559,7 +422,7 @@ class Estudio
     /**
      * Get fechaIngreso
      *
-     * @return \DateTime 
+     * @return string 
      */
     public function getFechaIngreso()
     {
@@ -610,45 +473,5 @@ class Estudio
     public function getPuertos()
     {
         return $this->puertos;
-    }
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->archivosestudios = new \Doctrine\Common\Collections\ArrayCollection();
-    }
-
-    /**
-     * Add archivosestudios
-     *
-     * @param \Opltda\EntidadesBundle\Entity\ArchivosEstudios $archivosestudios
-     * @return Estudio
-     */
-    public function addArchivosestudio(\Opltda\EntidadesBundle\Entity\ArchivosEstudios $archivosestudios)
-    {
-        $this->archivosestudios[] = $archivosestudios;
-
-        return $this;
-    }
-
-    /**
-     * Remove archivosestudios
-     *
-     * @param \Opltda\EntidadesBundle\Entity\ArchivosEstudios $archivosestudios
-     */
-    public function removeArchivosestudio(\Opltda\EntidadesBundle\Entity\ArchivosEstudios $archivosestudios)
-    {
-        $this->archivosestudios->removeElement($archivosestudios);
-    }
-
-    /**
-     * Get archivosestudios
-     *
-     * @return \Doctrine\Common\Collections\Collection 
-     */
-    public function getArchivosestudios()
-    {
-        return $this->archivosestudios;
     }
 }
