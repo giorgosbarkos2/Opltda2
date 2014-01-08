@@ -43784,6 +43784,8 @@ if(jQuery) (function($) {
 		 *  @returns {function} Data set function
 		 *  @memberof DataTable#oApi
 		 */
+                
+                
 		function _fnSetObjectDataFn( mSource )
 		{
 			if ( mSource === null )
@@ -44881,8 +44883,8 @@ if(jQuery) (function($) {
 			{
 				_fnClearTable( oSettings );
 			}
-			oSettings._iRecordsTotal = parseInt(json.iTotalRecords, 10);
-			oSettings._iRecordsDisplay = parseInt(json.iTotalDisplayRecords, 10);
+			oSettings._iRecordsTotal = parseInt(json.iTotalRecords, 20);
+			oSettings._iRecordsDisplay = parseInt(json.iTotalDisplayRecords, 20);
 			
 			/* Determine if reordering is required */
 			var sOrdering = _fnColumnOrdering(oSettings);
@@ -45649,7 +45651,7 @@ if(jQuery) (function($) {
 				}
 				
 				/* Redraw the table */
-				oSettings._iDisplayLength = parseInt(iVal, 10);
+				oSettings._iDisplayLength = parseInt(iVal, 20);
 				_fnCalculateEnd( oSettings );
 				
 				/* If we have space to show extra rows (backing up from the end point - then do so */
@@ -45807,7 +45809,7 @@ if(jQuery) (function($) {
 			{
 				if ( oSettings._iDisplayLength >= 0 )
 				{
-					var iPages = parseInt( (oSettings.fnRecordsDisplay()-1) / oSettings._iDisplayLength, 10 ) + 1;
+					var iPages = parseInt( (oSettings.fnRecordsDisplay()-1) / oSettings._iDisplayLength, 20 ) + 1;
 					oSettings._iDisplayStart = (iPages-1) * oSettings._iDisplayLength;
 				}
 				else
@@ -51895,7 +51897,8 @@ if(jQuery) (function($) {
 		 *      } );
 		 *    } )
 		 */
-		"iDisplayLength": 10,
+                 // Cantidad al inicio 
+		"iDisplayLength": 20,
 	
 	
 		/**
@@ -52041,7 +52044,7 @@ if(jQuery) (function($) {
 				 *      } );
 				 *    } );
 				 */
-				"sFirst": "First",
+				"sFirst": "Primero",
 			
 			
 				/**
@@ -52062,7 +52065,7 @@ if(jQuery) (function($) {
 				 *      } );
 				 *    } );
 				 */
-				"sLast": "Last",
+				"sLast": "Ultimo",
 			
 			
 				/**
