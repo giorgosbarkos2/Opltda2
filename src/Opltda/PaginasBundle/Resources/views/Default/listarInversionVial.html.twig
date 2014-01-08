@@ -12,6 +12,30 @@
 </h4>
 
 
+ <script>
+ 
+ 
+$(document).ready(function(){
+     $('#inversionVial').dataTable()
+		 .columnFilter({ sPlaceHolder: "head:after",
+                                                             aoColumns: [
+
+		        { type: "text" },
+		        { type: "text" },
+                                        { type: "text" }
+	
+		  
+
+				]
+
+		});
+});
+
+             </script>
+             
+             
+
+
                     <div id="page-content">
 {% block inversionvial %}
                             
@@ -19,7 +43,7 @@
  
                             
                             
-                            <table class="table"  id="example1" >
+                            <table class="table"  id="inversionVial" >
 		<thead>
 			<th>Region</th>
 			<th>Nombre</th>

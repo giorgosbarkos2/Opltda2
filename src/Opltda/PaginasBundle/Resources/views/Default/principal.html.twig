@@ -12,38 +12,18 @@
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
         <script type="text/javascript"src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
         <link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" />
-        <script type="text/javascript">
-            $(document).ready(function() {
-
-
-
-                $("#puerto").change(function() {
-                    $("#puerto option:selected").each(function() {
-                        
-                        var elegido = $(this).val();
-                        console.log(elegido);
-
-
-
-                        $.post($("#formCadenas").attr("action"), {elegido: elegido}, function(data) {
-                            $("#cadenas").html(data);
-                        });
-                    });
-                });
-            });
-
-
-
-            </script>
-
-            <style>
+        
+              <style>
           
+                      
 
 
 .myButton {
 	
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#599bb3', endColorstr='#408c99',GradientType=0);
 	background-color:#599bb3;
-                -webkit-border-radius:4px;
+
+	-webkit-border-radius:4px;
 	border-radius:4px;
                 border:none;
 	display:inline-block;
@@ -73,6 +53,33 @@
 
                 </style>
 
+        
+        <script type="text/javascript">
+            $(document).ready(function() {
+
+
+
+                $("#puerto").change(function() {
+                    $("#puerto option:selected").each(function() {
+                        
+                        var elegido = $(this).val();
+                        console.log(elegido);
+
+
+
+                        $.post($("#formCadenas").attr("action"), {elegido: elegido}, function(data) {
+                            $("#cadenas").html(data);
+                        });
+                    });
+                });
+            });
+
+
+
+            </script>
+
+         
+             
 
 
 

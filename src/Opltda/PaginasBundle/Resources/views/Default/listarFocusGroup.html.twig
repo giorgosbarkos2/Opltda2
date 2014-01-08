@@ -1,8 +1,41 @@
+
        {% include "OpltdaPaginasBundle:Default:estPrincipal.html.twig" %}
-                    <div id="page-content">
+                    
+
+
+ <script>
+ 
+ 
+$(document).ready(function(){
+     $('#focusGroup').dataTable()
+		 .columnFilter({ sPlaceHolder: "head:after",
+                                                             aoColumns: [
+
+		        { type: "text" },
+		        { type: "text" },
+                                        { type: "text" }
+	
+		  
+
+				]
+
+		});
+});
+
+             </script>
+             
+             
+
+
+
+
+<div id="page-content">
+                        
+             
+                        
                         
 {% block listarFocusGroup %}
-	<table class="table">
+	<table class="table" id="focusGroup">
 		<thead>
 			<th>Puertos</th>
 			<th>Transacciones</th>

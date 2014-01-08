@@ -1,7 +1,35 @@
        {% include "OpltdaPaginasBundle:Default:estPrincipal.html.twig" %}
                     <div id="page-content">
+                        
+                        
+         <!-- Filtros de la tabla -->               
+                        <script>
+ 
+$(document).ready(function(){
+     $('#entrevistas').dataTable()
+		 .columnFilter({ sPlaceHolder: "head:after",
+                                                             aoColumns: [
+
+		        { type: "text" },
+		        { type: "text" },
+                                        { type: "text" },
+		        { type: "text" },
+                         { type: "text" },
+                          { type: "text" },
+                        
+		  
+
+				]
+
+		});
+});
+
+             </script>
+             
+             
+                            </script>
 {% block entrevista %}
-	<table class="table"  id="example1" >
+	<table class="table"  id="entrevistas" >
 		<thead>
 			<th width="10%">Region</th>
 			<th width="10%">Puerto</th>
@@ -15,7 +43,7 @@
 			{% for entrevista in entrevista %}
 				<tr>    
                                     <td>{{entrevista.regiones.nombre}}</td>
-                                    <td>{{entrevista.puertos.codigo}}</td>
+                                    <td>{{entrevista.puertos.nombre}}</td>
                                     <td>{{entrevista.codigoFicha}}</td>
                                     <td>{{entrevista.nombreCadena}}</td>
                                     <td>{{entrevista.tipoActor}}</td>
@@ -26,9 +54,11 @@
                                         {% for archivo in archivo %}
                                     
                                         <a href="../web/archivos/entrevistas/{{archivo.url}}.pdf">Archivo</a>
-                                        {{archivo.url }}
+                               
                                         
                                         {% endfor %}
+                                        
+                                        
                                         
                                         
                                     

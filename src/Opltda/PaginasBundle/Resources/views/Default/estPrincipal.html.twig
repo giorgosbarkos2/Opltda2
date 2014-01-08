@@ -42,73 +42,12 @@
                    
                     <i class="glyph-icon icon-search"></i>
                 </div>
-                <div id="sidebar-menu" class="scrollable-content">
-                    <ul>
-                        <li>
-                            <a href="{{path('principal')}}" title="Dashboard">
-                                <i class="glyph-icon icon-dashboard"></i>
-                               Principal
-                            </a>
-                        </li>
-                        
-                        
-                        <!-- Prueba de testeo. -->
-                        <li>
-                            <a href="{{ path('listarEntrevista')}}" title="Data visualization">
-                                <i class="glyph-icon icon-chevron-right"></i>
-                                    Entrevistas.
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{{ path('listarInversionVial')}}" title="Data visualization">
-                                <i class="glyph-icon icon-chevron-right"></i>
-                                        Inversion Vial.
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{{ path('listarFocusGroup')}}" title="Data visualization">
-                               <i class="glyph-icon icon-chevron-right"></i>
-                               Focus Group.
-                            </a>
-                        </li>
-                        <!-- Prueba de testeo. -->
-                        <li>
-                            <a href="javascript:;" title="Maps">
-                                <i class="glyph-icon icon-map-marker"></i>
-                                Mapas
-                            </a>
-                            <ul>
-                                <li>
-                                    <a href="#" title="Google Maps">
-                                        <i class="glyph-icon icon-chevron-right"></i>
-                                        Por Region
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" title="Vector maps">
-                                        <i class="glyph-icon icon-chevron-right"></i>
-                                        Por Puertos
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                    <div class="divider mrg5T mobile-hidden"></div>
-                    <div class="text-center mobile-hidden">
-                        <div class="button-group">
-                            
-                            <div style="width: 160px;height: 160px;position:relative;margin:auto;">
-                                <img src="{{asset('bundles/opltdapaginas/images/logo.png')}}">
-                            
-                            </div>
-                            
-                            
-                        </div>
-
-                        <div class="divider"></div>
-                    </div>
-                </div>
-
+           
+                    
+                    
+                         {% include "OpltdaPaginasBundle:Layers:menu.html.twig" %}
+                    
+                    
             </div><!-- #page-sidebar -->
             
             <div id="page-main">
