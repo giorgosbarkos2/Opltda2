@@ -90,14 +90,17 @@ class Regiones
 
     private $mapas;
     
+        /**
+    * @ORM\OneToMany(targetEntity="Opltda\EntidadesBundle\Entity\Cadenas", mappedBy="regiones")
+    */
+    
+    
+    
+    private $cadenas;
     
     
     
     
     
     
-    
-
-
- 
 }

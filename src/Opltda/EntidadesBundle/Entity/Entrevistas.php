@@ -59,11 +59,6 @@ class Entrevistas
 
 
 
-     /** @ORM\Column(type="string", length=200 , nullable=true) */
-
-
-    private $CodigoCadena;
-
 
 
 
@@ -87,11 +82,16 @@ class Entrevistas
     private $archivosentrevistas;
     
     
+    
 
+     /**
+     * @ORM\ManyToOne(targetEntity="Opltda\EntidadesBundle\Entity\Cadenas", inversedBy="entrevistas")
+     * @ORM\JoinColumn(name="cadenas_id", referencedColumnName="id")
+     */
 
-
-
-
+    private $cadenas;
+    
+    
 
     /**
      * Constructor
@@ -158,29 +158,6 @@ class Entrevistas
     }
 
     /**
-     * Set CodigoCadena
-     *
-     * @param string $codigoCadena
-     * @return Entrevistas
-     */
-    public function setCodigoCadena($codigoCadena)
-    {
-        $this->CodigoCadena = $codigoCadena;
-
-        return $this;
-    }
-
-    /**
-     * Get CodigoCadena
-     *
-     * @return string 
-     */
-    public function getCodigoCadena()
-    {
-        return $this->CodigoCadena;
-    }
-
-    /**
      * Set TipoActor
      *
      * @param string $tipoActor
@@ -204,49 +181,49 @@ class Entrevistas
     }
 
     /**
-     * Set region
+     * Set regiones
      *
-     * @param \Opltda\EntidadesBundle\Entity\Regiones $region
+     * @param \Opltda\EntidadesBundle\Entity\Regiones $regiones
      * @return Entrevistas
      */
-    public function setRegion(\Opltda\EntidadesBundle\Entity\Regiones $region = null)
+    public function setRegiones(\Opltda\EntidadesBundle\Entity\Regiones $regiones = null)
     {
-        $this->region = $region;
+        $this->regiones = $regiones;
 
         return $this;
     }
 
     /**
-     * Get region
+     * Get regiones
      *
      * @return \Opltda\EntidadesBundle\Entity\Regiones 
      */
-    public function getRegion()
+    public function getRegiones()
     {
-        return $this->region;
+        return $this->regiones;
     }
 
     /**
-     * Set puerto
+     * Set puertos
      *
-     * @param \Opltda\EntidadesBundle\Entity\Puertos $puerto
+     * @param \Opltda\EntidadesBundle\Entity\Puertos $puertos
      * @return Entrevistas
      */
-    public function setPuerto(\Opltda\EntidadesBundle\Entity\Puertos $puerto = null)
+    public function setPuertos(\Opltda\EntidadesBundle\Entity\Puertos $puertos = null)
     {
-        $this->puerto = $puerto;
+        $this->puertos = $puertos;
 
         return $this;
     }
 
     /**
-     * Get puerto
+     * Get puertos
      *
      * @return \Opltda\EntidadesBundle\Entity\Puertos 
      */
-    public function getPuerto()
+    public function getPuertos()
     {
-        return $this->puerto;
+        return $this->puertos;
     }
 
     /**
@@ -283,48 +260,25 @@ class Entrevistas
     }
 
     /**
-     * Set puertos
+     * Set cadenas
      *
-     * @param \Opltda\EntidadesBundle\Entity\Puertos $puertos
+     * @param \Opltda\EntidadesBundle\Entity\Cadenas $cadenas
      * @return Entrevistas
      */
-    public function setPuertos(\Opltda\EntidadesBundle\Entity\Puertos $puertos = null)
+    public function setCadenas(\Opltda\EntidadesBundle\Entity\Cadenas $cadenas = null)
     {
-        $this->puertos = $puertos;
+        $this->cadenas = $cadenas;
 
         return $this;
     }
 
     /**
-     * Get puertos
+     * Get cadenas
      *
-     * @return \Opltda\EntidadesBundle\Entity\Puertos 
+     * @return \Opltda\EntidadesBundle\Entity\Cadenas 
      */
-    public function getPuertos()
+    public function getCadenas()
     {
-        return $this->puertos;
-    }
-
-    /**
-     * Set regiones
-     *
-     * @param \Opltda\EntidadesBundle\Entity\Regiones $regiones
-     * @return Entrevistas
-     */
-    public function setRegiones(\Opltda\EntidadesBundle\Entity\Regiones $regiones = null)
-    {
-        $this->regiones = $regiones;
-
-        return $this;
-    }
-
-    /**
-     * Get regiones
-     *
-     * @return \Opltda\EntidadesBundle\Entity\Regiones 
-     */
-    public function getRegiones()
-    {
-        return $this->regiones;
+        return $this->cadenas;
     }
 }

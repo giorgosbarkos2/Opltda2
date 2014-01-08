@@ -90,16 +90,19 @@ class Regiones
 
     private $mapas;
     
+        /**
+    * @ORM\OneToMany(targetEntity="Opltda\EntidadesBundle\Entity\Cadenas", mappedBy="regiones")
+    */
+    
+    
+    
+    private $cadenas;
     
     
     
     
     
     
-    
-
-
- 
     /**
      * Constructor
      */
@@ -110,6 +113,7 @@ class Regiones
         $this->estudio = new \Doctrine\Common\Collections\ArrayCollection();
         $this->puertos = new \Doctrine\Common\Collections\ArrayCollection();
         $this->mapas = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->cadenas = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
@@ -331,5 +335,38 @@ class Regiones
     public function getMapas()
     {
         return $this->mapas;
+    }
+
+    /**
+     * Add cadenas
+     *
+     * @param \Opltda\EntidadesBundle\Entity\Cadenas $cadenas
+     * @return Regiones
+     */
+    public function addCadena(\Opltda\EntidadesBundle\Entity\Cadenas $cadenas)
+    {
+        $this->cadenas[] = $cadenas;
+
+        return $this;
+    }
+
+    /**
+     * Remove cadenas
+     *
+     * @param \Opltda\EntidadesBundle\Entity\Cadenas $cadenas
+     */
+    public function removeCadena(\Opltda\EntidadesBundle\Entity\Cadenas $cadenas)
+    {
+        $this->cadenas->removeElement($cadenas);
+    }
+
+    /**
+     * Get cadenas
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getCadenas()
+    {
+        return $this->cadenas;
     }
 }

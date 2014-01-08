@@ -9,6 +9,11 @@ Autocompleta:
 AutoCompletaCodEnt:
    pattern:  /AutoCompletaCodEnt
    defaults: { _controller: OpltdaPaginasBundle:Default:AutoCompletaCodEnt}  
+ 
+  
+combosCadena:
+   pattern:  /combosCadena
+   defaults: { _controller: OpltdaPaginasBundle:Default:combosCadena}  
   
 AutoCadenaCodEnt:
   pattern:  /AutoCadenaCodEnt

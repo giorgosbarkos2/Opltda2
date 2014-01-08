@@ -68,8 +68,19 @@ class Puertos
     
 
     private $mapas;
+        
     
     
+     /**
+    * @ORM\OneToMany(targetEntity="Opltda\EntidadesBundle\Entity\Cadenas", mappedBy="puertos")
+    */
+    
+    
+    
+    private $cadenas;
+    
+    
+
     /**
      * Constructor
      */
@@ -79,6 +90,7 @@ class Puertos
         $this->focusgroup = new \Doctrine\Common\Collections\ArrayCollection();
         $this->estudio = new \Doctrine\Common\Collections\ArrayCollection();
         $this->mapas = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->cadenas = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
@@ -290,5 +302,38 @@ class Puertos
     public function getMapas()
     {
         return $this->mapas;
+    }
+
+    /**
+     * Add cadenas
+     *
+     * @param \Opltda\EntidadesBundle\Entity\Cadenas $cadenas
+     * @return Puertos
+     */
+    public function addCadena(\Opltda\EntidadesBundle\Entity\Cadenas $cadenas)
+    {
+        $this->cadenas[] = $cadenas;
+
+        return $this;
+    }
+
+    /**
+     * Remove cadenas
+     *
+     * @param \Opltda\EntidadesBundle\Entity\Cadenas $cadenas
+     */
+    public function removeCadena(\Opltda\EntidadesBundle\Entity\Cadenas $cadenas)
+    {
+        $this->cadenas->removeElement($cadenas);
+    }
+
+    /**
+     * Get cadenas
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getCadenas()
+    {
+        return $this->cadenas;
     }
 }

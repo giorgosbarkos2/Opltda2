@@ -11,6 +11,7 @@ use Opltda\EntidadesBundle\Entity\Entrevistas;
 use Opltda\EntidadesBundle\Entity\InversionVial;
 use Opltda\EntidadesBundle\Entity\FocusGroup;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+use Opltda\EntidadesBundle\Entity\Cadenas;
 
 
 use Symfony\Component\HttpFoundation\JsonResponse;
@@ -21,6 +22,42 @@ class DefaultController extends Controller {
         return $this->render('OpltdaPaginasBundle:Default:index.html.twig', array('name' => $name));
     }
     
+    
+    public function combosCadenaAction(Request $request){
+        $elegido = $request->request->get('elegido');
+        $em = $this->getDoctrine()->getManager();
+                $cadena = new Cadenas();
+        $puerto = $em->getRepository('OpltdaEntidadesBundle:FocusGroup')->findOneBy(array('id' => $elegido));     
+       
+        
+        $cadena = $em->getRepository('OpltdaEntidadesBundle:Cadenas')->findBy(array('puertos' => $elegido));
+      
+  
+        
+        
+
+        
+$cont = 0;
+    foreach ($cadena as $key => $value) {
+        $cont ++;
+        
+     $response[$cont]  = '<option>'. $value->getCodigo() .'</option>';
+
+  
+}
+     
+
+
+
+         
+        
+  
+        
+        return new Response(var_dump($response));
+        
+        
+        
+    }
     public function AutocompletaAction(Request $request){
             return $this->render('OpltdaPaginasBundle:Default:prueba.html.twig');
     }
@@ -77,7 +114,8 @@ class DefaultController extends Controller {
          $em = $this->getDoctrine()->getManager();
          $entrevistas = $em->getRepository('OpltdaEntidadesBundle:Entrevistas')->findAll();
          $focusGroup = $em->getRepository('OpltdaEntidadesBundle:FocusGroup')->findAll();
-         return $this->render('OpltdaPaginasBundle:Default:principal.html.twig' , array('entrevistas' => $entrevistas , 'focusGroup' => $focusGroup ));
+         $puertos = $em->getRepository('OpltdaEntidadesBundle:Puertos')->findAll();
+         return $this->render('OpltdaPaginasBundle:Default:principal.html.twig' , array('entrevistas' => $entrevistas , 'focusGroup' => $focusGroup , 'puertos' => $puertos));
     
          
     }
@@ -86,7 +124,11 @@ class DefaultController extends Controller {
         $intention = '';
         $csrf = $this->get('form.csrf_provider'); //
         $token = $csrf->generateCsrfToken($intention);
-
+              $em = $this->getDoctrine()->getManager();
+         $entrevistas = $em->getRepository('OpltdaEntidadesBundle:Entrevistas')->findAll();
+         $focusGroup = $em->getRepository('OpltdaEntidadesBundle:FocusGroup')->findAll();
+        
+        
         return $this->render('OpltdaPaginasBundle:Default:login.html.twig' , array('token' => $token));
     }
     

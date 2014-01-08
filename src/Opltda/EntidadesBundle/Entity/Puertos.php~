@@ -68,12 +68,17 @@ class Puertos
     
 
     private $mapas;
+        
     
     
+     /**
+    * @ORM\OneToMany(targetEntity="Opltda\EntidadesBundle\Entity\Cadenas", mappedBy="puertos")
+    */
+    
+    
+    
+    private $cadenas;
     
     
 
-    
-    
-    
 }

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-    <html>
+<html>
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -7,268 +7,288 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
         <!-- Favicons -->
-        
-        
+
+
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
         <script type="text/javascript"src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
         <link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" />
-    <script type="text/javascript">
-                $(document).ready(function(){
-                   $("#codigoEntrevista").autocomplete({
-  source: function (request, response) {
-    $.post("AutoCompletaCodEnt", request, response);
-  },
-                   });
-                    
-                });
-        </script>
-        
-        
-         <script type="text/javascript">
-                $(document).ready(function(){
-                   $("#codigoCadena").autocomplete({
-  source: function (request, response) {
-    $.post("AutoCadenaCodEnt", request, response);
-  },
-                   });
-                    
-                });
-        </script>
-        
-        
-        
-        
-        <style>
-        li.ui-menu-item
-{
-    
-list-style: none;
-}
+        <script type="text/javascript">
+            $(document).ready(function() {
 
 
 
-         </style>
-        
-  
-        
-        
-       {% include "OpltdaPaginasBundle:Layers:css.html.twig" %}
-        
+                $("#puerto").change(function() {
+                    $("#puerto option:selected").each(function() {
+                        
+                        var elegido = $(this).val();
+                        console.log(elegido);
 
-  
-   <link rel="stylesheet" type="text/css" href="{{ asset('bundles/opltdapaginas/js/prism.css') }}">
-     <link rel="stylesheet" type="text/css" href="{{ asset('bundles/opltdapaginas/js/chosen.min.css') }}">
-     <link rel="stylesheet" type="text/css" href="{{ asset('bundles/opltdapaginas/js/style.css') }}">
-     
-     
-  
-    </head>
-    <body class="fixed-sidebar fixed-header">
-        
 
-        <div id="loading" class="ui-front loader ui-widget-overlay bg-white opacity-100">
-            <img src="assets/images/loader-dark.gif" alt="">
-        </div>
-     
 
-        <div id="page-wrapper" class="demo-example">
-
-            <div id="page-sidebar">
-                <div id="header-logo">
-                   Opltda <i class="opacity-80"></i>
-
-                    <a href="javascript:;" class="tooltip-button" data-placement="bottom" title="Close sidebar" id="close-sidebar">
-                        <i class="glyph-icon icon-align-justify"></i>
-                    </a>
-                    <a href="javascript:;" class="tooltip-button hidden" data-placement="bottom" title="Open sidebar" id="rm-close-sidebar">
-                        <i class="glyph-icon icon-align-justify"></i>
-                    </a>
-                    <a href="javascript:;" class="tooltip-button hidden" title="Navigation Menu" id="responsive-open-menu">
-                        <i class="glyph-icon icon-align-justify"></i>
-                    </a>
-                </div>
-            
-                 {% include "OpltdaPaginasBundle:Layers:menu.html.twig" %}
-        
-
-            </div><!-- #page-sidebar -->
-            
-            <div id="page-main">
-
-                <div id="page-main-wrapper">
-
-                    <div id="page-header" class="clearfix">
-                        <div id="page-header-wrapper" class="clearfix">
-                            <div class="hide" id="black-modal-60" title="Modal window example">
-                                <div class="pad20A">
-
-                                
-
-                            
-                                 
-                                </div>
-                            </div>
-                            <div class="button-group dropdown">
-                            </div>
-                            <div id="layout-demo" class="button-group dropdown">
-                            </div>
-                            <div class="top-icon-bar dropdown">
-                             
-                                
-                            </div>
-                      
-                            <div id="theme-styling" class="hide">
-                           
-                            </div>
-
-                        </div>
-                    </div><!-- #page-header -->
-
-                    
-                    
-                    
-                    <div id="page-content">
-<div class="row">
-    
-
-<p class="font-gray-dark">
-    
-</p>
-
-<div class="example-box">
-    <div class="example-code clearfix">
-
-         <form action="" class="col-md-10 center-margin" method="">
-            <div class="form-row">
-               
-     
-                
-                
-                
-                
-                  <div class="form-row">
-                <div class="form-label col-md-3">
-                    <label for="" class="label-description" style="margin-top: 2%;">
-                       <p style="font-size: 12px;"> Por Código Entrevista :</p>
-   
-                    </label>
-                </div>
-                <div class="form-input col-md-8">
-                 
-                    <div style="width: 500px;height: auto;position:relative;float:left;margin-left: -15%;">  
-              <input type="text" id="codigoEntrevista">
-            
-                            </div>   
-                    
-                    <button class="btn ui-state-default medium mrg15R" style="margin-left: 10px;">Ver Detalle </button>
-                    
-                    
-                </div>
-            </div>
-                
-                
-                
-                
-                
-                
-                   <div class="form-row">
-                <div class="form-label col-md-3">
-                    <label for="" class="label-description" style="margin-top: 2%;">
-                       <p style="font-size: 12px;"> Por Código Cadena / Entrevistas :</p>
-   
-                    </label>
-                </div>
-                <div class="form-input col-md-8">
-                 
-                    <div style="width: 500px;height: auto;position:relative;float:left;margin-left: -15%;">  
-              <input type="text" id="codigoCadena">
-            
-                            </div>   
-                    
-                    <button class="btn ui-state-default medium mrg15R" style="margin-left: 10px;">Ver Detalle </button>
-                    
-                    
-                </div>
-            </div>
-                
-               
-                    
-                    
-                </div>
-            </div>
-                 
-                 
-                
-                
-                
-
-            <div class="divider"></div>
-
-            
-    
-    
-    
-
-    
-     <script src="http://maps.google.com/maps/api/js?sensor=false" 
-          type="text/javascript"></script>
-
-  <div id="map" style="width: 100%; height: 600px;"></div>
-
-  <script type="text/javascript">
-    var locations = [
-        ['Puerto Valparaiso  <a href="detallePuerto/41">Ver detalle</a>', -33.032341,-71.628073, 4],
-        ['Puerto Coquimbo   <a href="detallePuerto/30">Ver detalle</a> ' , -29.949664,-71.336129,4],
-        ['Puerto San Antonio   <a href="detallePuerto/46">Ver detalle</a>', -33.58445,-71.614233 , 4],
-        ['Puerto Bio Bio  <a href="detallePuerto/46">Ver detalle</a>', -36.713157,-73.109404 , 4],
-     
-     
-        
-      
-    
-    ];
-
-    var map = new google.maps.Map(document.getElementById('map'), {
-      zoom: 5,
-      center: new google.maps.LatLng(-33.578014,-70.676881),
-      mapTypeId: google.maps.MapTypeId.ROADMAP
-    });
-
-    var infowindow = new google.maps.InfoWindow();
-
-    var marker, i;
-
-    for (i = 0; i < locations.length; i++) {  
-      marker = new google.maps.Marker({
-        position: new google.maps.LatLng(locations[i][1], locations[i][2]),
-        map: map
-      });
-
-      google.maps.event.addListener(marker, 'click', (function(marker, i) {
-        return function() {
-          infowindow.setContent(locations[i][0]);
-          infowindow.open(map, marker);
-        }
-      })(marker, i));
-    }
-  </script>
-    
-</div>
-<script>
-            $(document).ready(function(){
-                $("#name").autocomplete({
-                    type: "post",
-                    source:$('#buscar').attr('action'),
-                    
-                    minLength:1
+                        $.post($("#formCadenas").attr("action"), {elegido: elegido}, function(data) {
+                            $("#cadenas").html(data);
+                        });
+                    });
                 });
             });
-    </script>
-    </script>
-                	</div><!-- #page-content -->
-	            </div><!-- #page-main -->
-            </div><!-- #page-main-wrapper -->
-        </div><!-- #page-wrapper -->
 
-    </body>
-</html>
+
+
+            </script>
+
+            <style>
+          
+
+
+.myButton {
+	
+	background-color:#599bb3;
+                -webkit-border-radius:4px;
+	border-radius:4px;
+                border:none;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:arial;
+	font-size:13px;
+	font-weight:bold;
+	padding:6px 38px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #3d768a;
+}
+.myButton:hover {
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #408c99), color-stop(1, #599bb3));
+	background:-moz-linear-gradient(top, #408c99 5%, #599bb3 100%);
+	background:-webkit-linear-gradient(top, #408c99 5%, #599bb3 100%);
+	background:-o-linear-gradient(top, #408c99 5%, #599bb3 100%);
+	background:-ms-linear-gradient(top, #408c99 5%, #599bb3 100%);
+	background:linear-gradient(to bottom, #408c99 5%, #599bb3 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#408c99', endColorstr='#599bb3',GradientType=0);
+	background-color:#408c99;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+
+                </style>
+
+
+
+
+
+
+
+       {% include "OpltdaPaginasBundle:Layers:css.html.twig" %}
+
+        <form id="formCadenas" action="{{path('combosCadena')}}" method="post"></form>
+
+            <link rel="stylesheet" type="text/css" href="{{ asset('bundles/opltdapaginas/js/prism.css') }}">
+            <link rel="stylesheet" type="text/css" href="{{ asset('bundles/opltdapaginas/js/chosen.min.css') }}">
+            <link rel="stylesheet" type="text/css" href="{{ asset('bundles/opltdapaginas/js/style.css') }}">
+
+
+
+        </head>
+        <body class="fixed-sidebar fixed-header">
+
+
+            <div id="loading" class="ui-front loader ui-widget-overlay bg-white opacity-100">
+                <img src="assets/images/loader-dark.gif" alt="">
+            </div>
+
+
+            <div id="page-wrapper" class="demo-example">
+
+                <div id="page-sidebar">
+                    <div id="header-logo">
+                        Opltda <i class="opacity-80"></i>
+
+                        <a href="javascript:;" class="tooltip-button" data-placement="bottom" title="Close sidebar" id="close-sidebar">
+                            <i class="glyph-icon icon-align-justify"></i>
+                        </a>
+                        <a href="javascript:;" class="tooltip-button hidden" data-placement="bottom" title="Open sidebar" id="rm-close-sidebar">
+                            <i class="glyph-icon icon-align-justify"></i>
+                        </a>
+                        <a href="javascript:;" class="tooltip-button hidden" title="Navigation Menu" id="responsive-open-menu">
+                            <i class="glyph-icon icon-align-justify"></i>
+                        </a>
+                    </div>
+
+                 {% include "OpltdaPaginasBundle:Layers:menu.html.twig" %}
+
+
+                </div><!-- #page-sidebar -->
+
+                <div id="page-main">
+
+                    <div id="page-main-wrapper">
+
+
+
+
+
+
+                        <div id="page-content">
+                            <div class="row">
+
+
+                                <p class="font-gray-dark">
+
+                                </p>
+
+                                <div class="example-box">
+                                    <div class="example-code clearfix">
+
+                                        <form action="" class="col-md-10 center-margin" method="">
+                                            <div class="form-row">
+
+
+
+
+
+
+                                                <div class="form-row">
+                                                    <div class="form-label col-md-3">
+                                                        <label for="" class="label-description" style="margin-top: 2%;">
+                                                            <p style="font-size: 12px;"> Seleccione Un puerto:</p>
+
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-input col-md-8">
+
+                                                        <div style="width: 500px;height: auto;position:relative;float:left;margin-left: -15%;">  
+                                                                 <select id="puerto">
+                            {% for puertos in puertos %}
+
+                                                                    <option value="{{puertos.id}}"> {{puertos.nombre}}</option>
+
+                            {% endfor %}
+                                                                </select>
+
+                                                        </div>   
+
+                           
+
+
+                                                    </div>
+                                                </div>
+
+
+
+
+
+
+                                                <div class="form-row">
+                                                    <div class="form-label col-md-3">
+                                                        <label for="" class="label-description" style="margin-top: 2%;">
+                                                            <p style="font-size: 12px;"> Seleccione Una Cadena :</p>
+
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-input col-md-8">
+
+                                                        <div style="width: 500px;height: auto;position:relative;float:left;margin-left: -15%;">  
+
+                                                       
+
+
+                                                                <select id="cadenas">
+                                                                    <option>
+
+                                                                    </option>
+
+
+
+
+
+                                                                </select>
+
+
+
+
+                                                            </div>   
+                                                        
+                                                
+
+                    
+
+                                                        </div>
+                                                    </div>
+
+                                        <button class="myButton"  style="margin-left: 16%;" >Ver Detalle </button>
+
+
+
+                                                </div>
+                                        </div>
+
+
+
+
+
+
+                                        <div class="divider"></div>
+
+
+
+
+
+
+
+                                        <script src="http://maps.google.com/maps/api/js?sensor=false" 
+                                        type="text/javascript"></script>
+
+                                        <div id="map" style="width: 100%; height: 600px;"></div>
+
+                                        <script type="text/javascript">
+                                            var locations = [
+                                                ['Puerto Valparaiso  <a href="detallePuerto/41">Ver detalle</a>', -33.032341, -71.628073, 4],
+                                                ['Puerto Coquimbo   <a href="detallePuerto/30">Ver detalle</a> ', -29.949664, -71.336129, 4],
+                                                ['Puerto San Antonio   <a href="detallePuerto/46">Ver detalle</a>', -33.58445, -71.614233, 4],
+                                                ['Puerto Bio Bio  <a href="detallePuerto/46">Ver detalle</a>', -36.713157, -73.109404, 4],
+                                            ];
+
+                                            var map = new google.maps.Map(document.getElementById('map'), {
+                                                zoom: 5,
+                                                center: new google.maps.LatLng(-33.578014, -70.676881),
+                                                mapTypeId: google.maps.MapTypeId.ROADMAP
+                                            });
+
+                                            var infowindow = new google.maps.InfoWindow();
+
+                                            var marker, i;
+
+                                            for (i = 0; i < locations.length; i++) {
+                                                marker = new google.maps.Marker({
+                                                    position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+                                                    map: map
+                                                });
+
+                                                google.maps.event.addListener(marker, 'click', (function(marker, i) {
+                                                    return function() {
+                                                        infowindow.setContent(locations[i][0]);
+                                                        infowindow.open(map, marker);
+                                                    }
+                                                })(marker, i));
+                                            }
+                                            </script>
+
+                                        </div>
+                                        <script>
+                                            $(document).ready(function() {
+                                                $("#name").autocomplete({
+                                                    type: "post",
+                                                    source: $('#buscar').attr('action'),
+                                                    minLength: 1
+                                                });
+                                            });
+                                            </script>
+                                            </script>
+                                        </div><!-- #page-content -->
+                                    </div><!-- #page-main -->
+                                </div><!-- #page-main-wrapper -->
+                            </div><!-- #page-wrapper -->
+
+                    </body>
+                </html>
