@@ -167,6 +167,7 @@
 
                                                         <div style="width: 500px;height: auto;position:relative;float:left;margin-left: -15%;">  
                                                                  <select id="puerto">
+                                                                     <option>Opción</option>
                             {% for puertos in puertos %}
 
                                                                     <option value="{{puertos.id}}"> {{puertos.nombre}}</option>
@@ -248,17 +249,19 @@
                                         type="text/javascript"></script>
 
                                         <div id="map" style="width: 100%; height: 600px;"></div>
-
+                                        
+                                        
                                         <script type="text/javascript">
                                             var locations = [
-                                                ['Puerto Valparaiso  <a href="detallePuerto/41">Ver detalle</a>', -33.032341, -71.628073, 4],
-                                                ['Puerto Coquimbo   <a href="detallePuerto/30">Ver detalle</a> ', -29.949664, -71.336129, 4],
-                                                ['Puerto San Antonio   <a href="detallePuerto/46">Ver detalle</a>', -33.58445, -71.614233, 4],
-                                                ['Puerto Bio Bio  <a href="detallePuerto/46">Ver detalle</a>', -36.713157, -73.109404, 4],
+                                                ['Puerto Valparaiso  <a href="detallePuerto/15">Ver detalle</a>', -33.032341, -71.628073, 4],
+                                                ['Puerto Terrestre de los Andes       ' , -32.825371,-70.594812],
+                                                ['Puerto Coquimbo   <a href="detallePuerto/14">Ver detalle</a> ', -29.949664, -71.336129, 4],
+                                                ['Puerto San Antonio   <a href="detallePuerto/17">Ver detalle</a>', -33.58445, -71.614233, 4],
+                                                ['Puerto Bio Bio  <a href="detallePuerto/27">Ver detalle</a>', -36.713157, -73.109404, 4],
                                             ];
 
                                             var map = new google.maps.Map(document.getElementById('map'), {
-                                                zoom: 5,
+                                                zoom: 6,
                                                 center: new google.maps.LatLng(-33.578014, -70.676881),
                                                 mapTypeId: google.maps.MapTypeId.ROADMAP
                                             });

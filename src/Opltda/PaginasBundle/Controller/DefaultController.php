@@ -193,8 +193,11 @@ $cont = 0;
     
     public function detallePuertoAction($id){
            $em  = $this->getDoctrine()->getManager();
-            $puertos = $em->getRepository('OpltdaEntidadesBundle:Puertos')->findAll();
-            return $this->render('OpltdaPaginasBundle:Default:detallePuerto.html.twig', array('puertos'=> $puertos));
+           
+            $puertos = $em->getRepository('OpltdaEntidadesBundle:Puertos')->findOneBy(array('id' => $id));
+            $entrevistas = $em->getRepository('OpltdaEntidadesBundle:Entrevistas')->findBy(array('puertos' => $id));
+            
+            return $this->render('OpltdaPaginasBundle:Default:detallePuerto.html.twig', array('puertos'=> $puertos ));
             
    
     }
