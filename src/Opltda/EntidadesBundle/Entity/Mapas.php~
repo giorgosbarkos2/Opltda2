@@ -22,10 +22,11 @@ class Mapas
     private $id;
     
     
-    private $nombre;
+        /** @ORM\Column(type="string", length=200 , nullable=true) */
     
     
-    private $detalle;
+    
+   private $url;
     
     
 
@@ -53,4 +54,60 @@ class Mapas
     
     
     
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set regiones
+     *
+     * @param \Opltda\EntidadesBundle\Entity\Regiones $regiones
+     * @return Mapas
+     */
+    public function setRegiones(\Opltda\EntidadesBundle\Entity\Regiones $regiones = null)
+    {
+        $this->regiones = $regiones;
+
+        return $this;
+    }
+
+    /**
+     * Get regiones
+     *
+     * @return \Opltda\EntidadesBundle\Entity\Regiones 
+     */
+    public function getRegiones()
+    {
+        return $this->regiones;
+    }
+
+    /**
+     * Set puertos
+     *
+     * @param \Opltda\EntidadesBundle\Entity\Puertos $puertos
+     * @return Mapas
+     */
+    public function setPuertos(\Opltda\EntidadesBundle\Entity\Puertos $puertos = null)
+    {
+        $this->puertos = $puertos;
+
+        return $this;
+    }
+
+    /**
+     * Get puertos
+     *
+     * @return \Opltda\EntidadesBundle\Entity\Puertos 
+     */
+    public function getPuertos()
+    {
+        return $this->puertos;
+    }
 }

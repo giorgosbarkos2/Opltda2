@@ -22,10 +22,11 @@ class Mapas
     private $id;
     
     
-    private $nombre;
+        /** @ORM\Column(type="string", length=200 , nullable=true) */
     
     
-    private $detalle;
+    
+   private $url;
     
     
 
@@ -108,5 +109,28 @@ class Mapas
     public function getPuertos()
     {
         return $this->puertos;
+    }
+
+    /**
+     * Set url
+     *
+     * @param string $url
+     * @return Mapas
+     */
+    public function setUrl($url)
+    {
+        $this->url = $url;
+
+        return $this;
+    }
+
+    /**
+     * Get url
+     *
+     * @return string 
+     */
+    public function getUrl()
+    {
+        return $this->url;
     }
 }
