@@ -81,18 +81,23 @@ class Cadenas
     private $entrevistas;
     
     
+    
+    
+    
+    /**
+     * @ORM\OneToMany(targetEntity="Opltda\EntidadesBundle\Entity\memoriaCalculo", mappedBy="cadenas")
+    */
      
+   private  $memoriacalculo;
 
      
-     
-        
-    
     /**
      * Constructor
      */
     public function __construct()
     {
         $this->entrevistas = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->memoriacalculo = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
@@ -205,5 +210,38 @@ class Cadenas
     public function getEntrevistas()
     {
         return $this->entrevistas;
+    }
+
+    /**
+     * Add memoriacalculo
+     *
+     * @param \Opltda\EntidadesBundle\Entity\memoriaCalculo $memoriacalculo
+     * @return Cadenas
+     */
+    public function addMemoriacalculo(\Opltda\EntidadesBundle\Entity\memoriaCalculo $memoriacalculo)
+    {
+        $this->memoriacalculo[] = $memoriacalculo;
+
+        return $this;
+    }
+
+    /**
+     * Remove memoriacalculo
+     *
+     * @param \Opltda\EntidadesBundle\Entity\memoriaCalculo $memoriacalculo
+     */
+    public function removeMemoriacalculo(\Opltda\EntidadesBundle\Entity\memoriaCalculo $memoriacalculo)
+    {
+        $this->memoriacalculo->removeElement($memoriacalculo);
+    }
+
+    /**
+     * Get memoriacalculo
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getMemoriacalculo()
+    {
+        return $this->memoriacalculo;
     }
 }

@@ -67,6 +67,8 @@ class Cadenas
     private $regiones;
     
     
+    
+    
 
     
     
@@ -79,10 +81,14 @@ class Cadenas
     private $entrevistas;
     
     
+    
+    
+    
+    /**
+     * @ORM\OneToMany(targetEntity="Opltda\EntidadesBundle\Entity\memoriaCalculo", mappedBy="cadenas")
+    */
      
+   private  $memoriacalculo;
 
      
-     
-        
-    
 }
