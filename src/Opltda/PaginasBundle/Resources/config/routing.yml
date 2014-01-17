@@ -56,3 +56,11 @@ detallePuerto:
 listarEntrevista:
     pattern: /listarEntrevista
     defaults: {_controller: OpltdaPaginasBundle:Default:listarEntrevista}
+    
+    
+    
+    
+listarMemoria:
+   pattern: /listarMemoria
+   defaults: {_controller: OpltdaPaginasBundle:Default:listarMemoria}
+  

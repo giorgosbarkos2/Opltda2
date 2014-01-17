@@ -1,0 +1,74 @@
+<?php
+
+namespace Opltda\EntidadesBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Modelamiento
+ *
+ * @ORM\Table()
+ * @ORM\Entity
+ */
+class Modelamiento
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    
+    
+      /** @ORM\Column(type="string", length=200 , nullable=true) */
+    
+    private $archivoDoc;
+    
+    
+      /** @ORM\Column(type="string", length=200 , nullable=true) */
+    
+    
+    private $archivoBpm;
+    
+    
+    
+    
+    
+    
+    
+             /**
+     * @ORM\ManyToOne(targetEntity="Opltda\EntidadesBundle\Entity\Puertos", inversedBy="modelamiento")
+     * @ORM\JoinColumn(name="puertos_id", referencedColumnName="id")
+     */
+    
+    
+    private $puertos;
+    
+    
+    
+    
+    
+       /**
+     * @ORM\ManyToOne(targetEntity="Opltda\EntidadesBundle\Entity\Cadenas", inversedBy="modelamiento")
+     * @ORM\JoinColumn(name="cadenas_id", referencedColumnName="id")
+     */
+
+    private $cadenas;
+    
+    
+    
+    
+    
+    
+    
+   
+}

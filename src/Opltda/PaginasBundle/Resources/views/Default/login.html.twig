@@ -72,7 +72,7 @@
             <div id="page-header" class="clearfix">
                 <div id="page-header-wrapper" class="clearfix">
                     <div id="header-logo">
-                        Opltda <i class="opacity-80"></i>
+                        Opltda  /  ESTUDIO DE EVALUACIÓN DE LAS BARRERAS LOGÍSTICAS DE TRANSPORTE DE CARGA A NIVEL NACIONAL<i class="opacity-80"></i>
 
                         <a href="#" class="tooltip-button" data-placement="bottom" title="Close sidebar" id="close-sidebar">
                             <i class="glyph-icon icon-align-justify"></i>
@@ -95,7 +95,7 @@
         <div class="pad20A mrg25T">
             <div class="row mrg25T">
 
-                <form action="{{path('login')}}" class="col-md-4 center-margin form-vertical mrg25T" method="post">
+                <form action="{{path('login')}}" class="col-md-4 center-margin form-vertical mrg25T" id="formLogin" method="post">
 
                     <div class="ui-dialog modal-dialog mrg25T" id="login-form" style="position: relative !important;">
                         <div class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix">
@@ -112,7 +112,7 @@
                                 <div class="form-input col-md-10">
                                     <div class="form-input-icon">
                                         <i class="glyph-icon icon-envelope-o ui-state-default"></i>
-                                        <input  name="usuario" type="text"   placeholder="Usuario">
+                                        <input  name="usuario" type="text"  id="usuario"   placeholder="Usuario">
                                     </div>
                                 </div>
                             </div>
@@ -130,29 +130,33 @@
                                 <div class="form-input col-md-10">
                                     <div class="form-input-icon">
                                         <i class="glyph-icon icon-unlock-alt ui-state-default"></i>
-                                        <input placeholder="Password" type="password" name="password" id="">
+                                        <input placeholder="Password" type="password" name="password" id="password">
                                     </div>
                                 </div>
                             </div>
 
+                           
+                            
                             
                          
                             <div class="form-row">
                                 <div class="form-checkbox-radio col-md-6">
-                                    <input type="checkbox" class="custom-checkbox" name="remember-password" id="remember-password">
-                                    <label for="remember-password" class="pad5L">Remember password?</label>
+                                 
                                 </div>
                                 <div class="form-checkbox-radio text-right col-md-6">
-                                    <a href="#" class="switch-button" switch-target="#login-forgot" switch-parent="#login-form" title="Recover password">Forgot your password?</a>
+
                                 </div>
                             </div>
                         </div>
                         <div class="ui-dialog-buttonpane text-center">
-                            <button type="submit" class="btn large primary-bg text-transform-upr font-bold font-size-11 radius-all-4" id="demo-form-valid" title="Validate!">
+                            <button type="submit" class="btn large primary-bg text-transform-upr font-bold font-size-11 radius-all-4" id="btnLogin" title="Validate!">
                                 <span class="button-content">
                                     Login
                                 </span>
                             </button>
+                                
+                                          <div id="respuesta"> </div>
+                                          
                         </div>
                     </div>
 
@@ -178,11 +182,9 @@
 
                         </div>
                         <div class="ui-dialog-buttonpane text-center">
-                            <button type="submit" class="btn large primary-bg radius-all-4" id="demo-form-valid" >
-                                <span class="button-content">
-                                    Recover Password
-                                </span>
-                            </button>
+                         
+                            
+                           
                             <a href="javascript:;" switch-target="#login-form" switch-parent="#login-forgot" class="btn large transparent no-shadow toggle-switch font-bold font-size-11 radius-all-4" id="demo-form-valid" >
                                 <span class="button-content">
                                     Cancel
@@ -190,6 +192,9 @@
                             </a>
                         </div>
                     </div>
+                    
+                    
+           
 
                 </form>
 
@@ -207,11 +212,76 @@
         
         <script>
             
-            $(document).ready(function() {
             
-                
-            })
             
+$(document).ready(function() {
+
+
+
+    $(document).ready(function() {
+        $("#btnLogin").click(function(e) {
+            e.preventDefault();
+            
+      
+            var myData = 'usuario='+$("#usuario").val()
+                    + '&password='+$("#password").val()
+                    + '&token='+$('#token').val();
+                    ;
+
+
+            jQuery.ajax({
+                type: "POST", // metodo post o get 
+                url: $("#formLogin").attr("action"),
+                dataType: "text", // tipo datos text o json etc 
+                data: myData,
+                success: function(response) {
+
+
+                    var respuesta = response;
+                    
+                    console.log(respuesta);
+
+
+                    if (respuesta == 200) {
+
+
+                        $('#respuesta').empty();
+                        
+                       
+
+                         window.location = "principal";
+
+
+                    } else {
+                        respuesta = '\
+\n\
+\n\
+<h5 class="form-signin-heading">Ingrese un usuario valido</h5>';
+
+                        $('#respuesta').empty();
+
+                        $("#respuesta").append(respuesta);
+
+
+                    }
+
+
+
+                },
+                error: function(xhr, ajaxOptions, thrownError) {
+                    alert(thrownError);
+
+
+
+                },
+            });
+        });
+    });
+
+
+});
+
+
             </script>
     </body>
 </html>

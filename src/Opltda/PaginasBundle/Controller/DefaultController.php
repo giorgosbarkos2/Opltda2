@@ -92,7 +92,9 @@ $cont = 0;
           return new JsonResponse($busEntrevisar);           
     }
     
+        
     
+      
     
     
         public function AutoCadenaCodEntAction(Request $request){
@@ -176,9 +178,12 @@ $cont = 0;
 
         if ($request->getMethod() == 'POST') {
             if($usuario){
-                 return $this->redirect($this->generateUrl('principal'));
+       
                  return new Response('200');
+                 
+                 
             } else {
+                
                  return new Response('100');
             }
         } else {
@@ -188,6 +193,8 @@ $cont = 0;
         }
     }
     
+    
+       return new Response('100');
     }
 	
     
@@ -215,6 +222,16 @@ $cont = 0;
             $inversionvial = $em->getRepository('OpltdaEntidadesBundle:InversionVial')->findAll();
             return $this->render('OpltdaPaginasBundle:Default:listarInversionVial.html.twig', array('inversionvial'=>$inversionvial));
 	}
+        
+        
+            
+        
+        	public function listarMemoriaAction(){
+            $em = $this->getDoctrine()->getManager();
+            $memoriaCalculo = $em->getRepository('OpltdaEntidadesBundle:memoriaCalculo')->findAll();
+              return $this->render('OpltdaPaginasBundle:Default:listarMemoriaC.html.twig', array('memoriaCalculo' => $memoriaCalculo));
+	}
+        
 
 	public function listarEntrevistaAction(){
             $em = $this->getDoctrine()->getManager();

@@ -12,14 +12,14 @@ $(document).ready(function(){
                                                              aoColumns: [
 
 		        { type: "text" },
-		        { type: "text" },
+		        { type: "select", values: [ 'Coronel' , 'CQQ' , 'PTLA' , 'PUQ' , 'SAI' , 'San Vicente' , 'San Vicente, Coronel'  , 'VAP' , 'VAP/SAI' ]  },
                                         { type: "text" },
-		        { type: "text" },
-                         { type: "text" },
-                          { type: "text" },
-                        
-		  
-
+		        { type: "select", values: [ 'Carne' , 'Celulosa' , 'Cobre' , 'Lana' , 'Madera' , 'Reefer' , 'Retail' , 'Salmón' , 'Transversal' , 'Uva' ,'Vino' ]  },
+                                      
+                                      { type: "select", values: [ 'Agencia de Aduana' , 'Concesionario' , 'Depósito de contenedores' , 'Embarcador' , 'Empresa portuaria' , 'Exportador' , 'Freight Forwarder'  , 'Importador' , 'Naviera' , 'SAG' , 'SERNAPESCA' , 'Servicio nacional de Aduanas'  , 'Transportista ferroviario'  , 'Transportista rodoviario' ]  },
+                                      
+                                      
+                                        { type: "text" },
 				]
 
 		});
@@ -30,6 +30,7 @@ $(document).ready(function(){
              
                             </script>
 {% block entrevista %}
+                            <h3>Listados archivos de  Entrevistas</h3>
 	<table class="table"  id="entrevistas" >
 		<thead>
 			<th width="10%">Region</th>
@@ -43,7 +44,7 @@ $(document).ready(function(){
 		<tbody>
 			{% for entrevista in entrevista %}
 				<tr>    
-                                    <td>{{entrevista.regiones.nombre}}</td>
+                                    <td>{{entrevista.regiones.numero}}</td>
                                     <td>{{entrevista.puertos.nombre}}</td>
                                     <td>{{entrevista.codigoFicha}}</td>
                                     <td>{{entrevista.nombreCadena}}</td>

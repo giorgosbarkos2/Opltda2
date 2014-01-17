@@ -41,6 +41,8 @@ class memoriaCalculo
     private $cadenas;
     
     
+    
+    
 
 
     /**
@@ -53,6 +55,7 @@ class memoriaCalculo
         return $this->id;
     }
 
+    
     /**
      * Set url
      *
