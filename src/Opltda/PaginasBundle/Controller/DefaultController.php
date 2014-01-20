@@ -257,4 +257,10 @@ $cont = 0;
             
             
         }
+        
+        public function verDetalleEstudioAction($id){
+            $em = $this->getDoctrine()->getManager();
+            $estudio = $em->getRepository('OpltdaEntidadesBundle:Estudio')->findOneBy(array('id'=>$id));
+            return $this->render('OpltdaPaginasBundle:Default:detalleEstudio.html.twig', array('estudio'=>$estudio));
+        }
 }

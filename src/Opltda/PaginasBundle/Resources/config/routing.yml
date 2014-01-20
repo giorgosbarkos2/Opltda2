@@ -71,5 +71,8 @@ listarMemoria:
 listarEstudio:
    pattern: /listarEstudio
    defaults: {_controller: OpltdaPaginasBundle:Default:listarEstudio}
-  
+
+verDetalleEstudio:
+    pattern: /verDetalleEstudio/{id}
+    defaults: {_controller: OpltdaPaginasBundle:Default:verDetalleEstudio}
   

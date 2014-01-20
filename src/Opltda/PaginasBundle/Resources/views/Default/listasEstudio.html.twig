@@ -1,113 +1,82 @@
-{# empty Twig template #}
-       {% include "OpltdaPaginasBundle:Default:estPrincipal.html.twig" %}
-                    <div id="page-content">
-                       <style>
-
-     .dataTables_length{
-                                position: absolute;
-                                width: 100px;
-                               
-                                
-                                }
-                            
-                                
-                                
-    </style>     
-               
-                        
-                        
-                        
-         <!-- Filtros de la tabla -->               
-                        <script>
- 
-$(document).ready(function(){
-     $('#entrevistas').dataTable()
-		 .columnFilter({ sPlaceHolder: "head:after",
-                                                             aoColumns: [
-
-		        { type: "text" },
-		        { type: "select", values: [ 'Coronel' , 'CQQ' , 'PTLA' , 'PUQ' , 'SAI' , 'San Vicente' , 'San Vicente, Coronel'  , 'VAP' , 'VAP/SAI' ]  },
-                                        { type: "text" },
-		        { type: "select", values: [ 'Carne' , 'Celulosa' , 'Cobre' , 'Lana' , 'Madera' , 'Reefer' , 'Retail' , 'Salmón' , 'Transversal' , 'Uva' ,'Vino' ]  },
-                                      
-                                      { type: "select", values: [ 'Agencia de Aduana' , 'Concesionario' , 'Depósito de contenedores' , 'Embarcador' , 'Empresa portuaria' , 'Exportador' , 'Freight Forwarder'  , 'Importador' , 'Naviera' , 'SAG' , 'SERNAPESCA' , 'Servicio nacional de Aduanas'  , 'Transportista ferroviario'  , 'Transportista rodoviario' ]  },
-                                      
-                                      
-                                        { type: "text" },
-				]
-
-		});
-});
-
-             </script>
-             
-             
-                            </script>
-{% block entrevista %}
-                            <h3>Listados archivos de  Entrevistas</h3>
-	<table class="table"  id="entrevistas" >
-		<thead>
-			<th >Codigo cad.</th>
-                                                <th >Region.</th>
-                                                <th >Puerto.</th>
-                                                <th >Cadena.</th>
-                                                <th >Macroproceso.</th>
-			<th >Factor.</th>
-                                                <th >Codigo actividad.</th>
-                                                <th >Actividad.</th>
-                                                <th >Agente.</th>
-                                                <th >Generador.</th>
-                                                <th> Sector.</th>
-                                                <th >C/u</th>
-                                                <th >C/u factor epacial temp.</th>
-                                                <th >Tiempo promedio</th>
-                                                <th >Precio</th>
-                                                <th >Costo de inventario</th>
-                                                <th > Suma de los factores màs inventarios</th>
-                                               
-                                                <th>Tranferencia de carga sistema</th>
-                                                <th>Tranferencia de carga cadena</th>
-                                                <th>Costo factor</th>
-                                                <th>Costo Logístico</th>
-                                                <th>Costo Inventario</th>
-                                                <th>Ineficencias</th>
-                                                <th>Causas </th>
-                                                <th>EJE</th>
-                                                <th>Iniciativa</th>
-                                                <th>Inversión</th>
-                                                <th>Costo Total</th>
-                                                <th>Costo Logistico</th>
-                                                <th>Cobertura Imp.</th>
-                                                 
-                                                
-                                              
-                            
-			
-			
-		</thead>
-		<tbody>
-			{% for estudio in estudio %}
-                        
-                    
-                        
-                        
-                 
-                 
-                    
-                    
-                    
-                                   
-                                    
-                                    
-					
-				</tr>
-			{% endfor %}
-		</tbody>
-	</table>
-{% endblock %}
-                    </div><!-- #page-content -->
-                </div><!-- #page-main -->
-            </div><!-- #page-main-wrapper -->
-        </div><!-- #page-wrapper -->
-    </body>
-</html>
+{####################################################
+    Lista el contenido de la base de datos Estudio.
+#####################################################}
+{% include "OpltdaPaginasBundle:Default:estPrincipal.html.twig" %}
+<div class="page-content">
+    {% block Estudio%}
+    <table id="Estudio" class="table">
+        <thead>
+            <th>Nombre Cadena</th>
+            <th>Nombre Region</th>
+            <th>Nombre Puertos </th>
+            <th>Cadena</th>
+            <th>Macroproceso</th>
+            <th>Factor</th>
+            <th>Codigo Actividad</th>
+            <th>Actividad</th>
+            <th>Agente</th>
+            <th>Generador</th>
+            <th>Sector</th>
+            <th>Costo Unitario</th>
+            <th>Costo unitario Factor espacial y temporal</th>
+            <th>Tiempo promedio Servicio</th>
+            <th>Precio del producto</th>
+            <th>Costo de inventario</th>
+            <th>Suma de los factores mas inventarios</th>
+            <th>Transferencia de carga sitema</th>
+            <th>Transferencia de carga puerto</th>
+            <th>Transferencia de carga cadena</th>
+            <th>Costo Factor</th>
+            <th>Costo Logistico</th>
+            <th>Costo Inventario</th>
+            <th>Ineficiencias</th>
+            <th>Causas de la ineficiencia</th>
+            <th>Eje</th>
+            <th>Iniciativa</th>
+            <th>Inversion estimada</th>
+            <th>Costo total</th>
+            <th>Costo Logistico 2</th>
+            <th>Cobertura impacto</th>
+            <th>Editar</th>
+        </thead>
+        <tbody>
+            {% for estudio in estudio %}
+            <tr>
+                <td>{{estudio.cadenas.nombre}}</td>
+                <td>{{estudio.regiones.nombre}}</td>
+                <td>{{estudio.puertos.nombre}}</td>
+                <td>{{estudio.cadena}}</td>
+                <td>{{estudio.macroproceso}}</td>
+                <td>{{estudio.factor}}</td>
+                <td>{{estudio.codigoactividad}}</td>
+                <td>{{estudio.actividad}}</td>
+                <td>{{estudio.agente}}</td>
+                <td>{{estudio.generador}}</td>
+                <td>{{estudio.sector}}</td>
+                <td>{{estudio.costounitario}}</td>
+                <td>{{estudio.COSTOUNITARIOFACTORESPACIALYTEMPORAL}}</td>
+                <td>{{estudio.TIEMPOPROMEDIOSERVICIO}}</td>
+                <td>{{estudio.PRECIODELPRODUCTO}}</td>
+                <td>{{estudio.COSTODEINVENTARIO}}</td>
+                <td>{{estudio.Sumadelosfactoresmasinventarios}}</td>
+                <td>{{estudio.TRANSFERENCIADECARGASISTEMA}}</td>
+                <td>{{estudio.TRANSFERENCIADECARGAPUERTO}}</td>
+                <td>{{estudio.TRANSFERENCIADECARGACADENA}}</td>
+                <td>{{estudio.COSTOFACTOR}}</td>
+                <td>{{estudio.COSTOLOGISTICO}}</td>
+                <td>{{estudio.COSTOINVENTARIO}}</td>
+                <td>{{estudio.Ineficencias}}</td>
+                <td>{{estudio.CAUSASDELASINEFICIENCIAS}}</td>
+                <td>{{estudio.eje}}</td>
+                <td>{{estudio.iniciativa}}</td>
+                <td>{{estudio.INVERSIONESTIMADA}}</td>
+                <td>{{estudio.COSTOTOTAL}}</td>
+                <td>{{estudio.Costologistico2}}</td>
+                <td>{{estudio.Coberturaimpacto}}</td>
+                <td><a href="verDetalleEstudio/{{estudio.id}}" class="btn btn-primary">Ver Detalle</a></td>
+            </tr>
+            {% endfor%}
+        </tbody>
+    </table>
+    {% endblock%}
+</div>
