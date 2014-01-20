@@ -1,5 +1,5 @@
 {# empty Twig template #}
-<div id="sidebar-menu" class="scrollable-content">
+<div id="sidebar-menu" class="scrollable-content" style="width: 220px;">
                       <ul>
                         <li>
                             <a href="{{path('principal')}}" title="Dashboard">
@@ -11,7 +11,7 @@
                         <li>
                             <a href="javascript:;" title="Fixed layout">
                                 <i class="glyph-icon icon-folder-open"></i>
-                                Archivos Adjuntos
+                              <p>  Archivos Adjuntos</p>
                             </a>
                             <ul>
                                <li>
@@ -63,7 +63,7 @@
                         
                         
                              <li>
-                            <a href="{{ path('listarFocusGroup')}}" title="Data visualization">
+                            <a href="{{ path('listarMapas')}}" title="Data visualization">
                                <i class="glyph-icon icon-chevron-right"></i>
                             <p style="font-size: 12px;">  Mapas.</p>
                             </a>
@@ -86,65 +86,26 @@
                         
                         <li>
                             <a href="javascript:;" title="Fixed layout">
-                                <i class="glyph-icon icon-folder-open"></i>
-                                Archivos Adjuntos
+                                <i class="glyph-icon icon-bar-chart-o"></i>
+                               Base Datos
                             </a>
                             <ul>
                                <li>
-                            <a href="{{ path('listarEntrevista')}}" title="Data visualization">
+                            <a href="{{ path('listarEstudio')}}" title="Data visualization">
                                 <i class="glyph-icon icon-chevron-right"></i>
-                                    Entrevistas.
+                                 Principal
                             </a>
                         </li>
+                        
+                        
+                        
+                        
                              
                         
-                            <li>
-                            <a href="{{ path('listarInversionVial')}}" title="Data visualization">
-                                <i class="glyph-icon icon-chevron-right"></i>
-                                        Inversion Vial.
-                            </a>
-                        </li>
+                         
                         
                         
-                        
-                        
-                            <li>
-                            <a href="{{ path('listarFocusGroup')}}" title="Data visualization">
-                               <i class="glyph-icon icon-chevron-right"></i>
-                               Focus Group.
-                            </a>
-                        </li>
-                        
-                        
-                             <li>
-                            <a href="{{ path('listarFocusGroup')}}" title="Data visualization">
-                               <i class="glyph-icon icon-chevron-right"></i>
-                            <p style="font-size: 14px;">  Memorias de cálculo.</p>
-                            </a>
-                        </li>
-                        
-                        
-                        
-                              <li>
-                            <a href="{{ path('listarFocusGroup')}}" title="Data visualization">
-                               <i class="glyph-icon icon-chevron-right"></i>
-                            <p style="font-size: 12px;">  Modelamiento  cadenas.</p>
-                            </a>
-                        </li>
-                        
-                        
-                        
-                        
-                        
-                             <li>
-                            <a href="{{ path('listarFocusGroup')}}" title="Data visualization">
-                               <i class="glyph-icon icon-chevron-right"></i>
-                            <p style="font-size: 12px;">  Mapas.</p>
-                            </a>
-                        </li>
-                        
-                        
-                        
+                      
                         
                         
                         
@@ -159,6 +120,34 @@
                         
                         
                     
+                         <li>
+                            <a href="javascript:;" title="Fixed layout">
+                                <i class="glyph-icon icon-bar-chart-o"></i>
+                               Guias
+                            </a>
+                            <ul>
+                               <li>
+                            <a href="{{ path('listarEntrevista')}}" title="Data visualization">
+                                <i class="glyph-icon icon-chevron-right"></i>
+                                 Principal
+                            </a>
+                        </li>
+                        
+                        
+                        
+                        
+                             
+                        
+                         
+                        
+                        
+                      
+                        
+                        
+                        
+                               
+                            </ul>
+                        </li>
                         
                         
                         
@@ -176,29 +165,7 @@
                      
                         
                         
-                        <!-- Prueba de testeo. -->
-                        <li>
-                            <a href="javascript:;" title="Maps">
-                                <i class="glyph-icon icon-map-marker"></i>
-                                Mapas
-                            </a>
-                            <ul>
-                                
-                                <li>
-                                    <a href="#" title="Google Maps">
-                                        <i class="glyph-icon icon-chevron-right"></i>
-                                        Por Region
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" title="Vector maps">
-                                        <i class="glyph-icon icon-chevron-right"></i>
-                                        Por Puertos
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
+                     
                               
                                
                     <div class="divider mrg5T mobile-hidden"></div>

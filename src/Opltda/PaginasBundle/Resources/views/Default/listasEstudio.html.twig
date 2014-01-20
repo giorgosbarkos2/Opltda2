@@ -1,0 +1,113 @@
+{# empty Twig template #}
+       {% include "OpltdaPaginasBundle:Default:estPrincipal.html.twig" %}
+                    <div id="page-content">
+                       <style>
+
+     .dataTables_length{
+                                position: absolute;
+                                width: 100px;
+                               
+                                
+                                }
+                            
+                                
+                                
+    </style>     
+               
+                        
+                        
+                        
+         <!-- Filtros de la tabla -->               
+                        <script>
+ 
+$(document).ready(function(){
+     $('#entrevistas').dataTable()
+		 .columnFilter({ sPlaceHolder: "head:after",
+                                                             aoColumns: [
+
+		        { type: "text" },
+		        { type: "select", values: [ 'Coronel' , 'CQQ' , 'PTLA' , 'PUQ' , 'SAI' , 'San Vicente' , 'San Vicente, Coronel'  , 'VAP' , 'VAP/SAI' ]  },
+                                        { type: "text" },
+		        { type: "select", values: [ 'Carne' , 'Celulosa' , 'Cobre' , 'Lana' , 'Madera' , 'Reefer' , 'Retail' , 'Salmón' , 'Transversal' , 'Uva' ,'Vino' ]  },
+                                      
+                                      { type: "select", values: [ 'Agencia de Aduana' , 'Concesionario' , 'Depósito de contenedores' , 'Embarcador' , 'Empresa portuaria' , 'Exportador' , 'Freight Forwarder'  , 'Importador' , 'Naviera' , 'SAG' , 'SERNAPESCA' , 'Servicio nacional de Aduanas'  , 'Transportista ferroviario'  , 'Transportista rodoviario' ]  },
+                                      
+                                      
+                                        { type: "text" },
+				]
+
+		});
+});
+
+             </script>
+             
+             
+                            </script>
+{% block entrevista %}
+                            <h3>Listados archivos de  Entrevistas</h3>
+	<table class="table"  id="entrevistas" >
+		<thead>
+			<th >Codigo cad.</th>
+                                                <th >Region.</th>
+                                                <th >Puerto.</th>
+                                                <th >Cadena.</th>
+                                                <th >Macroproceso.</th>
+			<th >Factor.</th>
+                                                <th >Codigo actividad.</th>
+                                                <th >Actividad.</th>
+                                                <th >Agente.</th>
+                                                <th >Generador.</th>
+                                                <th> Sector.</th>
+                                                <th >C/u</th>
+                                                <th >C/u factor epacial temp.</th>
+                                                <th >Tiempo promedio</th>
+                                                <th >Precio</th>
+                                                <th >Costo de inventario</th>
+                                                <th > Suma de los factores màs inventarios</th>
+                                               
+                                                <th>Tranferencia de carga sistema</th>
+                                                <th>Tranferencia de carga cadena</th>
+                                                <th>Costo factor</th>
+                                                <th>Costo Logístico</th>
+                                                <th>Costo Inventario</th>
+                                                <th>Ineficencias</th>
+                                                <th>Causas </th>
+                                                <th>EJE</th>
+                                                <th>Iniciativa</th>
+                                                <th>Inversión</th>
+                                                <th>Costo Total</th>
+                                                <th>Costo Logistico</th>
+                                                <th>Cobertura Imp.</th>
+                                                 
+                                                
+                                              
+                            
+			
+			
+		</thead>
+		<tbody>
+			{% for estudio in estudio %}
+                        
+                    
+                        
+                        
+                 
+                 
+                    
+                    
+                    
+                                   
+                                    
+                                    
+					
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+{% endblock %}
+                    </div><!-- #page-content -->
+                </div><!-- #page-main -->
+            </div><!-- #page-main-wrapper -->
+        </div><!-- #page-wrapper -->
+    </body>
+</html>

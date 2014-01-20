@@ -34,7 +34,7 @@ class memoriaCalculo
     
     
       /**
-     * @ORM\ManyToOne(targetEntity="Opltda\EntidadesBundle\Entity\Cadenas", inversedBy="entrevistas")
+     * @ORM\ManyToOne(targetEntity="Opltda\EntidadesBundle\Entity\Cadenas", inversedBy="memoriacalculo")
      * @ORM\JoinColumn(name="cadenas_id", referencedColumnName="id")
      */
 

@@ -34,6 +34,13 @@ class Cadenas
     
     
     
+ /** @ORM\Column(type="string", length=200 , nullable=true) */
+
+
+    private $nombre;
+    
+    
+    
     
     
     private $descripcion;
@@ -89,6 +96,25 @@ class Cadenas
     */
      
    private  $memoriacalculo;
-
+   
+   
+   
+   
+       
+    /**
+     * @ORM\OneToMany(targetEntity="Opltda\EntidadesBundle\Entity\Modelamiento", mappedBy="cadenas")
+    */
      
+   private  $modelamiento;
+   
+    
+    /**
+     * @ORM\OneToMany(targetEntity="Opltda\EntidadesBundle\Entity\Estudio", mappedBy="cadenas")
+    */
+     
+   private  $estudio;
+   
+   
+   
+   
 }

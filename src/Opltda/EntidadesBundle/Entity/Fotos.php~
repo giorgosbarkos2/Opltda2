@@ -1,0 +1,52 @@
+<?php
+
+namespace Opltda\EntidadesBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Fotos
+ *
+ * @ORM\Table()
+ * @ORM\Entity
+ */
+class Fotos
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+    
+    
+        
+    
+    
+    
+    /** @ORM\Column(type="string", length=300 , nullable=true) */
+    
+    
+    
+    private $url;
+    
+    
+    
+    
+               /**
+     * @ORM\ManyToOne(targetEntity="Opltda\EntidadesBundle\Entity\Puertos", inversedBy="modelamiento")
+     * @ORM\JoinColumn(name="puertos_id", referencedColumnName="id")
+     */
+    
+    
+    private $puertos;
+    
+    
+    
+    
+    
+
+
+}

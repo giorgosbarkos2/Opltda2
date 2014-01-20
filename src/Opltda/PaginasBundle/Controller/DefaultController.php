@@ -240,4 +240,21 @@ $cont = 0;
             
             return $this->render('OpltdaPaginasBundle:Default:listarEntrevista.html.twig', array('entrevista' => $entrevista));
 	}
+        
+        
+        
+        public function listarEstudioAction(){
+            
+            $em = $this->getDoctrine()->getManager();
+            $estudio =  $em->getRepository('OpltdaEntidadesBundle:Estudio')->findAll();
+            return $this->render('OpltdaPaginasBundle:Default:listasEstudio.html.twig', array('estudio' => $estudio));
+            
+        }
+        public function listarMapasAction(){
+            $em = $this->getDoctrine()->getManager();
+            $mapas =  $em->getRepository('OpltdaEntidadesBundle:Mapas')->findAll();
+            return $this->render('OpltdaPaginasBundle:Default:mapas.html.twig', array('mapas' => $mapas));
+            
+            
+        }
 }

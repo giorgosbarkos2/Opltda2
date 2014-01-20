@@ -21,94 +21,31 @@ class Estudio
      */
     private $id;
 
-    
-     /** @ORM\Column(type="string", length=200 , nullable=true) */
-    
-    
-    private $codigoCadena;
-    
-    
-    
-    /** @ORM\Column(type="string", length=200 , nullable=true) */
-    
-    
-    private $nombreCadena;
+      
     
     
     
     
-      /** @ORM\Column(type="string", length=200 , nullable=true) */
     
-    
-    private $macroProceso;
-    
-        
-      /** @ORM\Column(type="string", length=200 , nullable=true) */
-    
-    private $dimension;
-    
-    
-    
-      /** @ORM\Column(type="string", length=200 , nullable=true) */
-    
-    
-    
-    private $codigoActividad;
-    
-        
-      /** @ORM\Column(type="string", length=200 , nullable=true) */
-    
-    private $nombreActividad;
-    
-    private $agente;
-    
-        
-      /** @ORM\Column(type="string", length=200 , nullable=true) */
-    
-    private $costo;
-    
-        
-      /** @ORM\Column(type="string", length=200 , nullable=true) */
-    
-    private $tiempoPromedioServicio;
-        
-      /** @ORM\Column(type="string", length=200 , nullable=true) */
-    
-    
-    private $tiempoPromedioEspera;
-        
-      /** @ORM\Column(type="string", length=200 , nullable=true) */
-    
-    
-    private $inificencias;
-        
-      /** @ORM\Column(type="string", length=200 , nullable=true) */
-    
-    private $causainificencia;
-        
-      /** @ORM\Column(type="string", length=200 , nullable=true) */
-    
-    
-    private $iniciativa;
-    
-        
-      /** @ORM\Column(type="string", length=200 , nullable=true) */
-    
-    
-    private $fechaIngreso;
-    
+    /**
+     * @ORM\ManyToOne(targetEntity="Opltda\EntidadesBundle\Entity\Cadenas", inversedBy="estudio")
+     * @ORM\JoinColumn(name="cadenas_id", referencedColumnName="id")
+     */
 
+    private $cadenas;
     
-	   /**
+    
+    
+    
+   /**
      * @ORM\ManyToOne(targetEntity="Opltda\EntidadesBundle\Entity\Regiones", inversedBy="estudio")
      * @ORM\JoinColumn(name="regiones_id", referencedColumnName="id")
      */
+   
     
-	private $regiones;
+    private $regiones;
         
-        
-        
-        
+
              	   /**
      * @ORM\ManyToOne(targetEntity="Opltda\EntidadesBundle\Entity\Puertos", inversedBy="estudio")
      * @ORM\JoinColumn(name="puertos_id", referencedColumnName="id")
@@ -116,9 +53,123 @@ class Estudio
 	private $puertos;
         
         
+     
         
         
         
+        
+ /** @ORM\Column(type="string", length=200 , nullable=true) */
+    
+    
+    private $CADENA;
+    
+    
+            
+ /** @ORM\Column(type="string", length=200 , nullable=true) */
+    
+    private $MACROPROCESO;
+    
+     /** @ORM\Column(type="string", length=200 , nullable=true) */
+    
+    private $FACTOR;
+    
+     /** @ORM\Column(type="string", length=200 , nullable=true) */
+    
+    private $CODIGOACTIVIDAD;
+    
+     /** @ORM\Column(type="string", length=200 , nullable=true) */
+    
+    private $ACTIVIDAD;
+    
+     /** @ORM\Column(type="string", length=200 , nullable=true) */
+    
+    private $AGENTE;
+    
+    
+     /** @ORM\Column(type="string", length=200 , nullable=true) */
+    
+    private $GENERADOR;
+    
+    
+    /** @ORM\Column(type="string", length=200 , nullable=true) */
+    
+    
+    private $sector;
+    
+    
+    
+     /** @ORM\Column(type="string", length=200 , nullable=true) */
+    
+    private $COSTOunitario;
+    
+    
+     /** @ORM\Column(type="string", length=200 , nullable=true) */
+    
+    private $COSTOUNITARIOFACTORESPACIALYTEMPORAL;
+    
+     /** @ORM\Column(type="string", length=200 , nullable=true) */
+    
+    private $TIEMPOPROMEDIOSERVICIO;
+    
+     /** @ORM\Column(type="string", length=200 , nullable=true) */
+    
+    private $PRECIODELPRODUCTO;
+    
+    
+     /** @ORM\Column(type="string", length=200 , nullable=true) */
+    private $COSTODEINVENTARIO;
+    
+     /** @ORM\Column(type="string", length=200 , nullable=true) */
+    private $Sumadelosfactoresmasinventarios;
+    
+    
+     /** @ORM\Column(type="string", length=200 , nullable=true) */
+    
+    private $TRANSFERENCIADECARGASISTEMA;
+    
+     /** @ORM\Column(type="string", length=200 , nullable=true) */
+    private $TRANSFERENCIADECARGAPUERTO;
+    
+     /** @ORM\Column(type="string", length=200 , nullable=true) */
+   private $TRANSFERENCIADECARGACADENA;
+   
+    /** @ORM\Column(type="string", length=200 , nullable=true) */
+   private $COSTOFACTOR;
+   
+    /** @ORM\Column(type="string", length=200 , nullable=true) */
+   private $COSTOLOGISTICO;
+   
+    /** @ORM\Column(type="string", length=200 , nullable=true) */
+   
+   private $COSTOINVENTARIO;
+   
+    /** @ORM\Column(type="string", length=200 , nullable=true) */
+   
+   private $Ineficencias;
+   
+    /** @ORM\Column(type="string", length=200 , nullable=true) */
+   
+   private $CAUSASDELASINEFICIENCIAS;
+   
+    /** @ORM\Column(type="string", length=200 , nullable=true) */
+   
+   private $eje;
+   
+    /** @ORM\Column(type="string", length=200 , nullable=true) */
+   private $iniciativa;
+   
+    /** @ORM\Column(type="string", length=200 , nullable=true) */
+   private $INVERSIONESTIMADA;
+   
+    /** @ORM\Column(type="string", length=200 , nullable=true) */
+   private $COSTOTOTAL;
+    /** @ORM\Column(type="string", length=200 , nullable=true) */
+   private $Costologistico2;
+    /** @ORM\Column(type="string", length=200 , nullable=true) */
+   
+   private $Coberturaimpacto;
+  
+    
 
     /**
      * Get id
@@ -131,256 +182,532 @@ class Estudio
     }
 
     /**
-     * Set codigoCadena
+     * Set CADENA
      *
-     * @param string $codigoCadena
+     * @param string $cADENA
      * @return Estudio
      */
-    public function setCodigoCadena($codigoCadena)
+    public function setCADENA($cADENA)
     {
-        $this->codigoCadena = $codigoCadena;
+        $this->CADENA = $cADENA;
 
         return $this;
     }
 
     /**
-     * Get codigoCadena
+     * Get CADENA
      *
      * @return string 
      */
-    public function getCodigoCadena()
+    public function getCADENA()
     {
-        return $this->codigoCadena;
+        return $this->CADENA;
     }
 
     /**
-     * Set nombreCadena
+     * Set MACROPROCESO
      *
-     * @param string $nombreCadena
+     * @param string $mACROPROCESO
      * @return Estudio
      */
-    public function setNombreCadena($nombreCadena)
+    public function setMACROPROCESO($mACROPROCESO)
     {
-        $this->nombreCadena = $nombreCadena;
+        $this->MACROPROCESO = $mACROPROCESO;
 
         return $this;
     }
 
     /**
-     * Get nombreCadena
+     * Get MACROPROCESO
      *
      * @return string 
      */
-    public function getNombreCadena()
+    public function getMACROPROCESO()
     {
-        return $this->nombreCadena;
+        return $this->MACROPROCESO;
     }
 
     /**
-     * Set macroProceso
+     * Set FACTOR
      *
-     * @param string $macroProceso
+     * @param string $fACTOR
      * @return Estudio
      */
-    public function setMacroProceso($macroProceso)
+    public function setFACTOR($fACTOR)
     {
-        $this->macroProceso = $macroProceso;
+        $this->FACTOR = $fACTOR;
 
         return $this;
     }
 
     /**
-     * Get macroProceso
+     * Get FACTOR
      *
      * @return string 
      */
-    public function getMacroProceso()
+    public function getFACTOR()
     {
-        return $this->macroProceso;
+        return $this->FACTOR;
     }
 
     /**
-     * Set dimension
+     * Set CODIGOACTIVIDAD
      *
-     * @param string $dimension
+     * @param string $cODIGOACTIVIDAD
      * @return Estudio
      */
-    public function setDimension($dimension)
+    public function setCODIGOACTIVIDAD($cODIGOACTIVIDAD)
     {
-        $this->dimension = $dimension;
+        $this->CODIGOACTIVIDAD = $cODIGOACTIVIDAD;
 
         return $this;
     }
 
     /**
-     * Get dimension
+     * Get CODIGOACTIVIDAD
      *
      * @return string 
      */
-    public function getDimension()
+    public function getCODIGOACTIVIDAD()
     {
-        return $this->dimension;
+        return $this->CODIGOACTIVIDAD;
     }
 
     /**
-     * Set codigoActividad
+     * Set ACTIVIDAD
      *
-     * @param string $codigoActividad
+     * @param string $aCTIVIDAD
      * @return Estudio
      */
-    public function setCodigoActividad($codigoActividad)
+    public function setACTIVIDAD($aCTIVIDAD)
     {
-        $this->codigoActividad = $codigoActividad;
+        $this->ACTIVIDAD = $aCTIVIDAD;
 
         return $this;
     }
 
     /**
-     * Get codigoActividad
+     * Get ACTIVIDAD
      *
      * @return string 
      */
-    public function getCodigoActividad()
+    public function getACTIVIDAD()
     {
-        return $this->codigoActividad;
+        return $this->ACTIVIDAD;
     }
 
     /**
-     * Set nombreActividad
+     * Set AGENTE
      *
-     * @param string $nombreActividad
+     * @param string $aGENTE
      * @return Estudio
      */
-    public function setNombreActividad($nombreActividad)
+    public function setAGENTE($aGENTE)
     {
-        $this->nombreActividad = $nombreActividad;
+        $this->AGENTE = $aGENTE;
 
         return $this;
     }
 
     /**
-     * Get nombreActividad
+     * Get AGENTE
      *
      * @return string 
      */
-    public function getNombreActividad()
+    public function getAGENTE()
     {
-        return $this->nombreActividad;
+        return $this->AGENTE;
     }
 
     /**
-     * Set costo
+     * Set GENERADOR
      *
-     * @param string $costo
+     * @param string $gENERADOR
      * @return Estudio
      */
-    public function setCosto($costo)
+    public function setGENERADOR($gENERADOR)
     {
-        $this->costo = $costo;
+        $this->GENERADOR = $gENERADOR;
 
         return $this;
     }
 
     /**
-     * Get costo
+     * Get GENERADOR
      *
      * @return string 
      */
-    public function getCosto()
+    public function getGENERADOR()
     {
-        return $this->costo;
+        return $this->GENERADOR;
     }
 
     /**
-     * Set tiempoPromedioServicio
+     * Set sector
      *
-     * @param string $tiempoPromedioServicio
+     * @param string $sector
      * @return Estudio
      */
-    public function setTiempoPromedioServicio($tiempoPromedioServicio)
+    public function setSector($sector)
     {
-        $this->tiempoPromedioServicio = $tiempoPromedioServicio;
+        $this->sector = $sector;
 
         return $this;
     }
 
     /**
-     * Get tiempoPromedioServicio
+     * Get sector
      *
      * @return string 
      */
-    public function getTiempoPromedioServicio()
+    public function getSector()
     {
-        return $this->tiempoPromedioServicio;
+        return $this->sector;
     }
 
     /**
-     * Set tiempoPromedioEspera
+     * Set COSTOunitario
      *
-     * @param string $tiempoPromedioEspera
+     * @param string $cOSTOunitario
      * @return Estudio
      */
-    public function setTiempoPromedioEspera($tiempoPromedioEspera)
+    public function setCOSTOunitario($cOSTOunitario)
     {
-        $this->tiempoPromedioEspera = $tiempoPromedioEspera;
+        $this->COSTOunitario = $cOSTOunitario;
 
         return $this;
     }
 
     /**
-     * Get tiempoPromedioEspera
+     * Get COSTOunitario
      *
      * @return string 
      */
-    public function getTiempoPromedioEspera()
+    public function getCOSTOunitario()
     {
-        return $this->tiempoPromedioEspera;
+        return $this->COSTOunitario;
     }
 
     /**
-     * Set inificencias
+     * Set COSTOUNITARIOFACTORESPACIALYTEMPORAL
      *
-     * @param string $inificencias
+     * @param string $cOSTOUNITARIOFACTORESPACIALYTEMPORAL
      * @return Estudio
      */
-    public function setInificencias($inificencias)
+    public function setCOSTOUNITARIOFACTORESPACIALYTEMPORAL($cOSTOUNITARIOFACTORESPACIALYTEMPORAL)
     {
-        $this->inificencias = $inificencias;
+        $this->COSTOUNITARIOFACTORESPACIALYTEMPORAL = $cOSTOUNITARIOFACTORESPACIALYTEMPORAL;
 
         return $this;
     }
 
     /**
-     * Get inificencias
+     * Get COSTOUNITARIOFACTORESPACIALYTEMPORAL
      *
      * @return string 
      */
-    public function getInificencias()
+    public function getCOSTOUNITARIOFACTORESPACIALYTEMPORAL()
     {
-        return $this->inificencias;
+        return $this->COSTOUNITARIOFACTORESPACIALYTEMPORAL;
     }
 
     /**
-     * Set causainificencia
+     * Set TIEMPOPROMEDIOSERVICIO
      *
-     * @param string $causainificencia
+     * @param string $tIEMPOPROMEDIOSERVICIO
      * @return Estudio
      */
-    public function setCausainificencia($causainificencia)
+    public function setTIEMPOPROMEDIOSERVICIO($tIEMPOPROMEDIOSERVICIO)
     {
-        $this->causainificencia = $causainificencia;
+        $this->TIEMPOPROMEDIOSERVICIO = $tIEMPOPROMEDIOSERVICIO;
 
         return $this;
     }
 
     /**
-     * Get causainificencia
+     * Get TIEMPOPROMEDIOSERVICIO
      *
      * @return string 
      */
-    public function getCausainificencia()
+    public function getTIEMPOPROMEDIOSERVICIO()
     {
-        return $this->causainificencia;
+        return $this->TIEMPOPROMEDIOSERVICIO;
+    }
+
+    /**
+     * Set PRECIODELPRODUCTO
+     *
+     * @param string $pRECIODELPRODUCTO
+     * @return Estudio
+     */
+    public function setPRECIODELPRODUCTO($pRECIODELPRODUCTO)
+    {
+        $this->PRECIODELPRODUCTO = $pRECIODELPRODUCTO;
+
+        return $this;
+    }
+
+    /**
+     * Get PRECIODELPRODUCTO
+     *
+     * @return string 
+     */
+    public function getPRECIODELPRODUCTO()
+    {
+        return $this->PRECIODELPRODUCTO;
+    }
+
+    /**
+     * Set COSTODEINVENTARIO
+     *
+     * @param string $cOSTODEINVENTARIO
+     * @return Estudio
+     */
+    public function setCOSTODEINVENTARIO($cOSTODEINVENTARIO)
+    {
+        $this->COSTODEINVENTARIO = $cOSTODEINVENTARIO;
+
+        return $this;
+    }
+
+    /**
+     * Get COSTODEINVENTARIO
+     *
+     * @return string 
+     */
+    public function getCOSTODEINVENTARIO()
+    {
+        return $this->COSTODEINVENTARIO;
+    }
+
+    /**
+     * Set Sumadelosfactoresmasinventarios
+     *
+     * @param string $sumadelosfactoresmasinventarios
+     * @return Estudio
+     */
+    public function setSumadelosfactoresmasinventarios($sumadelosfactoresmasinventarios)
+    {
+        $this->Sumadelosfactoresmasinventarios = $sumadelosfactoresmasinventarios;
+
+        return $this;
+    }
+
+    /**
+     * Get Sumadelosfactoresmasinventarios
+     *
+     * @return string 
+     */
+    public function getSumadelosfactoresmasinventarios()
+    {
+        return $this->Sumadelosfactoresmasinventarios;
+    }
+
+    /**
+     * Set TRANSFERENCIADECARGASISTEMA
+     *
+     * @param string $tRANSFERENCIADECARGASISTEMA
+     * @return Estudio
+     */
+    public function setTRANSFERENCIADECARGASISTEMA($tRANSFERENCIADECARGASISTEMA)
+    {
+        $this->TRANSFERENCIADECARGASISTEMA = $tRANSFERENCIADECARGASISTEMA;
+
+        return $this;
+    }
+
+    /**
+     * Get TRANSFERENCIADECARGASISTEMA
+     *
+     * @return string 
+     */
+    public function getTRANSFERENCIADECARGASISTEMA()
+    {
+        return $this->TRANSFERENCIADECARGASISTEMA;
+    }
+
+    /**
+     * Set TRANSFERENCIADECARGAPUERTO
+     *
+     * @param string $tRANSFERENCIADECARGAPUERTO
+     * @return Estudio
+     */
+    public function setTRANSFERENCIADECARGAPUERTO($tRANSFERENCIADECARGAPUERTO)
+    {
+        $this->TRANSFERENCIADECARGAPUERTO = $tRANSFERENCIADECARGAPUERTO;
+
+        return $this;
+    }
+
+    /**
+     * Get TRANSFERENCIADECARGAPUERTO
+     *
+     * @return string 
+     */
+    public function getTRANSFERENCIADECARGAPUERTO()
+    {
+        return $this->TRANSFERENCIADECARGAPUERTO;
+    }
+
+    /**
+     * Set TRANSFERENCIADECARGACADENA
+     *
+     * @param string $tRANSFERENCIADECARGACADENA
+     * @return Estudio
+     */
+    public function setTRANSFERENCIADECARGACADENA($tRANSFERENCIADECARGACADENA)
+    {
+        $this->TRANSFERENCIADECARGACADENA = $tRANSFERENCIADECARGACADENA;
+
+        return $this;
+    }
+
+    /**
+     * Get TRANSFERENCIADECARGACADENA
+     *
+     * @return string 
+     */
+    public function getTRANSFERENCIADECARGACADENA()
+    {
+        return $this->TRANSFERENCIADECARGACADENA;
+    }
+
+    /**
+     * Set COSTOFACTOR
+     *
+     * @param string $cOSTOFACTOR
+     * @return Estudio
+     */
+    public function setCOSTOFACTOR($cOSTOFACTOR)
+    {
+        $this->COSTOFACTOR = $cOSTOFACTOR;
+
+        return $this;
+    }
+
+    /**
+     * Get COSTOFACTOR
+     *
+     * @return string 
+     */
+    public function getCOSTOFACTOR()
+    {
+        return $this->COSTOFACTOR;
+    }
+
+    /**
+     * Set COSTOLOGISTICO
+     *
+     * @param string $cOSTOLOGISTICO
+     * @return Estudio
+     */
+    public function setCOSTOLOGISTICO($cOSTOLOGISTICO)
+    {
+        $this->COSTOLOGISTICO = $cOSTOLOGISTICO;
+
+        return $this;
+    }
+
+    /**
+     * Get COSTOLOGISTICO
+     *
+     * @return string 
+     */
+    public function getCOSTOLOGISTICO()
+    {
+        return $this->COSTOLOGISTICO;
+    }
+
+    /**
+     * Set COSTOINVENTARIO
+     *
+     * @param string $cOSTOINVENTARIO
+     * @return Estudio
+     */
+    public function setCOSTOINVENTARIO($cOSTOINVENTARIO)
+    {
+        $this->COSTOINVENTARIO = $cOSTOINVENTARIO;
+
+        return $this;
+    }
+
+    /**
+     * Get COSTOINVENTARIO
+     *
+     * @return string 
+     */
+    public function getCOSTOINVENTARIO()
+    {
+        return $this->COSTOINVENTARIO;
+    }
+
+    /**
+     * Set Ineficencias
+     *
+     * @param string $ineficencias
+     * @return Estudio
+     */
+    public function setIneficencias($ineficencias)
+    {
+        $this->Ineficencias = $ineficencias;
+
+        return $this;
+    }
+
+    /**
+     * Get Ineficencias
+     *
+     * @return string 
+     */
+    public function getIneficencias()
+    {
+        return $this->Ineficencias;
+    }
+
+    /**
+     * Set CAUSASDELASINEFICIENCIAS
+     *
+     * @param string $cAUSASDELASINEFICIENCIAS
+     * @return Estudio
+     */
+    public function setCAUSASDELASINEFICIENCIAS($cAUSASDELASINEFICIENCIAS)
+    {
+        $this->CAUSASDELASINEFICIENCIAS = $cAUSASDELASINEFICIENCIAS;
+
+        return $this;
+    }
+
+    /**
+     * Get CAUSASDELASINEFICIENCIAS
+     *
+     * @return string 
+     */
+    public function getCAUSASDELASINEFICIENCIAS()
+    {
+        return $this->CAUSASDELASINEFICIENCIAS;
+    }
+
+    /**
+     * Set eje
+     *
+     * @param string $eje
+     * @return Estudio
+     */
+    public function setEje($eje)
+    {
+        $this->eje = $eje;
+
+        return $this;
+    }
+
+    /**
+     * Get eje
+     *
+     * @return string 
+     */
+    public function getEje()
+    {
+        return $this->eje;
     }
 
     /**
@@ -407,26 +734,118 @@ class Estudio
     }
 
     /**
-     * Set fechaIngreso
+     * Set INVERSIONESTIMADA
      *
-     * @param string $fechaIngreso
+     * @param string $iNVERSIONESTIMADA
      * @return Estudio
      */
-    public function setFechaIngreso($fechaIngreso)
+    public function setINVERSIONESTIMADA($iNVERSIONESTIMADA)
     {
-        $this->fechaIngreso = $fechaIngreso;
+        $this->INVERSIONESTIMADA = $iNVERSIONESTIMADA;
 
         return $this;
     }
 
     /**
-     * Get fechaIngreso
+     * Get INVERSIONESTIMADA
      *
      * @return string 
      */
-    public function getFechaIngreso()
+    public function getINVERSIONESTIMADA()
     {
-        return $this->fechaIngreso;
+        return $this->INVERSIONESTIMADA;
+    }
+
+    /**
+     * Set COSTOTOTAL
+     *
+     * @param string $cOSTOTOTAL
+     * @return Estudio
+     */
+    public function setCOSTOTOTAL($cOSTOTOTAL)
+    {
+        $this->COSTOTOTAL = $cOSTOTOTAL;
+
+        return $this;
+    }
+
+    /**
+     * Get COSTOTOTAL
+     *
+     * @return string 
+     */
+    public function getCOSTOTOTAL()
+    {
+        return $this->COSTOTOTAL;
+    }
+
+    /**
+     * Set Costologistico2
+     *
+     * @param string $costologistico2
+     * @return Estudio
+     */
+    public function setCostologistico2($costologistico2)
+    {
+        $this->Costologistico2 = $costologistico2;
+
+        return $this;
+    }
+
+    /**
+     * Get Costologistico2
+     *
+     * @return string 
+     */
+    public function getCostologistico2()
+    {
+        return $this->Costologistico2;
+    }
+
+    /**
+     * Set Coberturaimpacto
+     *
+     * @param string $coberturaimpacto
+     * @return Estudio
+     */
+    public function setCoberturaimpacto($coberturaimpacto)
+    {
+        $this->Coberturaimpacto = $coberturaimpacto;
+
+        return $this;
+    }
+
+    /**
+     * Get Coberturaimpacto
+     *
+     * @return string 
+     */
+    public function getCoberturaimpacto()
+    {
+        return $this->Coberturaimpacto;
+    }
+
+    /**
+     * Set cadenas
+     *
+     * @param \Opltda\EntidadesBundle\Entity\Cadenas $cadenas
+     * @return Estudio
+     */
+    public function setCadenas(\Opltda\EntidadesBundle\Entity\Cadenas $cadenas = null)
+    {
+        $this->cadenas = $cadenas;
+
+        return $this;
+    }
+
+    /**
+     * Get cadenas
+     *
+     * @return \Opltda\EntidadesBundle\Entity\Cadenas 
+     */
+    public function getCadenas()
+    {
+        return $this->cadenas;
     }
 
     /**

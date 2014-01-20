@@ -80,7 +80,29 @@ class Puertos
     private $cadenas;
     
     
+       /**
+    * @ORM\OneToMany(targetEntity="Opltda\EntidadesBundle\Entity\Modelamiento", mappedBy="puertos")
+    */
+    
+    
+    
+    private $modelamiento;
+    
+    
+    
+        /**
+    * @ORM\OneToMany(targetEntity="Opltda\EntidadesBundle\Entity\Fotos", mappedBy="puertos")
+    */
+    
 
+    private $fotos;
+    
+    
+    
+    
+    
+    
+    
     /**
      * Constructor
      */
@@ -91,6 +113,8 @@ class Puertos
         $this->estudio = new \Doctrine\Common\Collections\ArrayCollection();
         $this->mapas = new \Doctrine\Common\Collections\ArrayCollection();
         $this->cadenas = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->modelamiento = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->fotos = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
@@ -335,5 +359,71 @@ class Puertos
     public function getCadenas()
     {
         return $this->cadenas;
+    }
+
+    /**
+     * Add modelamiento
+     *
+     * @param \Opltda\EntidadesBundle\Entity\Modelamiento $modelamiento
+     * @return Puertos
+     */
+    public function addModelamiento(\Opltda\EntidadesBundle\Entity\Modelamiento $modelamiento)
+    {
+        $this->modelamiento[] = $modelamiento;
+
+        return $this;
+    }
+
+    /**
+     * Remove modelamiento
+     *
+     * @param \Opltda\EntidadesBundle\Entity\Modelamiento $modelamiento
+     */
+    public function removeModelamiento(\Opltda\EntidadesBundle\Entity\Modelamiento $modelamiento)
+    {
+        $this->modelamiento->removeElement($modelamiento);
+    }
+
+    /**
+     * Get modelamiento
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getModelamiento()
+    {
+        return $this->modelamiento;
+    }
+
+    /**
+     * Add fotos
+     *
+     * @param \Opltda\EntidadesBundle\Entity\Fotos $fotos
+     * @return Puertos
+     */
+    public function addFoto(\Opltda\EntidadesBundle\Entity\Fotos $fotos)
+    {
+        $this->fotos[] = $fotos;
+
+        return $this;
+    }
+
+    /**
+     * Remove fotos
+     *
+     * @param \Opltda\EntidadesBundle\Entity\Fotos $fotos
+     */
+    public function removeFoto(\Opltda\EntidadesBundle\Entity\Fotos $fotos)
+    {
+        $this->fotos->removeElement($fotos);
+    }
+
+    /**
+     * Get fotos
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getFotos()
+    {
+        return $this->fotos;
     }
 }

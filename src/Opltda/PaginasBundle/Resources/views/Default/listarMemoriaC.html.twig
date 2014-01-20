@@ -4,6 +4,20 @@
 
 
 
+
+<style>
+
+     .dataTables_length{
+                                position: absolute;
+                                width: 100px;
+                               
+                                
+                                }
+                            
+                                
+    </style>
+    
+    
 <h4 class="heading-1 clearfix">
     <br>
 
@@ -42,40 +56,32 @@ $(document).ready(function(){
                     <div id="page-content">
 {% block inversionvial %}
                             
-                             <h3>Listados archivos de Inversión Vial</h3>
+                             <h3>Listados Memoria Calculo </h3>
                             
  
                             
                             
                             <table class="table"  id="inversionVial" >
 		<thead>
-			<th>Region</th>
-			<th>Nombre</th>
-                                                <th>Archivo</th>
+			<th>Cadena</th>
+			<th>Archivo</th>
+                        
+                        
+                                                
 			
 		
 		</thead>
 		<tbody>
-			{% for inversionvial in inversionvial %}
-		
+		{% for memoriaCalculo in memoriaCalculo %}
+                        
                         <tr>
-                        <td>{{inversionvial.regiones.nombre}}</td>
-			<td>{{inversionvial.nombre}}</td>
-                                                <td>{% set archivo = inversionvial.archivosinversionvial %}
-                                                   
-                                                   
-                                                     {% for archivo in archivo %} 
-                                                    
-                                       
-                                                
-                                                    <a href="../web/archivos/inversionVial/{{archivo.url}}" target="_blank">Archivo</a>
-                                                        
-                                                     
-                                                    {% endfor %}    
-                                                
-                                                </td>
-                                                </tr>
-			{% endfor %}
+                    <td>{{memoriaCalculo.cadenas.codigo}}      </td>  
+                    <td>{{memoriaCalculo.url}} <a href="../web/archivos/memoriaC/{{memoriaCalculo.url}}" target="_blank">Archivo</a></td>
+                                
+                        </tr>
+                                {% endfor %}
+		
+                      
 		</tbody>
 	</table>
 {% endblock %}

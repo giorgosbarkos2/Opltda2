@@ -34,6 +34,13 @@ class Cadenas
     
     
     
+ /** @ORM\Column(type="string", length=200 , nullable=true) */
+
+
+    private $nombre;
+    
+    
+    
     
     
     private $descripcion;
@@ -89,8 +96,27 @@ class Cadenas
     */
      
    private  $memoriacalculo;
-
+   
+   
+   
+   
+       
+    /**
+     * @ORM\OneToMany(targetEntity="Opltda\EntidadesBundle\Entity\Modelamiento", mappedBy="cadenas")
+    */
      
+   private  $modelamiento;
+   
+    
+    /**
+     * @ORM\OneToMany(targetEntity="Opltda\EntidadesBundle\Entity\Estudio", mappedBy="cadenas")
+    */
+     
+   private  $estudio;
+   
+   
+   
+   
     /**
      * Constructor
      */
@@ -98,6 +124,8 @@ class Cadenas
     {
         $this->entrevistas = new \Doctrine\Common\Collections\ArrayCollection();
         $this->memoriacalculo = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->modelamiento = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->estudio = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
@@ -131,6 +159,29 @@ class Cadenas
     public function getCodigo()
     {
         return $this->codigo;
+    }
+
+    /**
+     * Set nombre
+     *
+     * @param string $nombre
+     * @return Cadenas
+     */
+    public function setNombre($nombre)
+    {
+        $this->nombre = $nombre;
+
+        return $this;
+    }
+
+    /**
+     * Get nombre
+     *
+     * @return string 
+     */
+    public function getNombre()
+    {
+        return $this->nombre;
     }
 
     /**
@@ -243,5 +294,71 @@ class Cadenas
     public function getMemoriacalculo()
     {
         return $this->memoriacalculo;
+    }
+
+    /**
+     * Add modelamiento
+     *
+     * @param \Opltda\EntidadesBundle\Entity\Modelamiento $modelamiento
+     * @return Cadenas
+     */
+    public function addModelamiento(\Opltda\EntidadesBundle\Entity\Modelamiento $modelamiento)
+    {
+        $this->modelamiento[] = $modelamiento;
+
+        return $this;
+    }
+
+    /**
+     * Remove modelamiento
+     *
+     * @param \Opltda\EntidadesBundle\Entity\Modelamiento $modelamiento
+     */
+    public function removeModelamiento(\Opltda\EntidadesBundle\Entity\Modelamiento $modelamiento)
+    {
+        $this->modelamiento->removeElement($modelamiento);
+    }
+
+    /**
+     * Get modelamiento
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getModelamiento()
+    {
+        return $this->modelamiento;
+    }
+
+    /**
+     * Add estudio
+     *
+     * @param \Opltda\EntidadesBundle\Entity\Estudio $estudio
+     * @return Cadenas
+     */
+    public function addEstudio(\Opltda\EntidadesBundle\Entity\Estudio $estudio)
+    {
+        $this->estudio[] = $estudio;
+
+        return $this;
+    }
+
+    /**
+     * Remove estudio
+     *
+     * @param \Opltda\EntidadesBundle\Entity\Estudio $estudio
+     */
+    public function removeEstudio(\Opltda\EntidadesBundle\Entity\Estudio $estudio)
+    {
+        $this->estudio->removeElement($estudio);
+    }
+
+    /**
+     * Get estudio
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getEstudio()
+    {
+        return $this->estudio;
     }
 }

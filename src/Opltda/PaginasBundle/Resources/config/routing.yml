@@ -57,10 +57,19 @@ listarEntrevista:
     pattern: /listarEntrevista
     defaults: {_controller: OpltdaPaginasBundle:Default:listarEntrevista}
     
-    
+listarMapas:
+  pattern: /listarMapas
+  defaults: {_controller: OpltdaPaginasBundle:Default:listarMapas}
     
     
 listarMemoria:
    pattern: /listarMemoria
    defaults: {_controller: OpltdaPaginasBundle:Default:listarMemoria}
+   
+   
+   
+listarEstudio:
+   pattern: /listarEstudio
+   defaults: {_controller: OpltdaPaginasBundle:Default:listarEstudio}
+  
   

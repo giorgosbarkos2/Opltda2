@@ -1,0 +1,84 @@
+{# empty Twig template #}
+
+
+
+       {% include "OpltdaPaginasBundle:Default:estPrincipal.html.twig" %}
+                    <div id="page-content">
+                       <style>
+
+     .dataTables_length{
+                                position: absolute;
+                                width: 100px;
+                               
+                                
+                                }
+                            
+                                
+    </style>     
+               
+                        
+                        
+                        
+         <!-- Filtros de la tabla -->               
+                        <script>
+ 
+$(document).ready(function(){
+     $('#entrevistas').dataTable()
+		 .columnFilter({ sPlaceHolder: "head:after",
+                                                             aoColumns: [
+
+		        { type: "text" },
+                                        { type: "text" },
+                                        
+		      
+				]
+
+		});
+});
+
+             </script>
+             
+             
+                            </script>
+{% block entrevista %}
+                            <h3>Listados archivos de  Entrevistas</h3>
+	<table class="table"  id="entrevistas" >
+		<thead>
+			<th width="10%">Region</th>
+			<th width="10%">Foto</th>
+			
+		
+		</thead>
+		<tbody>
+			{% for mapas in mapas %}
+                                
+                            <tr>    
+                            
+                            <td>{{mapas.regiones.nombre}}</td>
+                            
+                            <td>{{mapas.url}}</td>
+                            
+                           </tr>
+                                
+                                
+                                        {% endfor %}
+                                        
+                                        
+                                        
+                                        
+                                    
+                                    
+                                    </td>
+                                    
+					
+				</tr>
+			
+		</tbody>
+	</table>
+{% endblock %}
+                    </div><!-- #page-content -->
+                </div><!-- #page-main -->
+            </div><!-- #page-main-wrapper -->
+        </div><!-- #page-wrapper -->
+    </body>
+</html>

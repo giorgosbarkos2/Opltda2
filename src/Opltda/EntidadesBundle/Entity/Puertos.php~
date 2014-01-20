@@ -80,5 +80,26 @@ class Puertos
     private $cadenas;
     
     
+       /**
+    * @ORM\OneToMany(targetEntity="Opltda\EntidadesBundle\Entity\Modelamiento", mappedBy="puertos")
+    */
+    
+    
+    
+    private $modelamiento;
+    
+    
+    
+        /**
+    * @ORM\OneToMany(targetEntity="Opltda\EntidadesBundle\Entity\Fotos", mappedBy="puertos")
+    */
+    
 
+    private $fotos;
+    
+    
+    
+    
+    
+    
 }

@@ -3,6 +3,20 @@
                     
 
 
+<style>
+
+     .dataTables_length{
+                                position: absolute;
+                                width: 100px;
+                               
+                                
+                                }
+                            
+                                
+    </style>
+    
+    
+
 
  <script>
  
@@ -47,7 +61,7 @@ $(document).ready(function(){
 		<tbody>
 		{% for focusgroup in focusgroup %}
 		<tr>
-			<td>{{focusgroup.id}}</td>
+			<td>{{focusgroup.puertos.nombre}}</td>
                         <td>{{focusgroup.trascripciones}} <a href=" ../web/archivos/focusgroup/{{focusgroup.trascripciones}}.pdf"> Archivo</a> </td>
 			<td>{{focusgroup.categorizaciones}}  <a href=" ../web/archivos/focusgroup/{{focusgroup.categorizaciones}}.pdf"> Archivo</a></td>
 		</tr>

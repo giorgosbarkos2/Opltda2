@@ -1,5 +1,17 @@
        {% include "OpltdaPaginasBundle:Default:estPrincipal.html.twig" %}
                     <div id="page-content">
+                       <style>
+
+     .dataTables_length{
+                                position: absolute;
+                                width: 100px;
+                               
+                                
+                                }
+                            
+                                
+    </style>     
+               
                         
                         
                         
@@ -55,7 +67,7 @@ $(document).ready(function(){
                                      
                                         {% for archivo in archivo %}
                                     
-                                        <a href="../web/archivos/entrevistas/{{archivo.url}}">Archivo</a>
+                                        <a href="../web/archivos/entrevistas/{{archivo.url}}.pdf" target="_blank">Archivo</a>
                                
                                         
                                         {% endfor %}
