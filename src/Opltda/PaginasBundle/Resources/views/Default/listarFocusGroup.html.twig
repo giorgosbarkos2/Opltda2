@@ -55,15 +55,15 @@ $(document).ready(function(){
 	<table class="table" id="focusGroup">
 		<thead>
 			<th>Puertos</th>
-			<th>Transacciones</th>
-			<th>Categorizaciones</th>
+			<th>Transcripción</th>
+			<th>Categorización</th>
 		<thead>
 		<tbody>
 		{% for focusgroup in focusgroup %}
 		<tr>
 			<td>{{focusgroup.puertos.nombre}}</td>
-                        <td>{{focusgroup.trascripciones}} <a href=" ../web/archivos/focusgroup/{{focusgroup.trascripciones}}.pdf"> Archivo</a> </td>
-			<td>{{focusgroup.categorizaciones}}  <a href=" ../web/archivos/focusgroup/{{focusgroup.categorizaciones}}.pdf"> Archivo</a></td>
+                        <td><a href=" ../web/archivos/focusgroup/{{focusgroup.trascripciones}}.pdf" target="_blank"> Archivo</a> </td>
+			<td> <a href=" ../web/archivos/focusgroup/{{focusgroup.categorizaciones}}.pdf"  target="_blank"> Archivo</a></td>
 		</tr>
                 
 		{% endfor %}

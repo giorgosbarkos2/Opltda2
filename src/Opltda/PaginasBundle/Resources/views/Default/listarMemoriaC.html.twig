@@ -13,6 +13,8 @@
                                
                                 
                                 }
+                                
+ 
                             
                                 
     </style>
@@ -63,8 +65,8 @@ $(document).ready(function(){
                             
                             <table class="table"  id="inversionVial" >
 		<thead>
-			<th>Cadena</th>
-			<th>Archivo</th>
+			<th width="20%">Cadena</th>
+			<th width="20%">Archivo</th>
                         
                         
                                                 
@@ -75,8 +77,8 @@ $(document).ready(function(){
 		{% for memoriaCalculo in memoriaCalculo %}
                         
                         <tr>
-                    <td>{{memoriaCalculo.cadenas.codigo}}      </td>  
-                    <td>{{memoriaCalculo.url}} <a href="../web/archivos/memoriaC/{{memoriaCalculo.url}}" target="_blank">Archivo</a></td>
+                    <td>{{memoriaCalculo.cadenas.nombre}}      </td>  
+                    <td> <a href="../web/archivos/memoriaC/{{memoriaCalculo.url}}" target="_blank">Archivo</a></td>
                                 
                         </tr>
                                 {% endfor %}

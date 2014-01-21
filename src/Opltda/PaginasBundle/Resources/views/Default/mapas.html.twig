@@ -23,6 +23,10 @@
                         <script>
  
 $(document).ready(function(){
+
+
+
+
      $('#entrevistas').dataTable()
 		 .columnFilter({ sPlaceHolder: "head:after",
                                                              aoColumns: [
@@ -55,13 +59,16 @@ $(document).ready(function(){
                             <tr>    
                             
                             <td>{{mapas.regiones.nombre}}</td>
-                            
-                            <td>{{mapas.url}}</td>
+
+                            <td><a href="../web/archivos/mapas/{{mapas.url}}.jpg"   target="_blank"> Imagen </a></td>
+                           
                             
                            </tr>
                                 
                                 
                                         {% endfor %}
+                           
+                           
                                         
                                         
                                         
