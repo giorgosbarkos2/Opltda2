@@ -1,0 +1,58 @@
+{# Plantilla modelamiento #}
+{% include "OpltdaPaginasBundle:Default:estPrincipal.html.twig" %}
+<style>
+.dataTables_length{
+    position: absolute;
+    width: 100px;
+}
+</style>
+<h4 class="heading-1 clearfix">
+    <br>
+
+    <div class="heading-content"></div>
+    <div class="clear"></div>
+    <div class="divider"></div>
+
+</h4>
+<script>
+    $(document).ready(function(){
+         $('#modelamiento').dataTable()
+                     .columnFilter({ sPlaceHolder: "head:after",
+                         aoColumns: [
+
+                            { type: "text" },
+                            { type: "text" },
+                                            { type: "text" }
+
+
+
+                                    ]
+
+                    });
+    });
+</script>
+<div id="page-content">
+{% block modelamiento %}
+<h3>Lista Archivos de modelamiento.</h3>
+<table class="table" id="modelamiento">
+    <thead>
+        <th>Nombre puerto</th>
+        <th>Nombre cadena</th>
+        <th>Visualizar pdf</th>
+        <th>Descargar Archivo</th>
+    </thead>
+    <tbody>
+        {% for modelamiento in modelamiento %}
+        <tr>
+            <td>{{modelamiento.puertos.nombre}}</td>
+            <td>{{modelamiento.cadenas.nombre}}</td>
+            <td><a href="../web/modelamiento/{{modelamiento.archivoDoc}}">{{modelamiento.archivoDoc}}</a></td>
+            <td><a href="../web/modelamiento/{{modelamiento.archivoBpm}}">{{modelamiento.archivoBpm}}</a></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
+        </div><!-- #page-content -->
+    </body>
+</html>

@@ -4,6 +4,137 @@
 {% include "OpltdaPaginasBundle:Default:estPrincipal.html.twig" %}
 <div class="page-content">
     {% block detalleEstudio%}
-        
+    <table>
+        <tr>
+            <td colspan="2"><h2>Detalle del estudio.</h2></td>
+        </tr>
+        <tr>
+            <td>Nombre Cadena:</td>
+            <td>{{estudio.cadenas.nombre}}</td>
+        </tr>
+        <tr>
+            <td>Nombre Regi&oacute;n:</td>
+            <td>{{estudio.regiones.nombre}}</td>
+        </tr>
+        <tr>
+            <td>Nombre Puertos:</td>
+            <td>{{estudio.puertos.nombre}}</td>
+        </tr>
+        <tr>
+            <td>Cadena: </td>
+            <td>{{estudio.cadena}}</td>
+        </tr>
+        <tr>
+            <td>Macro Proceso:</td>
+            <td>{{estudio.macroproceso}}</td>
+        </tr>
+        <tr>
+            <td>Factor:</td>
+            <td>{{estudio.factor}}</td>
+        </tr>
+        <tr>
+            <td>Codigo Actividad:</td>
+            <td>{{estudio.codigoactividad}}</td>
+        </tr>
+        <tr>
+            <td>Actividad:</td>
+            <td>{{estudio.actividad}}</td>
+        </tr>
+        <tr>
+            <td>Agente:</td>
+            <td>{{estudio.agente}}</td>
+        </tr>
+        <tr>
+            <td>Generador:</td>
+            <td>{{estudio.generador}}</td>
+        </tr>
+        <tr>
+            <td>Sector: </td>
+            <td><{{estudio.sector}}/td>
+        </tr>
+        <tr>
+            <td>Costo Unitario:</td>
+            <td>{{estudio.costounitario}}</td>
+        </tr>
+        <tr>
+            <td>Costo unitario Factor espacial y temporal:</td>
+            <td>{{estudio.COSTOUNITARIOFACTORESPACIALYTEMPORAL}}</td>
+        </tr>
+        <tr>
+            <td>Tiempo promedio del servicio: </td>
+            <td>{{estudio.TIEMPOPROMEDIOSERVICIO}}</td>
+        </tr>
+        <tr>
+            <td>Precio del producto:</td>
+            <td>{{estudio.PRECIODELPRODUCTO}}</td>
+        </tr>
+        <tr>
+            <td>Costo inventario: </td>
+            <td>{{estudio.COSTODEINVENTARIO}}</td>
+        </tr>
+        <tr>
+            <td>Suma de los factores mas inventarios:</td>
+            <td>{{estudio.Sumadelosfactoresmasinventarios}}</td>
+        </tr>
+        <tr>
+            <td>Transferencia de carga del sistema:</td>
+            <td>{{estudio.TRANSFERENCIADECARGASISTEMA}}</td>
+        </tr>
+        <tr>
+            <td>Transferencia de carga del puerto:</td>
+            <td>{{estudio.TRANSFERENCIADECARGAPUERTO}}</td>
+        </tr>
+        <tr>
+            <td>Transferencia de carga de la cadena:</td>
+            <td>{{estudio.TRANSFERENCIADECARGACADENA}}</td>
+        </tr>
+        <tr>
+            <td>Costo facor: </td>
+            <td>{{estudio.COSTOFACTOR}}</td>
+        </tr>
+        <tr>
+            <td>Costo Logistico</td>
+            <td>{{estudio.COSTOLOGISTICO}}</td>
+        </tr>
+        <tr>
+            <td>Costo Inventario</td>
+            <td>{{estudio.COSTOINVENTARIO}}</td>
+        </tr
+        <tr>
+            <td>Ineficiencias:</td>
+            <td>{{estudio.Ineficencias}}</td>
+        </tr>
+        <tr>
+            <td>Causas de las ineficiencias:</td>
+            <td>{{estudio.CAUSASDELASINEFICIENCIAS}}</td>
+        </tr>
+        <tr>
+            <td>Eje:</td>
+            <td>{{estudio.eje}}</td>
+        </tr>
+        <tr>
+            <td>Iniciativa:</td>
+            <td>{{estudio.iniciativa}}</td>
+        </tr>
+        <tr>
+            <td>Inversion Estimada:</td>
+            <td>{{estudio.INVERSIONESTIMADA}}</td>
+        </tr>
+        <tr>
+            <td>Costo Total:</td>
+            <td>{{estudio.COSTOTOTAL}}</td>
+        </tr>
+        <tr>
+            <td>Costo Log&iacute;stico</td>
+            <td>{{estudio.Costologistico2}}</td>
+        </tr>
+        <tr>
+            <td>Cobertura impacto:</td>
+            <td>{{estudio.Coberturaimpacto}}</td>
+        </tr>
+        <tr>
+            <td colspan="2"> <a href="listarEstudio">Listar Estudios</a> </td>
+        </tr>
+    </table>
     {% endblock%}
 </div>
