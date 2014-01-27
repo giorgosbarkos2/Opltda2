@@ -75,4 +75,8 @@ listarEstudio:
 verDetalleEstudio:
     pattern: /verDetalleEstudio/{id}
     defaults: {_controller: OpltdaPaginasBundle:Default:verDetalleEstudio}
+
+listarModelamiento:
+    pattern: /listarModelamiento
+    defaults: {_controller: OpltdaPaginasBundle:Default:listarModelamiento}
   

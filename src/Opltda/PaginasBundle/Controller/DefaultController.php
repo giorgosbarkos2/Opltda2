@@ -113,11 +113,29 @@ $cont = 0;
     
     
     public function principalVistaAction(){
-         $em = $this->getDoctrine()->getManager();
-         $entrevistas = $em->getRepository('OpltdaEntidadesBundle:Entrevistas')->findAll();
-         $focusGroup = $em->getRepository('OpltdaEntidadesBundle:FocusGroup')->findAll();
-         $puertos = $em->getRepository('OpltdaEntidadesBundle:Puertos')->findAll();
-         return $this->render('OpltdaPaginasBundle:Default:principal.html.twig' , array('entrevistas' => $entrevistas , 'focusGroup' => $focusGroup , 'puertos' => $puertos));
+        
+        $em = $this->getDoctrine()->getManager();
+        
+         $session = $this->getRequest()->getSession();   
+         $usuario = $session->get('usuario'); 
+         $password = $session->get('password');
+         
+         $admin = $em->getRepository('OpltdaEntidadesBundle:Usuarios')->findOneBy(array('usuario'=>$usuario, 'password' => $password));
+         
+         if (!$admin) {
+              $entrevistas = $em->getRepository('OpltdaEntidadesBundle:Entrevistas')->findAll();
+             $focusGroup = $em->getRepository('OpltdaEntidadesBundle:FocusGroup')->findAll();
+             $puertos = $em->getRepository('OpltdaEntidadesBundle:Puertos')->findAll();
+             return $this->render('OpltdaPaginasBundle:Default:principal.html.twig' , array('entrevistas' => $entrevistas , 'focusGroup' => $focusGroup , 'puertos' => $puertos));  
+         }else{
+             $session->remove($admin);
+             $intention = '';
+            $csrf = $this->get('form.csrf_provider'); //
+            $token = $csrf->generateCsrfToken($intention);
+            $em = $this->getDoctrine()->getManager(); 
+            return $this->render('OpltdaPaginasBundle:Default:login.html.twig' , array('token' => $token));
+         }
+         
     
          
     }
@@ -126,9 +144,9 @@ $cont = 0;
         $intention = '';
         $csrf = $this->get('form.csrf_provider'); //
         $token = $csrf->generateCsrfToken($intention);
-              $em = $this->getDoctrine()->getManager();
-         $entrevistas = $em->getRepository('OpltdaEntidadesBundle:Entrevistas')->findAll();
-         $focusGroup = $em->getRepository('OpltdaEntidadesBundle:FocusGroup')->findAll();
+        $em = $this->getDoctrine()->getManager();
+        $entrevistas = $em->getRepository('OpltdaEntidadesBundle:Entrevistas')->findAll();
+        $focusGroup = $em->getRepository('OpltdaEntidadesBundle:FocusGroup')->findAll();
         
         
         return $this->render('OpltdaPaginasBundle:Default:login.html.twig' , array('token' => $token));
@@ -171,27 +189,29 @@ $cont = 0;
         $password = $request->request->get('password');
         $token = $request->request->get('token');
        
+        
         $em = $this->getDoctrine()->getManager();
 
-         if($token == $token1){
+        $session  = new Session();
+        if($token == $token1){
         $usuario = $em->getRepository('OpltdaEntidadesBundle:Usuarios')->findOneBy(array('usuario' => $usuario, 'password' => $password));
 
         if ($request->getMethod() == 'POST') {
             if($usuario){
-       
+                 $session->set('admin', $usuario);
                  return new Response('200');
                  
                  
             } else {
-                
                  return new Response('100');
+                 
             }
         } else {
 
 
-            return new Response('100');
+                return new Response('100');
+            }
         }
-    }
     
     
        return new Response('100');
@@ -262,5 +282,11 @@ $cont = 0;
             $em = $this->getDoctrine()->getManager();
             $estudio = $em->getRepository('OpltdaEntidadesBundle:Estudio')->findOneBy(array('id'=>$id));
             return $this->render('OpltdaPaginasBundle:Default:detalleEstudio.html.twig', array('estudio'=>$estudio));
+        }
+        
+        public function listarModelamientoAction() {
+            $em = $this->getDoctrine()->getManager();
+            $modelamiento = $em->getRepository('OpltdaEntidadesBundle:Modelamiento')->findAll();
+            return $this->render('OpltdaPaginasBundle:Default:listarModelamiento.html.twig', array('modelamiento'=>$modelamiento));
         }
 }
