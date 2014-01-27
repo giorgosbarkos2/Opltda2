@@ -91,109 +91,34 @@ $(document).ready(function(){
         
          <thead>
             
-            <th width="200px">Nombre Cadena</th>
-            <th width="200px">Nombre Region</th>
-            <th width="200px">Nombre Puertos </th>
+         <th width="200px">C&oacute;digo</th>
             <th width="200px">Cadena</th>
-            <th width="200px">Macroproceso</th>
             <th width="200px">Factor</th>
-            <th width="30%">Codigo Actividad</th>
             <th width="30%">Actividad</th>
-            <th width="30%">Agente</th>
-            <th width="30%">Generador</th>
-            <th width="30%">Sector</th>
             <th width="30%">Costo Unitario</th>
-            <th width="30%">Costo unitario Factor espacial y temporal</th>
-            <th width="20%">Tiempo promedio Servicio</th>
-            <th width="20%">Precio del producto</th>
             <th width="20%">Costo de inventario</th>
-            <th width="20%">Suma de los factores mas inventarios</th>
-            <th width="20%">Transferencia de carga sitema</th>
-            <th width="20%">Transferencia de carga puerto</th>
-            <th width="20%">Transferencia de carga cadena</th>
-            <th width="20%">Costo Factor</th>
-            <th width="20%">Costo Logistico</th>
-            <th width="20%">Costo Inventario</th>
-            <th width="20%">Ineficiencias</th>
-            <th width="20%">Causas de la ineficiencia</th>
-            <th width="20%">Eje</th>
-            <th width="20%">Iniciativa</th>
-            <th width="20%">Inversion estimada</th>
-            <th width="20%">Costo total</th>
-            <th width="20%">Costo Logistico 2</th>
-            <th width="20%">Cobertura impacto</th>
-            <th width="20%">Editar</th>
+            <th width="20%">Ver detalle</th>
         </thead>
         
         <thead>
             
-            <th width="30%">Nombre Cadena</th>
-            <th width="30%">Nombre Region</th>
-            <th width="30%">Nombre Puertos </th>
+            <th width="30%">C&oacu;digo</th>
             <th width="30%">Cadena</th>
-            <th width="30%">Macroproceso</th>
             <th width="30%">Factor</th>
-            <th width="30%">Codigo Actividad</th>
             <th width="30%">Actividad</th>
-            <th width="30%">Agente</th>
-            <th width="30%">Generador</th>
-            <th width="30%">Sector</th>
             <th width="30%">Costo Unitario</th>
-            <th width="30%">Costo unitario Factor espacial y temporal</th>
-            <th width="20%">Tiempo promedio Servicio</th>
-            <th width="20%">Precio del producto</th>
             <th width="20%">Costo de inventario</th>
-            <th width="20%">Suma de los factores mas inventarios</th>
-            <th width="20%">Transferencia de carga sitema</th>
-            <th width="20%">Transferencia de carga puerto</th>
-            <th width="20%">Transferencia de carga cadena</th>
-            <th width="20%">Costo Factor</th>
-            <th width="20%">Costo Logistico</th>
-            <th width="20%">Costo Inventario</th>
-            <th width="20%">Ineficiencias</th>
-            <th width="20%">Causas de la ineficiencia</th>
-            <th width="20%">Eje</th>
-            <th width="20%">Iniciativa</th>
-            <th width="20%">Inversion estimada</th>
-            <th width="20%">Costo total</th>
-            <th width="20%">Costo Logistico 2</th>
-            <th width="20%">Cobertura impacto</th>
-            <th width="20%">Editar</th>
+            <th width="20%">Ver Detalle</th>
         </thead>
         <tbody>
             {% for estudio in estudio %}
             <tr>
-                <td>{{estudio.cadenas.nombre}}</td>
-                <td>{{estudio.regiones.nombre}}</td>
-                <td>{{estudio.puertos.nombre}}</td>
+                <td>{{estudio.cadenas.codigo}}</td>
                 <td>{{estudio.cadena}}</td>
-                <td>{{estudio.macroproceso}}</td>
                 <td>{{estudio.factor}}</td>
-                <td>{{estudio.codigoactividad}}</td>
                 <td>{{estudio.actividad}}</td>
-                <td>{{estudio.agente}}</td>
-                <td>{{estudio.generador}}</td>
-                <td>{{estudio.sector}}</td>
                 <td>{{estudio.costounitario}}</td>
-                <td>{{estudio.COSTOUNITARIOFACTORESPACIALYTEMPORAL}}</td>
-                <td>{{estudio.TIEMPOPROMEDIOSERVICIO}}</td>
-                <td>{{estudio.PRECIODELPRODUCTO}}</td>
                 <td>{{estudio.COSTODEINVENTARIO}}</td>
-                <td>{{estudio.Sumadelosfactoresmasinventarios}}</td>
-                <td>{{estudio.TRANSFERENCIADECARGASISTEMA}}</td>
-                <td>{{estudio.TRANSFERENCIADECARGAPUERTO}}</td>
-                <td>{{estudio.TRANSFERENCIADECARGACADENA}}</td>
-                <td>{{estudio.COSTOFACTOR}}</td>
-                <td>{{estudio.COSTOLOGISTICO}}</td>
-                <td>{{estudio.COSTOINVENTARIO}}</td>
-                <td>{{estudio.Ineficencias}}</td>
-                <td>{{estudio.CAUSASDELASINEFICIENCIAS}}</td>
-                <td>{{estudio.eje}}</td>
-                <td>{{estudio.iniciativa}}</td>
-                <td>{{estudio.INVERSIONESTIMADA}}</td>
-                <td>{{estudio.COSTOTOTAL}}</td>
-                <td>{{estudio.Costologistico2}}</td>
-                <td>{{estudio.Coberturaimpacto}}</td>
                 <td><a href="verDetalleEstudio/{{estudio.id}}" class="btn btn-primary">Ver Detalle</a></td>
             </tr>
             {% endfor%}
