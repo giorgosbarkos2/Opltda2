@@ -52149,7 +52149,7 @@ if(jQuery) (function($) {
 			 *      } );
 			 *    } );
 			 */
-			"sInfo": "Mostrado _START_ un _END_ of _TOTAL_ entradas",
+			"sInfo": "Mostrando _START_ un _END_ of _TOTAL_ entradas",
 		
 		
 			/**
@@ -52168,6 +52168,9 @@ if(jQuery) (function($) {
 			 *      } );
 			 *    } );
 			 */
+                
+                
+                
 			"sInfoEmpty": "Mostrando 0 de 0  0 entries",
                                 
 		

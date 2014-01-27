@@ -12,6 +12,14 @@
                                 }
                             
                                 
+ #inversionVial_filter{
+        
+        display:none;
+        
+        
+        }
+        
+                                
     </style>
     
     
@@ -35,9 +43,10 @@ $(document).ready(function(){
 		 .columnFilter({ sPlaceHolder: "head:after",
                                                              aoColumns: [
 
-		        { type: "text" },
+		        { type: "select", values: [ '4' , '5' , '8' , '12' ]  },
 		        { type: "text" },
                                         { type: "text" }
+                                        
 	
 		  
 
@@ -71,7 +80,7 @@ $(document).ready(function(){
 			{% for inversionvial in inversionvial %}
 		
                         <tr>
-                        <td>{{inversionvial.regiones.nombre}}</td>
+                        <td>{{inversionvial.regiones.numero}}</td>
 			<td>{{inversionvial.nombre}}</td>
                                                 <td>{% set archivo = inversionvial.archivosinversionvial %}
                                                    

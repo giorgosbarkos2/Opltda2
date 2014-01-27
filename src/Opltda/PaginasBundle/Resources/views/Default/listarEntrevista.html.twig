@@ -11,6 +11,13 @@
                                
                                 
                                 }
+                                
+    #entrevistas_filter{
+        
+        display:none;
+        
+        
+        }
                             
                                 
     </style>     
@@ -26,7 +33,8 @@ $(document).ready(function(){
 		 .columnFilter({ sPlaceHolder: "head:after",
                                                              aoColumns: [
 
-		        { type: "text" },
+
+		              { type: "select", values: [ '4' , '5' , '8' , '12' ]  },
 		        { type: "select", values: [ 'Coronel' , 'CQQ' , 'PTLA' , 'PUQ' , 'SAI' , 'San Vicente' , 'San Vicente, Coronel'  , 'VAP' , 'VAP/SAI' ]  },
                                         { type: "text" },
 		        { type: "select", values: [ 'Carne' , 'Celulosa' , 'Cobre' , 'Lana' , 'Madera' , 'Reefer' , 'Retail' , 'Salmón' , 'Transversal' , 'Uva' ,'Vino' ]  },
