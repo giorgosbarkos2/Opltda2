@@ -122,14 +122,14 @@ $cont = 0;
          
          $admin = $em->getRepository('OpltdaEntidadesBundle:Usuarios')->findOneBy(array('usuario'=>$usuario, 'password' => $password));
          
-         if (!$admin) {
+         if(!$admin) {
               $entrevistas = $em->getRepository('OpltdaEntidadesBundle:Entrevistas')->findAll();
              $focusGroup = $em->getRepository('OpltdaEntidadesBundle:FocusGroup')->findAll();
              $puertos = $em->getRepository('OpltdaEntidadesBundle:Puertos')->findAll();
              return $this->render('OpltdaPaginasBundle:Default:principal.html.twig' , array('entrevistas' => $entrevistas , 'focusGroup' => $focusGroup , 'puertos' => $puertos));  
          }else{
-             $session->remove($admin);
-             $intention = '';
+            $session->remove($admin);
+            $intention = '';
             $csrf = $this->get('form.csrf_provider'); //
             $token = $csrf->generateCsrfToken($intention);
             $em = $this->getDoctrine()->getManager(); 
@@ -223,70 +223,216 @@ $cont = 0;
     public function detallePuertoAction($id){
            $em  = $this->getDoctrine()->getManager();
            
-            $puertos = $em->getRepository('OpltdaEntidadesBundle:Puertos')->findOneBy(array('id' => $id));
-            $entrevistas = $em->getRepository('OpltdaEntidadesBundle:Entrevistas')->findBy(array('puertos' => $id));
+           $session = $this->getRequest()->getSession();   
+           $usuario = $session->get('usuario'); 
+           $password = $session->get('password');
+         
+            $admin = $em->getRepository('OpltdaEntidadesBundle:Usuarios')->findOneBy(array('usuario'=>$usuario, 'password' => $password));
+ 
+            if(!$admin){
+                $puertos = $em->getRepository('OpltdaEntidadesBundle:Puertos')->findOneBy(array('id' => $id));
+                $entrevistas = $em->getRepository('OpltdaEntidadesBundle:Entrevistas')->findBy(array('puertos' => $id));
+
+                return $this->render('OpltdaPaginasBundle:Default:detallePuerto.html.twig', array('puertos'=> $puertos ));
+            }else{
+                $session->remove($admin);
+                $intention = '';
+                $csrf = $this->get('form.csrf_provider'); //
+                $token = $csrf->generateCsrfToken($intention);
+                $em = $this->getDoctrine()->getManager(); 
+                return $this->render('OpltdaPaginasBundle:Default:login.html.twig' , array('token' => $token));
+            }
             
-            return $this->render('OpltdaPaginasBundle:Default:detallePuerto.html.twig', array('puertos'=> $puertos ));
+
             
             
    
     }
 	public function listarFocusGroupAction(){
-            $em  = $this->getDoctrine()->getManager();
-            $focusgroup = $em->getRepository('OpltdaEntidadesBundle:FocusGroup')->findAll();
-            return $this->render('OpltdaPaginasBundle:Default:listarFocusGroup.html.twig', array('focusgroup'=> $focusgroup));
+           $em  = $this->getDoctrine()->getManager();
+            
+           $session = $this->getRequest()->getSession();   
+           $usuario = $session->get('usuario'); 
+           $password = $session->get('password');
+         
+            $admin = $em->getRepository('OpltdaEntidadesBundle:Usuarios')->findOneBy(array('usuario'=>$usuario, 'password' => $password));
+ 
+            if(!$admin){
+                       $focusgroup = $em->getRepository('OpltdaEntidadesBundle:FocusGroup')->findAll();
+            return $this->render('OpltdaPaginasBundle:Default:listarFocusGroup.html.twig', array('focusgroup'=> $focusgroup));    
+            }else{
+                $session->remove($admin);
+                $intention = '';
+                $csrf = $this->get('form.csrf_provider'); //
+                $token = $csrf->generateCsrfToken($intention);
+                $em = $this->getDoctrine()->getManager(); 
+                return $this->render('OpltdaPaginasBundle:Default:login.html.twig' , array('token' => $token));
+            }
+            
+     
 	}
 	
 	public function listarInversionVialAction(){
-            $em = $this->getDoctrine()->getManager();
-            $inversionvial = $em->getRepository('OpltdaEntidadesBundle:InversionVial')->findAll();
-            return $this->render('OpltdaPaginasBundle:Default:listarInversionVial.html.twig', array('inversionvial'=>$inversionvial));
+           $em = $this->getDoctrine()->getManager();
+           
+           $session = $this->getRequest()->getSession();   
+           $usuario = $session->get('usuario'); 
+           $password = $session->get('password');
+         
+            $admin = $em->getRepository('OpltdaEntidadesBundle:Usuarios')->findOneBy(array('usuario'=>$usuario, 'password' => $password));
+ 
+            if(!$admin){
+                $inversionvial = $em->getRepository('OpltdaEntidadesBundle:InversionVial')->findAll();
+                return $this->render('OpltdaPaginasBundle:Default:listarInversionVial.html.twig', array('inversionvial'=>$inversionvial));   
+            }else{
+                $session->remove($admin);
+                $intention = '';
+                $csrf = $this->get('form.csrf_provider'); //
+                $token = $csrf->generateCsrfToken($intention);
+                $em = $this->getDoctrine()->getManager(); 
+                return $this->render('OpltdaPaginasBundle:Default:login.html.twig' , array('token' => $token));                
+            }
+
 	}
         
         
             
         
-        	public function listarMemoriaAction(){
-            $em = $this->getDoctrine()->getManager();
-            $memoriaCalculo = $em->getRepository('OpltdaEntidadesBundle:memoriaCalculo')->findAll();
-              return $this->render('OpltdaPaginasBundle:Default:listarMemoriaC.html.twig', array('memoriaCalculo' => $memoriaCalculo));
+       public function listarMemoriaAction(){
+           $em = $this->getDoctrine()->getManager();
+        
+           $session = $this->getRequest()->getSession();   
+           $usuario = $session->get('usuario'); 
+           $password = $session->get('password');
+         
+            $admin = $em->getRepository('OpltdaEntidadesBundle:Usuarios')->findOneBy(array('usuario'=>$usuario, 'password' => $password));
+ 
+            if(!$admin){
+                $memoriaCalculo = $em->getRepository('OpltdaEntidadesBundle:memoriaCalculo')->findAll();
+                return $this->render('OpltdaPaginasBundle:Default:listarMemoriaC.html.twig', array('memoriaCalculo' => $memoriaCalculo));
+            }else{
+                $session->remove($admin);
+                $intention = '';
+                $csrf = $this->get('form.csrf_provider'); //
+                $token = $csrf->generateCsrfToken($intention);
+                $em = $this->getDoctrine()->getManager(); 
+                return $this->render('OpltdaPaginasBundle:Default:login.html.twig' , array('token' => $token));                                
+            }    
+
 	}
         
 
 	public function listarEntrevistaAction(){
-            $em = $this->getDoctrine()->getManager();
-            $entrevista = $em->getRepository('OpltdaEntidadesBundle:Entrevistas')->findAll();
-            
-            
-            return $this->render('OpltdaPaginasBundle:Default:listarEntrevista.html.twig', array('entrevista' => $entrevista));
+           $em = $this->getDoctrine()->getManager();
+           
+           $session = $this->getRequest()->getSession();   
+           $usuario = $session->get('usuario'); 
+           $password = $session->get('password');
+         
+            $admin = $em->getRepository('OpltdaEntidadesBundle:Usuarios')->findOneBy(array('usuario'=>$usuario, 'password' => $password));
+ 
+            if(!$admin){
+                $entrevista = $em->getRepository('OpltdaEntidadesBundle:Entrevistas')->findAll();
+                return $this->render('OpltdaPaginasBundle:Default:listarEntrevista.html.twig', array('entrevista' => $entrevista));
+            }else{
+                $session->remove($admin);
+                $intention = '';
+                $csrf = $this->get('form.csrf_provider'); //
+                $token = $csrf->generateCsrfToken($intention);
+                $em = $this->getDoctrine()->getManager(); 
+                return $this->render('OpltdaPaginasBundle:Default:login.html.twig' , array('token' => $token));                                
+            }                          
 	}
         
         
         
         public function listarEstudioAction(){
             
-            $em = $this->getDoctrine()->getManager();
-            $estudio =  $em->getRepository('OpltdaEntidadesBundle:Estudio')->findAll();
-            return $this->render('OpltdaPaginasBundle:Default:listasEstudio.html.twig', array('estudio' => $estudio));
-            
+           $em = $this->getDoctrine()->getManager();
+                       
+           $session = $this->getRequest()->getSession();   
+           $usuario = $session->get('usuario'); 
+           $password = $session->get('password');
+         
+            $admin = $em->getRepository('OpltdaEntidadesBundle:Usuarios')->findOneBy(array('usuario'=>$usuario, 'password' => $password));
+ 
+            if(!$admin){
+                $estudio =  $em->getRepository('OpltdaEntidadesBundle:Estudio')->findAll();
+                return $this->render('OpltdaPaginasBundle:Default:listasEstudio.html.twig', array('estudio' => $estudio));
+            }else{
+                $session->remove($admin);
+                $intention = '';
+                $csrf = $this->get('form.csrf_provider'); //
+                $token = $csrf->generateCsrfToken($intention);
+                $em = $this->getDoctrine()->getManager(); 
+                return $this->render('OpltdaPaginasBundle:Default:login.html.twig' , array('token' => $token));                                                
+            }                          
         }
         public function listarMapasAction(){
-            $em = $this->getDoctrine()->getManager();
-            $mapas =  $em->getRepository('OpltdaEntidadesBundle:Mapas')->findAll();
-            return $this->render('OpltdaPaginasBundle:Default:mapas.html.twig', array('mapas' => $mapas));
-            
-            
+           $em = $this->getDoctrine()->getManager();
+           
+           $session = $this->getRequest()->getSession();   
+           $usuario = $session->get('usuario'); 
+           $password = $session->get('password');
+         
+            $admin = $em->getRepository('OpltdaEntidadesBundle:Usuarios')->findOneBy(array('usuario'=>$usuario, 'password' => $password));
+ 
+            if(!$admin){
+                $mapas =  $em->getRepository('OpltdaEntidadesBundle:Mapas')->findAll();
+                return $this->render('OpltdaPaginasBundle:Default:mapas.html.twig', array('mapas' => $mapas));
+            }else{
+                $session->remove($admin);
+                $intention = '';
+                $csrf = $this->get('form.csrf_provider'); //
+                $token = $csrf->generateCsrfToken($intention);
+                $em = $this->getDoctrine()->getManager(); 
+                                return $this->render('OpltdaPaginasBundle:Default:login.html.twig' , array('token' => $token));
+            }
         }
         
         public function verDetalleEstudioAction($id){
-            $em = $this->getDoctrine()->getManager();
-            $estudio = $em->getRepository('OpltdaEntidadesBundle:Estudio')->findOneBy(array('id'=>$id));
-            return $this->render('OpltdaPaginasBundle:Default:detalleEstudio.html.twig', array('estudio'=>$estudio));
+           $em = $this->getDoctrine()->getManager();
+
+           $session = $this->getRequest()->getSession();   
+           $usuario = $session->get('usuario'); 
+           $password = $session->get('password');
+         
+            $admin = $em->getRepository('OpltdaEntidadesBundle:Usuarios')->findOneBy(array('usuario'=>$usuario, 'password' => $password));
+ 
+            if(!$admin){
+                $estudio = $em->getRepository('OpltdaEntidadesBundle:Estudio')->findOneBy(array('id'=>$id));
+                return $this->render('OpltdaPaginasBundle:Default:detalleEstudio.html.twig', array('estudio'=>$estudio));
+            }else{
+                $session->remove($admin);
+                $intention = '';
+                $csrf = $this->get('form.csrf_provider'); //
+                $token = $csrf->generateCsrfToken($intention);
+                $em = $this->getDoctrine()->getManager();
+                return $this->render('OpltdaPaginasBundle:Default:login.html.twig' , array('token' => $token));
+            }
         }
         
         public function listarModelamientoAction() {
-            $em = $this->getDoctrine()->getManager();
-            $modelamiento = $em->getRepository('OpltdaEntidadesBundle:Modelamiento')->findAll();
-            return $this->render('OpltdaPaginasBundle:Default:listarModelamiento.html.twig', array('modelamiento'=>$modelamiento));
+           $em = $this->getDoctrine()->getManager();
+            
+           $session = $this->getRequest()->getSession();   
+           $usuario = $session->get('usuario'); 
+           $password = $session->get('password');
+         
+            $admin = $em->getRepository('OpltdaEntidadesBundle:Usuarios')->findOneBy(array('usuario'=>$usuario, 'password' => $password));
+ 
+            if(!$admin){
+                $modelamiento = $em->getRepository('OpltdaEntidadesBundle:Modelamiento')->findAll();
+                return $this->render('OpltdaPaginasBundle:Default:listarModelamiento.html.twig', array('modelamiento'=>$modelamiento));
+            }else{
+                $session->remove($admin);
+                $intention = '';
+                $csrf = $this->get('form.csrf_provider'); //
+                $token = $csrf->generateCsrfToken($intention);
+                $em = $this->getDoctrine()->getManager();
+                return $this->render('OpltdaPaginasBundle:Default:login.html.twig' , array('token' => $token));                               
+            }
+            
+
         }
 }
