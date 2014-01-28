@@ -1,4 +1,7 @@
 {% include "OpltdaPaginasBundle:Default:estPrincipal.html.twig" %}
 {% block fotopuerto %}
-<img src="../../web/" alt="Panor&aa&aacute;mica">
+     {% set fotos = puertos.fotos %}
+     {% for fotos in fotos%}
+        <img src="../../web/panoramicas/{{fotos.url}}" alt="{{puertos.nombre}}">
+     {% endfor %}
 {% endblock %}

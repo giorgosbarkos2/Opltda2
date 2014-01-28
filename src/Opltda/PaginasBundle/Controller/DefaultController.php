@@ -242,8 +242,6 @@ $cont = 0;
  
             if($admin){
                 $puertos = $em->getRepository('OpltdaEntidadesBundle:Puertos')->findOneBy(array('id' => $id));
-                $entrevistas = $em->getRepository('OpltdaEntidadesBundle:Entrevistas')->findBy(array('puertos' => $id));
-
                 return $this->render('OpltdaPaginasBundle:Default:detallePuerto.html.twig', array('puertos'=> $puertos ));
             }else{
                 $session->remove($admin);
