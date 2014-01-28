@@ -2,6 +2,7 @@
 {% block fotopuerto %}
      {% set fotos = puertos.fotos %}
      {% for fotos in fotos%}
-        <img src="../../web/panoramicas/{{fotos.url}}" alt="{{puertos.nombre}}">
+ 
+        <img src="../../web/archivos/panoramicas/{{fotos.url}}" alt="{{puertos.nombre}}" width="60%" height="60%">
      {% endfor %}
 {% endblock %}
