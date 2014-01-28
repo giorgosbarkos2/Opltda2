@@ -22,7 +22,8 @@
 
                             { type: "text" },
                             { type: "text" },
-                                            { type: "text" }
+                                            { type: "text" },
+                                                { type: "text" }
 
 
 
@@ -38,16 +39,17 @@
     <thead>
         <th>Nombre puerto</th>
         <th>Nombre cadena</th>
-        <th>Visualizar pdf</th>
-        <th>Descargar Archivo</th>
+        <th>Visualizar Pdf</th>
+        <th>Bajar Bpm</th>
+ 
     </thead>
     <tbody>
         {% for modelamiento in modelamiento %}
         <tr>
             <td>{{modelamiento.puertos.nombre}}</td>
             <td>{{modelamiento.cadenas.nombre}}</td>
-            <td><a href="../web/modelamiento/{{modelamiento.archivoDoc}}">{{modelamiento.archivoDoc}}</a></td>
-            <td><a href="../web/modelamiento/{{modelamiento.archivoBpm}}">{{modelamiento.archivoBpm}}</a></td>
+            <td><a href="../web/archivos/modelamiento/{{modelamiento.archivoDoc}}">{{modelamiento.archivoDoc}}</a></td>
+            <td><a href="../web/archivos/modelamiento/{{modelamiento.archivoBpm}}">{{modelamiento.archivoBpm}}</a></td>
         </tr>
         {% endfor %}
     </tbody>
