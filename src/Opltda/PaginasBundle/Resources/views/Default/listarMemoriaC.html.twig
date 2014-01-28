@@ -1,28 +1,17 @@
 {# empty Twig template #}
-
-       {% include "OpltdaPaginasBundle:Default:estPrincipal.html.twig" %}
-
-
-
-
+{% include "OpltdaPaginasBundle:Default:estPrincipal.html.twig" %}
 <style>
-
-     .dataTables_length{
-                                position: absolute;
-                                width: 100px;
+.dataTables_length{
+     position: absolute;
+     width: 100px;
+}
                                
-                                
-                                }
-                                
- #inversionVial_filter{
+#inversionVial_filter{
      display: none;
-     
-     }
-                            
-                                
-    </style>
+}
+</style>
     
-    
+   
 <h4 class="heading-1 clearfix">
     <br>
 
@@ -39,18 +28,13 @@
  
 $(document).ready(function(){
      $('#inversionVial').dataTable()
-		 .columnFilter({ sPlaceHolder: "head:after",
-                                                             aoColumns: [
-
-		        { type: "text" },
-		        { type: "text" },
-                                        { type: "text" }
-	
-		  
-
-				]
-
-		});
+	 .columnFilter({ sPlaceHolder: "head:after",
+             aoColumns: [
+                { type: "select", values: ['Cadena logística exportación de uva en pallet ', 'Cadena logística exportación de uva en pallet ', 'Cadena logística exportación concentrado de cobre','Cadena logística de exportación de cobre refinado ','Cadena logística exportación de manzana fresca en pallet','Cadena logística de exportación de uva en contenedor ','Cadena logística importación de carga general, pago anticipado','Cadena logística de exportación de cobre refinado.','Cadena logística importación de carne ','Cadena logística de exportación de madera aserrada ','Cadena logística exportación de celulosa ','Cadena logística exportación de salmón ','Cadena de exportación de salmón','Cadena de Exportación de la lana','Cadena de exportación carne congelada cordero ','Cadena logística exportación de vino por forwarder','Cadena logística exportación de uva en contenedor ','Cadena logística de exportación de vino ','Cadena logística importación de carga general sin pago anticipado']},
+	        { type: "text" },
+                { type: "text" }
+            ]
+	});
 });
 
              </script>

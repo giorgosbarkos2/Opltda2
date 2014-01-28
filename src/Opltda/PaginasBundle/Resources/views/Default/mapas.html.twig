@@ -31,16 +31,12 @@ $(document).ready(function(){
 
 
      $('#entrevistas').dataTable()
-		 .columnFilter({ sPlaceHolder: "head:after",
-                                                             aoColumns: [
-
-		        { type: "text" },
-                                        { type: "text" },
-                                        
-		      
-				]
-
-		});
+        .columnFilter({ sPlaceHolder: "head:after",
+            aoColumns: [
+	        { type: "select", values: [ '4' , '5' , '8' ] },
+                { type: "text" },
+            ]
+	});
 });
 
              </script>
@@ -61,7 +57,7 @@ $(document).ready(function(){
                                 
                             <tr>    
                             
-                            <td>{{mapas.regiones.nombre}}</td>
+                            <td>{{mapas.regiones.numero}}</td>
 
                             <td><a href="../web/archivos/mapas/{{mapas.url}}.jpg"   target="_blank"> Imagen </a></td>
                            

@@ -31,19 +31,14 @@
 $(document).ready(function(){
      $('#entrevistas').dataTable()
 		 .columnFilter({ sPlaceHolder: "head:after",
-                                                             aoColumns: [
-
-
-		              { type: "select", values: [ '4' , '5' , '8' , '12' ]  },
-		        { type: "select", values: [ 'Coronel' , 'CQQ' , 'PTLA' , 'PUQ' , 'SAI' , 'San Vicente' , 'San Vicente, Coronel'  , 'VAP' , 'VAP/SAI' ]  },
-                                        { type: "text" },
-		        { type: "select", values: [ 'Carne' , 'Celulosa' , 'Cobre' , 'Lana' , 'Madera' , 'Reefer' , 'Retail' , 'Salmón' , 'Transversal' , 'Uva' ,'Vino' ]  },
-                                      
-                                      { type: "select", values: [ 'Agencia de Aduana' , 'Concesionario' , 'Depósito de contenedores' , 'Embarcador' , 'Empresa portuaria' , 'Exportador' , 'Freight Forwarder'  , 'Importador' , 'Naviera' , 'SAG' , 'SERNAPESCA' , 'Servicio nacional de Aduanas'  , 'Transportista ferroviario'  , 'Transportista rodoviario' ]  },
-                                      
-                                      
-                                        { type: "text" },
-				]
+                       aoColumns: [
+                            { type: "select", values: [ '4' , '5' , '8' , '12' ]  },
+                            { type: "select", values: [ 'Coronel' , 'CQQ' , 'PTLA' , 'PUQ' , 'SAI' , 'San Vicente' , 'San Vicente, Coronel'  , 'VAP' , 'VAP/SAI' ]  },
+                            { type: "text" },
+                            { type: "select", values: [ 'Carne' , 'Celulosa' , 'Cobre' , 'Lana' , 'Madera' , 'Reefer' , 'Retail' , 'Salmón' , 'Transversal' , 'Uva' ,'Vino' ]  },
+                            { type: "select", values: [ 'Agencia de Aduana' , 'Concesionario' , 'Depósito de contenedores' , 'Embarcador' , 'Empresa portuaria' , 'Exportador' , 'Freight Forwarder'  , 'Importador' , 'Naviera' , 'SAG' , 'SERNAPESCA' , 'Servicio nacional de Aduanas'  , 'Transportista ferroviario'  , 'Transportista rodoviario' ]  },
+                            { type: "text" }
+			]
 
 		});
 });

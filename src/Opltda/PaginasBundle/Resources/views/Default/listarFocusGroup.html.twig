@@ -26,18 +26,14 @@
  
 $(document).ready(function(){
      $('#focusGroup').dataTable()
-		 .columnFilter({ sPlaceHolder: "head:after",
-                                                             aoColumns: [
-
+	 .columnFilter({ sPlaceHolder: "head:after",
+                      aoColumns: [
+		        { type: "select", values: [ 'Coronel' , 'CQQ' , 'PTLA' , 'PUQ' , 'SAI' , 'San Vicente' , 'San Vicente, Coronel'  , 'VAP' , 'VAP/SAI' ] },
 		        { type: "text" },
-		        { type: "text" },
-                                        { type: "text" }
-	
-		  
+                        { type: "text" }
+            	]
 
-				]
-
-		});
+	 });
 });
 
              </script>
