@@ -26,30 +26,31 @@
 
         <div id="page-wrapper" class="demo-example">
 
-            <div id="page-sidebar">
-                <div id="header-logo">
-                    Opltda <i class="opacity-80"></i>
+          <div id="page-sidebar">
+                    <div id="header-logo" style="height:100px;">
+                      <img src="{{asset('bundles/opltdapaginas/images/logochico.png')}}" style="margin-top:6px; width: 101px;height: 83px;" >  Opltda <i class="opacity-80"></i>
+               
+                  
+                            
+                 
 
-                    <a href="javascript:;" class="tooltip-button" data-placement="bottom" title="Close sidebar" id="close-sidebar">
-                        <i class="glyph-icon icon-align-justify"></i>
-                    </a>
-                    <a href="javascript:;" class="tooltip-button hidden" data-placement="bottom" title="Open sidebar" id="rm-close-sidebar">
-                        <i class="glyph-icon icon-align-justify"></i>
-                    </a>
-                    <a href="javascript:;" class="tooltip-button hidden" title="Navigation Menu" id="responsive-open-menu">
-                        <i class="glyph-icon icon-align-justify"></i>
-                    </a>
-                </div>
-         
-           
-                    
-                    
-                    
-                    
-                         {% include "OpltdaPaginasBundle:Layers:menu.html.twig" %}
-                    
-                    
-            </div><!-- #page-sidebar -->
+                        <a href="javascript:;" class="tooltip-button" data-placement="bottom" title="Close sidebar" id="close-sidebar">
+                            <i class="glyph-icon icon-align-justify"></i>
+                        </a>
+                        <a href="javascript:;" class="tooltip-button hidden" data-placement="bottom" title="Open sidebar" id="rm-close-sidebar">
+                            <i class="glyph-icon icon-align-justify"></i>
+                        </a>
+                        <a href="javascript:;" class="tooltip-button hidden" title="Navigation Menu" id="responsive-open-menu">
+                            <i class="glyph-icon icon-align-justify"></i>
+                        </a>
+                    </div>
+
+                 {% include "OpltdaPaginasBundle:Layers:menu.html.twig" %}
+
+
+                </div><!-- #page-sidebar -->
+                
+                
             
             <div id="page-main">
 

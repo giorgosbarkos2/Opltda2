@@ -1,25 +1,26 @@
 {# empty Twig template #}
 
 
+
 <div id="sidebar-menu" class="scrollable-content" style="width: 220px;">
                       <ul>
                         <li>
                             <a href="{{path('principal')}}" title="Dashboard">
                                 <i class="glyph-icon icon-dashboard"></i>
-                               Principal
+                   Principal 
                             </a>
                         </li>
                        
                         <li>
                             <a href="javascript:;" title="Fixed layout">
                                 <i class="glyph-icon icon-folder-open"></i>
-                              <p>Descargar archivos </p>
+                       Descargar archivos 
                             </a>
                             <ul>
                                <li>
                             <a href="{{ path('listarEntrevista')}}" title="Data visualization">
                                 <i class="glyph-icon icon-chevron-right"></i>
-                                    Entrevistas.
+                               <p style="font-size: 12px;"> Entrevistas </p>
                             </a>
                         </li>
                              
@@ -27,7 +28,7 @@
                             <li>
                             <a href="{{ path('listarInversionVial')}}" title="Data visualization">
                                 <i class="glyph-icon icon-chevron-right"></i>
-                                        Inversion Vial.
+                                         <p style="font-size: 12px;"> Inversion Vial </p>
                             </a>
                         </li>
                         
@@ -37,7 +38,7 @@
                             <li>
                             <a href="{{ path('listarFocusGroup')}}" title="Data visualization">
                                <i class="glyph-icon icon-chevron-right"></i>
-                               Focus Group.
+                                   <p style="font-size: 12px;">  Focus Group</p>
                             </a>
                         </li>
                         
@@ -47,7 +48,7 @@
                              <li>
                             <a href="{{ path('listarMemoria')}}" title="Data visualization">
                                <i class="glyph-icon icon-chevron-right"></i>
-                            <p style="font-size: 14px;">  Memorias de cálculo.</p>
+                            <p style="font-size: 12px;">  Memorias de cálculo.</p>
                             </a>
                         </li>
                         
@@ -74,6 +75,35 @@
                             <p style="font-size: 12px;">  Mapas.</p>
                             </a>
                         </li>
+                        
+                        
+                        
+                        
+                        
+                            <li>
+                            
+                                <a href="archivos/guia/codigosActividad.xlsx" target="_blanck" title="Data visualization">
+                               <i class="glyph-icon icon-chevron-right"></i>
+                            <p style="font-size: 12px;">  Códigos Actividades.</p>
+                            </a>
+                        
+                        
+                        </li>
+                        
+                        
+                        
+                        <li>
+                            
+                                <a href="archivos/guia/codigocad.xlsx" target="_blanck" title="Data visualization">
+                               <i class="glyph-icon icon-chevron-right"></i>
+                            <p style="font-size: 12px;">  Códigos Cad.</p>
+                            </a>
+                        
+                        
+                        </li>
+                        
+                        
+                        
                         
                         
                        
@@ -128,18 +158,7 @@
                         
                         
                     
-                         <li>
-                            <a href="javascript:;" title="Fixed layout">
-                                <i class="glyph-icon icon-bar-chart-o"></i>
-                               Guias
-                            </a>
-                            <ul>
-                               <li>
-                            <a href="{{ path('listarEntrevista')}}" title="Data visualization">
-                                <i class="glyph-icon icon-chevron-right"></i>
-                                 Principal
-                            </a>
-                        </li>
+                       
                         
                         
                         
@@ -180,10 +199,7 @@
                     <div class="text-center mobile-hidden">
                         <div class="button-group">
                             
-                            <div style="width: 160px;height: 160px;position:relative;margin:auto;">
-                                <img src="{{asset('bundles/opltdapaginas/images/logo.png')}}">
-                            
-                            </div>
+                       
                             
                             
                           

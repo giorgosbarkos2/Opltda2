@@ -5,6 +5,18 @@
     position: absolute;
     width: 100px;
 }
+
+
+#modelamiento_filter{
+    display: none;
+    
+    
+    }
+
+
+
+
+
 </style>
 <h4 class="heading-1 clearfix">
     <br>
@@ -48,8 +60,8 @@
         <tr>
             <td>{{modelamiento.puertos.nombre}}</td>
             <td>{{modelamiento.cadenas.nombre}}</td>
-            <td><a href="../web/archivos/modelamiento/{{modelamiento.archivoDoc}}">{{modelamiento.archivoDoc}}</a></td>
-            <td><a href="../web/archivos/modelamiento/{{modelamiento.archivoBpm}}">{{modelamiento.archivoBpm}}</a></td>
+            <td><a href="../web/archivos/modelamiento/{{modelamiento.archivoDoc}}" target="_blank">{{modelamiento.archivoDoc}}</a></td>
+            <td><a href="../web/archivos/modelamiento/{{modelamiento.archivoBpm}}" target="_blank" >{{modelamiento.archivoBpm}}</a></td>
         </tr>
         {% endfor %}
     </tbody>
