@@ -122,7 +122,7 @@ $cont = 0;
          
          $admin = $em->getRepository('OpltdaEntidadesBundle:Usuarios')->findOneBy(array('usuario'=>$usuario, 'password' => $password));
          
-         if(!$admin) {
+         if($admin) {
               $entrevistas = $em->getRepository('OpltdaEntidadesBundle:Entrevistas')->findAll();
              $focusGroup = $em->getRepository('OpltdaEntidadesBundle:FocusGroup')->findAll();
              $puertos = $em->getRepository('OpltdaEntidadesBundle:Puertos')->findAll();
@@ -191,14 +191,25 @@ $cont = 0;
        
         
         $em = $this->getDoctrine()->getManager();
-
-        $session  = new Session();
+        
+        
+        $session  = $this->getRequest()->getSession();
+        $session->set('usuario' , $usuario); 
+        $session->set('password' , $password);
+    
+        
         if($token == $token1){
         $usuario = $em->getRepository('OpltdaEntidadesBundle:Usuarios')->findOneBy(array('usuario' => $usuario, 'password' => $password));
+          
 
+    
+         
+          
+          
         if ($request->getMethod() == 'POST') {
             if($usuario){
-                 $session->set('admin', $usuario);
+                
+      
                  return new Response('200');
                  
                  
@@ -274,6 +285,8 @@ $cont = 0;
            $session = $this->getRequest()->getSession();   
            $usuario = $session->get('usuario'); 
            $password = $session->get('password');
+           
+           
          
             $admin = $em->getRepository('OpltdaEntidadesBundle:Usuarios')->findOneBy(array('usuario'=>$usuario, 'password' => $password));
  
