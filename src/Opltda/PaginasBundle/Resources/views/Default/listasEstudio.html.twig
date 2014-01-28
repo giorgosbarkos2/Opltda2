@@ -28,11 +28,11 @@ $(document).ready(function(){
      $('#Estudio').dataTable()
 		 .columnFilter({ sPlaceHolder: "head:after",
                                                              aoColumns: [
-
-		        { type: "text" },
-		        { type: "text" },
                         
-                         	        { type: "select", values: [ 'Coronel' , 'CQQ' , 'PTLA' , 'PUQ' , 'SAI' , 'San Vicente' , 'San Vicente, Coronel'  , 'VAP' , 'VAP/SAI' ]  },
+		        { type: "select", values: [  'BIO-BÍO-001', 'BIO-BÍO-002', 'BIO-BÍO-003', 'SAI-001',  'CQQ-001', 'CQQ-002', 'PUQ-001', 'PUQ-002', 'PUQ-003', 'PTLA-001' ] },
+		        { type: "select", values: ['Madera', 'Celulosa', 'Salmón', 'Salmón', 'Vino forwarder', 'Uva pallet', 'Concentrado de cobre', 'Concentrado de cobre', 'Salmón Congelado', 'Lana',  'Carne Congelda',  'Carne Congelda', 'importación de carne '] },
+                        
+                        { type: "select", values: [ 'Temporal', 'Espacial' ]  },
                                         
                                         
                                         { type: "text" },
@@ -87,6 +87,7 @@ $(document).ready(function(){
              
 <div class="page-content">
     {% block Estudio%}
+    
     <table id="Estudio" class="table">
         
          <thead>
@@ -102,7 +103,7 @@ $(document).ready(function(){
         
         <thead>
             
-            <th width="30%">C&oacu;digo</th>
+            <th width="30%">C&oacute;digo</th>
             <th width="30%">Cadena</th>
             <th width="30%">Factor</th>
             <th width="30%">Actividad</th>
