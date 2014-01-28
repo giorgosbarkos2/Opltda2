@@ -229,17 +229,13 @@ $cont = 0;
          
             $admin = $em->getRepository('OpltdaEntidadesBundle:Usuarios')->findOneBy(array('usuario'=>$usuario, 'password' => $password));
  
-            if(!$admin){
+            if($admin){
                 $puertos = $em->getRepository('OpltdaEntidadesBundle:Puertos')->findOneBy(array('id' => $id));
                 $entrevistas = $em->getRepository('OpltdaEntidadesBundle:Entrevistas')->findBy(array('puertos' => $id));
 
                 return $this->render('OpltdaPaginasBundle:Default:detallePuerto.html.twig', array('puertos'=> $puertos ));
             }else{
                 $session->remove($admin);
-                $intention = '';
-                $csrf = $this->get('form.csrf_provider'); //
-                $token = $csrf->generateCsrfToken($intention);
-                $em = $this->getDoctrine()->getManager(); 
                 return $this->render('OpltdaPaginasBundle:Default:login.html.twig' , array('token' => $token));
             }
             
@@ -257,7 +253,7 @@ $cont = 0;
          
             $admin = $em->getRepository('OpltdaEntidadesBundle:Usuarios')->findOneBy(array('usuario'=>$usuario, 'password' => $password));
  
-            if(!$admin){
+            if($admin){
                        $focusgroup = $em->getRepository('OpltdaEntidadesBundle:FocusGroup')->findAll();
             return $this->render('OpltdaPaginasBundle:Default:listarFocusGroup.html.twig', array('focusgroup'=> $focusgroup));    
             }else{
@@ -281,7 +277,7 @@ $cont = 0;
          
             $admin = $em->getRepository('OpltdaEntidadesBundle:Usuarios')->findOneBy(array('usuario'=>$usuario, 'password' => $password));
  
-            if(!$admin){
+            if($admin){
                 $inversionvial = $em->getRepository('OpltdaEntidadesBundle:InversionVial')->findAll();
                 return $this->render('OpltdaPaginasBundle:Default:listarInversionVial.html.twig', array('inversionvial'=>$inversionvial));   
             }else{
@@ -307,7 +303,7 @@ $cont = 0;
          
             $admin = $em->getRepository('OpltdaEntidadesBundle:Usuarios')->findOneBy(array('usuario'=>$usuario, 'password' => $password));
  
-            if(!$admin){
+            if($admin){
                 $memoriaCalculo = $em->getRepository('OpltdaEntidadesBundle:memoriaCalculo')->findAll();
                 return $this->render('OpltdaPaginasBundle:Default:listarMemoriaC.html.twig', array('memoriaCalculo' => $memoriaCalculo));
             }else{
@@ -331,7 +327,7 @@ $cont = 0;
          
             $admin = $em->getRepository('OpltdaEntidadesBundle:Usuarios')->findOneBy(array('usuario'=>$usuario, 'password' => $password));
  
-            if(!$admin){
+            if($admin){
                 $entrevista = $em->getRepository('OpltdaEntidadesBundle:Entrevistas')->findAll();
                 return $this->render('OpltdaPaginasBundle:Default:listarEntrevista.html.twig', array('entrevista' => $entrevista));
             }else{
@@ -356,7 +352,7 @@ $cont = 0;
          
             $admin = $em->getRepository('OpltdaEntidadesBundle:Usuarios')->findOneBy(array('usuario'=>$usuario, 'password' => $password));
  
-            if(!$admin){
+            if($admin){
                 $estudio =  $em->getRepository('OpltdaEntidadesBundle:Estudio')->findAll();
                 return $this->render('OpltdaPaginasBundle:Default:listasEstudio.html.twig', array('estudio' => $estudio));
             }else{
@@ -377,7 +373,7 @@ $cont = 0;
          
             $admin = $em->getRepository('OpltdaEntidadesBundle:Usuarios')->findOneBy(array('usuario'=>$usuario, 'password' => $password));
  
-            if(!$admin){
+            if($admin){
                 $mapas =  $em->getRepository('OpltdaEntidadesBundle:Mapas')->findAll();
                 return $this->render('OpltdaPaginasBundle:Default:mapas.html.twig', array('mapas' => $mapas));
             }else{
@@ -399,7 +395,7 @@ $cont = 0;
          
             $admin = $em->getRepository('OpltdaEntidadesBundle:Usuarios')->findOneBy(array('usuario'=>$usuario, 'password' => $password));
  
-            if(!$admin){
+            if($admin){
                 $estudio = $em->getRepository('OpltdaEntidadesBundle:Estudio')->findOneBy(array('id'=>$id));
                 return $this->render('OpltdaPaginasBundle:Default:detalleEstudio.html.twig', array('estudio'=>$estudio));
             }else{
@@ -421,7 +417,7 @@ $cont = 0;
          
             $admin = $em->getRepository('OpltdaEntidadesBundle:Usuarios')->findOneBy(array('usuario'=>$usuario, 'password' => $password));
  
-            if(!$admin){
+            if($admin){
                 $modelamiento = $em->getRepository('OpltdaEntidadesBundle:Modelamiento')->findAll();
                 return $this->render('OpltdaPaginasBundle:Default:listarModelamiento.html.twig', array('modelamiento'=>$modelamiento));
             }else{
