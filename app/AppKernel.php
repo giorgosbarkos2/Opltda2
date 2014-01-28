@@ -5,9 +5,7 @@ use Symfony\Component\Config\Loader\LoaderInterface;
 
 class AppKernel extends Kernel
 {
-
-
-          public function init()
+    public function init()
     {
         date_default_timezone_set( 'America/Santiago' );
         parent::init();
