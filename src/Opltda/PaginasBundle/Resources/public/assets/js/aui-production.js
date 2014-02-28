@@ -52391,7 +52391,7 @@ if(jQuery) (function($) {
 			 *      } );
 			 *    } );
 			 */
-			"sZeroRecords": "No matching records found"
+			"sZeroRecords": "No se encontraron registros"
 		},
 	
 	

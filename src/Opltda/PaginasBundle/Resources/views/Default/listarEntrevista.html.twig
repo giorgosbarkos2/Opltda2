@@ -32,10 +32,13 @@ $(document).ready(function(){
      $('#entrevistas').dataTable()
 		 .columnFilter({ sPlaceHolder: "head:after",
                        aoColumns: [
+                            { type: "text" },
                             { type: "select", values: [ '4' , '5' , '8' , '12' ]  },
                             { type: "select", values: [ 'Coronel' , 'CQQ' , 'PTLA' , 'PUQ' , 'SAI' , 'San Vicente' , 'San Vicente, Coronel'  , 'VAP' , 'VAP/SAI' ]  },
-                            { type: "text" },
                             { type: "select", values: [ 'Carne' , 'Celulosa' , 'Cobre' , 'Lana' , 'Madera' , 'Reefer' , 'Retail' , 'Salmón' , 'Transversal' , 'Uva' ,'Vino' ]  },
+                
+                            { type: "select" , values: [ 'BIO-BÍO-002' , 'BIO-BÍO-003' , 'CQQ' , 'CQQ-001' , 'CQQ-002' , 'PTLA' , 'PTLA-001' , 'PUQ' , 'PUQ-001' , 'PUQ-002' ,'PUQ-003' , 'SAI'  , 'SAI-001' , 'SAI-002' , 'VAP' , 'VAP-001' , 'VAP-002' , 'VAP-003' , 'VAP-004' , 'VAP-005' , 'VAP-006']  },
+                            
                             { type: "select", values: [ 'Agencia de Aduana' , 'Concesionario' , 'Depósito de contenedores' , 'Embarcador' , 'Empresa portuaria' , 'Exportador' , 'Freight Forwarder'  , 'Importador' , 'Naviera' , 'SAG' , 'SERNAPESCA' , 'Servicio nacional de Aduanas'  , 'Transportista ferroviario'  , 'Transportista rodoviario' ]  },
                             { type: "text" }
 			]
@@ -51,21 +54,25 @@ $(document).ready(function(){
                             <h3>Listados archivos de  Entrevistas</h3>
 	<table class="table"  id="entrevistas" >
 		<thead>
-			<th width="10%">Region</th>
-			<th width="10%">Puerto</th>
 			<th width="10%">Codigo Ficha</th>
+                                                <th width="10%">Region</th>
+			<th width="10%">Puerto</th>
+			
 			<th width="10%">Nombre Cadena</th>
+                                                <th width="10%">Código cadena</th>
 			
 			<th>Actor</th>
                                                  <th>Archivos</td>
 		</thead>
 		<tbody>
 			{% for entrevista in entrevista %}
-				<tr>    
+                    		<tr>    
+                                    <td>{{entrevista.codigoFicha}}</td>
                                     <td>{{entrevista.regiones.numero}}</td>
                                     <td>{{entrevista.puertos.nombre}}</td>
-                                    <td>{{entrevista.codigoFicha}}</td>
+                                    
                                     <td>{{entrevista.nombreCadena}}</td>
+                                    <td>{{entrevista.cadenas.codigo}}</td>
                                     <td>{{entrevista.tipoActor}}</td>
                                     <td>
 

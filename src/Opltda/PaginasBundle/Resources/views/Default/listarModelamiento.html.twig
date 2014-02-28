@@ -34,7 +34,10 @@
 
                             { type: "select", values: [ 'CQQ' , 'PTLA' , 'PUQ' , 'SAI' , 'VAP' , 'VAP/SAI' ]  },
                             { type: "select", values: ['Cadena logística exportación de celulosa ', 'Cadena logística de exportación de madera aserrada ', 'Cadena logística exportación de salmón ', 'Cadena logística exportación concentrado de cobre', 'Cadena logística exportación de uva en pallet ', 'Cadena logística importación de carne ', 'Cadena logística de exportación de cobre refinado.', 'Cadena logística exportación de uva en contenedor ', 'Cadena logística exportación de vino por forwarder', 'Cadena logística de exportación de cobre refinado ', 'Cadena logística exportación de manzana fresca en pallet', 'Cadena logística de exportación de vino ', 'Cadena logística de exportación de uva en contenedor ', 'Cadena logística importación de carga general, pago anticipado', 'Cadena logística importación de carga general sin pago anticipado', 'Cadena de Exportación de la lana', 'Cadena de exportación de salmón'] },
-                                            { type: "text" },
+                            { type: "select" , values: [ 'BIO-BÍO-002' , 'BIO-BÍO-003' , 'CQQ' , 'CQQ-001' , 'CQQ-002' , 'PTLA' , 'PTLA-001' , 'PUQ' , 'PUQ-001' , 'PUQ-002' ,'PUQ-003' , 'SAI'  , 'SAI-001' , 'SAI-002' , 'VAP' , 'VAP-001' , 'VAP-002' , 'VAP-003' , 'VAP-004' , 'VAP-005' , 'VAP-006']  },
+                            
+                
+                { type: "text" },
                                                 { type: "text" }
 
 
@@ -51,6 +54,7 @@
     <thead>
         <th>Nombre puerto</th>
         <th>Nombre cadena</th>
+        <th>Codigo cadena</th>
         <th>Visualizar Pdf</th>
         <th>Bajar Bpm</th>
  
@@ -60,6 +64,7 @@
         <tr>
             <td>{{modelamiento.puertos.nombre}}</td>
             <td>{{modelamiento.cadenas.nombre}}</td>
+            <td>{{modelamiento.cadenas.codigo}}</td>
             <td><a href="../web/archivos/modelamiento/{{modelamiento.archivoDoc}}" target="_blank">{{modelamiento.archivoDoc}}</a></td>
             <td><a href="../web/archivos/modelamiento/{{modelamiento.archivoBpm}}" target="_blank" >{{modelamiento.archivoBpm}}</a></td>
         </tr>

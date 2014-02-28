@@ -18,7 +18,14 @@
              
                    width: 200px;
              }
-                                
+       #Estudio_filter{
+           
+           display: none;
+           
+           }
+             
+             
+             
                             
 </style>
 
@@ -28,49 +35,17 @@ $(document).ready(function(){
      $('#Estudio').dataTable()
 		 .columnFilter({ sPlaceHolder: "head:after",
                                                              aoColumns: [
-                        
-		        { type: "select", values: [  'BIO-BÍO-001', 'BIO-BÍO-002', 'BIO-BÍO-003', 'SAI-001',  'CQQ-001', 'CQQ-002', 'PUQ-001', 'PUQ-002', 'PUQ-003', 'PTLA-001' ] },
-		        { type: "select", values: ['Madera', 'Celulosa', 'Salmón', 'Salmón', 'Vino forwarder', 'Uva pallet', 'Concentrado de cobre', 'Concentrado de cobre', 'Salmón Congelado', 'Lana',  'Carne Congelda',  'Carne Congelda', 'importación de carne '] },
-                        
-                        { type: "select", values: [ 'Temporal', 'Espacial' ]  },
-                                        
-                                        
-                                        { type: "text" },
-		        { type: "text" },
-                                        { type: "text" },
-                                        { type: "text" },
-		        { type: "text" },
-                                        { type: "text" },
-                                        
-                                        { type: "text" },
-                                        { type: "text" },
-		        { type: "text" },
-                                        { type: "text" },
-                                        { type: "text" },
-                                        { type: "text" },
-		        { type: "text" },
-                                        { type: "text" },
-                                        
-                                           { type: "text" },
-                                        { type: "text" },
-		        { type: "text" },
-                                        { type: "text" },
-                                        
-                                               { type: "text" },
-                                        { type: "text" },
-		        { type: "text" },
-                                        { type: "text" },
-                                        
-                                        
-                                               { type: "text" },
-                                        { type: "text" },
-		        { type: "text" },
-                                        { type: "text" },
-                                        { type: "text" },
-                                        { type: "text" }
-                                        
-                                        
-                                        
+                                  { type: "select", values: [ '4' , '5' , '8' , '12' ]  },
+                                  { type: "select", values: [ 'Coronel' , 'CQQ' , 'PTLA' , 'PUQ' , 'SAI' , 'San Vicente' , 'San Vicente, Coronel'  , 'VAP' , 'VAP/SAI' ]  },
+                                  { type: "select" , values: [ 'BIO-BÍO-002' , 'BIO-BÍO-003' , 'CQQ' , 'CQQ-001' , 'CQQ-002' , 'PTLA' , 'PTLA-001' , 'PUQ' , 'PUQ-001' , 'PUQ-002' ,'PUQ-003' , 'SAI'  , 'SAI-001' , 'SAI-002' , 'VAP' , 'VAP-001' , 'VAP-002' , 'VAP-003' , 'VAP-004' , 'VAP-005' , 'VAP-006']  },
+                                  { type: "select", values: [  'Carne Congelda' , 'Celulosa' ,  'Concentrado de cobre' , 'Importación con pago anticipado' , 'Importación de carne' , 'Lana' , 'Madera' , 'Reefer' , 'Retail' , 'Salmón' , 'Salmón Congelado' ,  'Uva pallet' , 'Vino forwarder']  },
+                                  { type: "select", values: [ 'Espacial' , 'Temporal' ]  },
+                                   { type: "select", values: [ 'Control' , 'Destino Final' , 'Gestión Portuaria' , 'Gestión terminal' ,'Ingreso Mercancia País'  , 'Pre - embarque' , 'Visación' , 'Visación terminal' ]  },
+      
+                                  { type: "text" },
+                                  { type: "text" },
+                                    { type: "text" },
+		       
                                         
                                         
                                         
@@ -91,36 +66,36 @@ $(document).ready(function(){
     <table id="Estudio" class="table">
         
          <thead>
+            <th width="10%">Region</th>
+            <th width="10%">Puerto</th>
+            <th width="10%">Código Cadena</th>
+            <th width="10%">Nombre Cadena</th>
             
-         <th width="200px">C&oacute;digo</th>
-            <th width="200px">Cadena</th>
-            <th width="200px">Factor</th>
-            <th width="30%">Actividad</th>
-            <th width="30%">Costo Unitario</th>
-            <th width="20%">Costo de inventario</th>
-            <th width="20%">Ver detalle</th>
+            
+            <th width="10%">Factor</th>
+            <th width="10%">Macro Proceso</th>
+            <th width="10%">Actividad</th>
+            <th width="10%">Costo unitario (us $ dolar)</th>
+            <th widht="10%">Costo invitario (us $ dólar)</th>
+
         </thead>
         
-        <thead>
-            
-            <th width="30%">C&oacute;digo</th>
-            <th width="30%">Cadena</th>
-            <th width="30%">Factor</th>
-            <th width="30%">Actividad</th>
-            <th width="30%">Costo Unitario</th>
-            <th width="20%">Costo de inventario</th>
-            <th width="20%">Ver Detalle</th>
-        </thead>
+       
         <tbody>
             {% for estudio in estudio %}
             <tr>
+                <td>{{estudio.regiones.numero}}</td>
+                <td>{{estudio.puertos.nombre}}</td>
                 <td>{{estudio.cadenas.codigo}}</td>
+                
                 <td>{{estudio.cadena}}</td>
                 <td>{{estudio.factor}}</td>
-                <td>{{estudio.actividad}}</td>
-                <td>{{estudio.costounitario}}</td>
-                <td>{{estudio.COSTODEINVENTARIO}}</td>
-                <td><a href="verDetalleEstudio/{{estudio.id}}" class="btn btn-primary">Ver Detalle</a></td>
+                <td>{{estudio.MACROPROCESO}}</td>
+                <td>{{estudio.ACTIVIDAD}}</td>
+                <td>{{estudio.COSTOunitario}}</td>
+                <td>{{estudio.cOSTODEINVENTARIO}}</td>
+                
+
             </tr>
             {% endfor%}
         </tbody>

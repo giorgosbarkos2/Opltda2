@@ -30,6 +30,9 @@ $(document).ready(function(){
      $('#inversionVial').dataTable()
 	 .columnFilter({ sPlaceHolder: "head:after",
              aoColumns: [
+                  { type: "select", values: [ '4' , '5' , '8' , '12' ]  },
+                  { type: "select", values: [ 'Coronel' , 'CQQ' , 'PTLA' , 'PUQ' , 'SAI' , 'San Vicente' , 'San Vicente, Coronel'  , 'VAP' , 'VAP/SAI' ]  },
+
                 { type: "select", values: ['Cadena logística exportación de uva en pallet ', 'Cadena logística exportación de uva en pallet ', 'Cadena logística exportación concentrado de cobre','Cadena logística de exportación de cobre refinado ','Cadena logística exportación de manzana fresca en pallet','Cadena logística de exportación de uva en contenedor ','Cadena logística importación de carga general, pago anticipado','Cadena logística de exportación de cobre refinado.','Cadena logística importación de carne ','Cadena logística de exportación de madera aserrada ','Cadena logística exportación de celulosa ','Cadena logística exportación de salmón ','Cadena de exportación de salmón','Cadena de Exportación de la lana','Cadena de exportación carne congelada cordero ','Cadena logística exportación de vino por forwarder','Cadena logística exportación de uva en contenedor ','Cadena logística de exportación de vino ','Cadena logística importación de carga general sin pago anticipado']},
 	        { type: "text" },
                 { type: "text" }
@@ -51,8 +54,11 @@ $(document).ready(function(){
                             
                             
                             <table class="table"  id="inversionVial" >
-		<thead>
-			<th width="20%">Cadena</th>
+		<thead> 
+                    
+                                                <th width="20%">Región</th>
+                                                <th width="20%">Cadena (código)</th>
+			<th width="20%">Cadena (nombre)</th>
 			<th width="20%">Archivo</th>
                         
                         
@@ -64,8 +70,10 @@ $(document).ready(function(){
 		{% for memoriaCalculo in memoriaCalculo %}
                         
                         <tr>
+                    <td>{{memoriaCalculo.cadenas.regiones.numero}}</td>   
+                    <td>{{memoriaCalculo.cadenas.codigo}}</td>
                     <td>{{memoriaCalculo.cadenas.nombre}}      </td>  
-                    <td> <a href="../web/archivos/memoriaC/{{memoriaCalculo.url}}" target="_blank">Archivo</a></td>
+                    <td> <a href="../web/archivos/memoriac/{{memoriaCalculo.url}}" target="_blank">Archivo</a></td>
                                 
                         </tr>
                                 {% endfor %}
